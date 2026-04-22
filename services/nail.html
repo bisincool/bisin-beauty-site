@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ネイルサービス | BISIN BEAUTY</title>
+  <meta name="description" content="上品なネイルデザインから可愛い系まで。小郡CHUCHU店でのネイルメニュー・料金。脂肪冷却と同日施術も可能。" />
+  <style>
+    :root{--bg:#f7f3ee;--card:rgba(255,255,255,0.85);--text:#2f2a26;--muted:#7a7169;--line:#e8dfd6;--accent:#b99c87;--accent-dark:#8a6e59;--shadow:0 18px 50px rgba(74,56,42,0.10);--shadow-sm:0 8px 24px rgba(74,56,42,0.07);--radius-xl:28px;--radius-lg:20px;--radius-md:14px;--max:1180px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--text);background:linear-gradient(180deg,#fbf8f4 0%,#f5efe8 100%);line-height:1.75}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(251,248,244,0.82);border-bottom:1px solid rgba(232,223,214,0.8)}
+    .header-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:1.2rem;font-weight:800;letter-spacing:.1em}
+    .logo small{display:block;font-size:.68rem;color:var(--muted);font-weight:500;letter-spacing:.12em;margin-top:-2px}
+    .nav{display:flex;gap:24px;color:var(--muted);font-size:.95rem;font-weight:600}
+    .nav a:hover,.nav a.active{color:var(--text)}
+    .nav a.active{border-bottom:2px solid var(--accent-dark);padding-bottom:2px}
+    .nav-cta{padding:11px 20px;border-radius:999px;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:.9rem;font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.15);transition:transform .2s}
+    .nav-cta:hover{transform:translateY(-2px)}
+    .breadcrumb{display:flex;gap:7px;align-items:center;font-size:.83rem;color:var(--muted);padding:14px 0}
+    .breadcrumb a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:13px 24px;font-size:.97rem;font-weight:800;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+    .btn-secondary{background:rgba(255,255,255,.95);border-color:var(--line);color:var(--text)}
+    .eyebrow{color:var(--accent-dark);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+    .section-title{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;line-height:1.25;margin-bottom:10px}
+    .section-lead{color:var(--muted);font-size:.96rem;margin-bottom:32px;max-width:600px}
+    .section{padding:64px 0}
+    .section+.section{border-top:1px solid var(--line)}
+
+    /* HERO */
+    .page-hero{padding:48px 0 52px;background:radial-gradient(ellipse 70% 50% at 80% 40%,rgba(185,156,135,.14) 0,transparent 60%),linear-gradient(180deg,#fdf9f4,#f5ebe0)}
+    .page-hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;background:rgba(255,255,255,.8);border:1px solid rgba(232,223,214,.9);border-radius:999px;color:var(--muted);font-size:.82rem;font-weight:700;margin-bottom:16px}
+    .page-hero h1{font-size:clamp(2rem,4vw,3.4rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px}
+    .page-hero h1 em{font-style:normal;color:var(--accent-dark)}
+    .page-hero p{color:var(--muted);font-size:.98rem;max-width:520px;margin-bottom:20px}
+    .trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+    .trust-chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);color:#5b514a;font-size:.84rem;font-weight:600}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+    .note-box{margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.8);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-md);font-size:.86rem;color:var(--muted)}
+    .note-box strong{color:var(--text);display:block;margin-bottom:3px}
+
+    /* hero visual - nail image grid */
+    .nail-hero-visual{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px}
+    .nail-hero-img{border-radius:18px;overflow:hidden;position:relative}
+    .nail-hero-img:first-child{grid-row:span 2;border-radius:24px}
+    .nail-img-placeholder{width:100%;height:100%;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-size:.78rem;color:rgba(138,110,89,.45);font-weight:600;border:1.5px dashed rgba(185,156,135,.35);border-radius:inherit;background:rgba(255,255,255,.5)}
+    .nail-img-placeholder .ph-icon{font-size:1.8rem;opacity:.4}
+    .nail-img-placeholder span{font-size:.7rem;opacity:.6;letter-spacing:.04em}
+    .nail-hero-img:first-child .nail-img-placeholder{min-height:320px}
+
+    /* GALLERY */
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .gallery-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s}
+    .gallery-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .gallery-img{aspect-ratio:3/4;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:.76rem;color:rgba(138,110,89,.4);font-weight:600}
+    .gallery-img.style-simple{background:linear-gradient(135deg,#fdf6ec,#f5ebe0)}
+    .gallery-img.style-art{background:linear-gradient(135deg,#f5e6f0,#eeddf5)}
+    .gallery-img.style-season{background:linear-gradient(135deg,#e6f0f5,#dde8f5)}
+    .gallery-img.style-adult{background:linear-gradient(135deg,#f0ede6,#e8e0d5)}
+    .gallery-img .gi-icon{font-size:2rem;opacity:.3}
+    .gallery-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .gallery-body{padding:12px 14px}
+    .gallery-tag{display:inline-block;padding:3px 9px;border-radius:999px;background:#f4ece3;border:1px solid rgba(185,156,135,.25);font-size:.7rem;font-weight:700;color:var(--accent-dark);margin-bottom:6px}
+    .gallery-body h3{font-size:.9rem;font-weight:800;margin-bottom:3px}
+    .gallery-body p{font-size:.78rem;color:var(--muted)}
+
+    /* PLANS */
+    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .plan-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);padding:26px;box-shadow:var(--shadow-sm);position:relative;transition:transform .25s,box-shadow .25s}
+    .plan-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .plan-card.featured{background:linear-gradient(160deg,rgba(255,250,235,.98),rgba(255,246,210,.98));border-color:rgba(201,163,75,.4);box-shadow:0 18px 50px rgba(201,163,75,.18)}
+    .plan-popular{position:absolute;top:14px;right:-6px;background:linear-gradient(135deg,#c9a34b,#e0bb6a);color:#2f1f00;font-size:.7rem;font-weight:900;padding:4px 12px 4px 8px;border-radius:999px 0 0 999px}
+    .plan-icon{width:44px;height:44px;border-radius:14px;background:#f4ece3;border:1px solid rgba(185,156,135,.25);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
+    .plan-card h3{font-size:1.05rem;font-weight:800;margin-bottom:8px}
+    .plan-price{font-size:2rem;font-weight:900;color:var(--accent-dark);line-height:1.1;margin:10px 0 6px}
+    .plan-price small{font-size:.86rem;color:var(--muted);font-weight:500;margin-left:4px}
+    .plan-desc{color:var(--muted);font-size:.88rem;margin-bottom:18px}
+    .plan-feature-list{margin-bottom:18px}
+    .plan-feature{display:flex;align-items:center;gap:7px;font-size:.84rem;color:#544a42;margin-bottom:5px}
+    .plan-feature::before{content:"✔";color:var(--accent-dark);font-size:.75rem;flex-shrink:0}
+
+    /* FLOW */
+    .flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .flow-steps::before{content:"";position:absolute;top:28px;left:calc(12.5%);right:calc(12.5%);height:2px;background:linear-gradient(90deg,var(--line),rgba(185,156,135,.4));z-index:0}
+    .flow-step{text-align:center;padding:0 12px;position:relative;z-index:1}
+    .flow-num{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.9);border:2px solid rgba(185,156,135,.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin:0 auto 14px;box-shadow:0 6px 16px rgba(74,56,42,.08)}
+    .flow-step h4{font-size:.92rem;font-weight:800;margin-bottom:5px}
+    .flow-step p{font-size:.8rem;color:var(--muted)}
+
+    /* BOTTOM CTA */
+    .bottom-cta{padding:56px 0 72px}
+    .bottom-box{background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(251,246,240,.92));border:1px solid rgba(232,223,214,.95);border-radius:32px;padding:38px;box-shadow:var(--shadow);text-align:center}
+    .bottom-box h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;margin-bottom:10px}
+    .bottom-box p{color:var(--muted);max-width:520px;margin:0 auto 22px}
+    .cta-group{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+
+    @media(max-width:960px){
+      .page-hero-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .plans-grid{grid-template-columns:1fr 1fr}
+      .flow-steps{grid-template-columns:1fr 1fr;gap:24px}
+      .flow-steps::before{display:none}
+    }
+    @media(max-width:720px){
+      .nav{display:none}
+      .plans-grid{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .flow-steps{grid-template-columns:1fr 1fr}
+      .cta-group,.cta-row{flex-direction:column}
+      .btn{width:100%;justify-content:center}
+    }
+      .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+    .footer-brand{font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:var(--text)}
+    .footer-reserve{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .footer-hp-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:999px;background:#ff4b4b;color:#fff;font-size:.86rem;font-weight:700;transition:opacity .2s}
+    .footer-hp-btn:hover{opacity:.85}
+    .hp-badge{font-size:.68rem;background:rgba(0,0,0,.15);padding:2px 7px;border-radius:4px}
+    .footer-sns{display:flex;gap:10px}
+    .sns-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.06);color:var(--text);transition:background .2s,transform .2s}
+    .sns-btn:hover{background:rgba(0,0,0,.12);transform:translateY(-2px)}
+    .sns-btn.rednote{background:#ff2442;color:#fff;font-size:.6rem;font-weight:800;border-radius:8px;width:auto;padding:0 8px}
+    .footer-copy{font-size:.82rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../index.html">BISIN BEAUTY<small>天神店 ／ 小郡店</small></a>
+    <nav class="nav">
+      <a href="../index.html">ホーム</a>
+      <a href="fat-freezing.html">脂肪冷却</a>
+      <a href="nail.html" class="active">ネイル</a>
+      <a href="../stores/coolspa-tenjin.html">店舗案内</a>
+      <a href="../blog/">症例・ビフォーアフター</a>
+            <a href="../for-business.html">開業支援</a>
+      </nav>
+    <a class="nav-cta" href="#contact">LINE相談</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">ホーム</a><span>›</span>
+        <a href="#">サービス</a><span>›</span>
+        <span>ネイル</span>
+      </div>
+      <div class="page-hero-grid">
+        <div>
+          <div class="hero-eyebrow">✦ Nail</div>
+          <h1>指先から、<em>自信が生まれる</em>。<br>上品なネイルで毎日を彩る。</h1>
+          <p>可愛い系から大人上品デザインまで、日常に馴染む美しさをご提案。季節ごとの新デザイン提案も充実。脂肪冷却と同日施術もOK。</p>
+          <div class="trust-row">
+            <span class="trust-chip">✔ デザイン豊富</span>
+            <span class="trust-chip">✔ 季節提案あり</span>
+            <span class="trust-chip">✔ 脂肪冷却と同日可</span>
+            <span class="trust-chip">✔ 完全予約制</span>
+          </div>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">予約・相談する</a>
+            <a href="#plans" class="btn btn-secondary">料金を見る</a>
+          </div>
+          <div class="note-box">
+            <strong>📍 CHUCHU 小郡店 のみ提供</strong>
+            ネイルサービスは小郡店でご対応しています。脂肪冷却と組み合わせて、同日施術も可能です。
+          </div>
+        </div>
+        <div class="nail-hero-visual">
+          <div class="nail-hero-img">
+            <div class="nail-img-placeholder">
+              <span class="ph-icon">💅</span>
+              <span>ネイル写真ここに挿入</span>
+            </div>
+          </div>
+          <div class="nail-hero-img">
+            <div class="nail-img-placeholder"><span class="ph-icon">✨</span><span>デザイン写真</span></div>
+          </div>
+          <div class="nail-hero-img">
+            <div class="nail-img-placeholder"><span class="ph-icon">🎨</span><span>デザイン写真</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="eyebrow">Design Gallery</div>
+      <h2 class="section-title">デザインギャラリー</h2>
+      <p class="section-lead">オフィスから休日まで、シーンに合わせたデザインをご提案します。写真はサンプルです。</p>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-img style-simple">
+            <!-- <img src="../../assets/nail/simple-01.jpg" alt="シンプルネイル"> -->
+            <span class="gi-icon">💅</span>
+          </div>
+          <div class="gallery-body">
+            <span class="gallery-tag">シンプル</span>
+            <h3>ワンカラー</h3>
+            <p>清潔感ある単色。オフィスでも馴染む上品な仕上がり。</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img style-art">
+            <!-- <img src="../../assets/nail/art-01.jpg" alt="ネイルアート"> -->
+            <span class="gi-icon">✨</span>
+          </div>
+          <div class="gallery-body">
+            <span class="gallery-tag">アート</span>
+            <h3>フラワーアート</h3>
+            <p>繊細な花柄で上品さをプラス。大人可愛いデザイン。</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img style-season">
+            <!-- <img src="../../assets/nail/season-01.jpg" alt="季節ネイル"> -->
+            <span class="gi-icon">🌸</span>
+          </div>
+          <div class="gallery-body">
+            <span class="gallery-tag">季節限定</span>
+            <h3>春の桜デザイン</h3>
+            <p>季節に合わせたトレンドデザイン。毎シーズン新作提案。</p>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img style-adult">
+            <!-- <img src="../../assets/nail/adult-01.jpg" alt="大人ネイル"> -->
+            <span class="gi-icon">🤍</span>
+          </div>
+          <div class="gallery-body">
+            <span class="gallery-tag">大人上品</span>
+            <h3>フレンチネイル</h3>
+            <p>クラシックで飽きのこない、長く使えるデザイン。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="section" id="plans" style="background:linear-gradient(180deg,#f3ebe0,#faf6f1)">
+    <div class="container">
+      <div class="eyebrow">Plans &amp; Price</div>
+      <h2 class="section-title">ネイルメニュー・料金</h2>
+      <p class="section-lead">CHUCHU 小郡店のネイルプランです。詳細はLINEにてご確認いただけます。</p>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-icon">💅</div>
+          <h3>シンプルネイル</h3>
+          <div class="plan-price">¥5,500 <small>税込</small></div>
+          <p class="plan-desc">単色カラーやシンプルなデザイン。はじめての方にもおすすめ。</p>
+          <div class="plan-feature-list">
+            <div class="plan-feature">オフィスに馴染むデザイン</div>
+            <div class="plan-feature">カラー豊富</div>
+            <div class="plan-feature">短時間で仕上がる</div>
+          </div>
+          <a href="#contact" class="btn btn-secondary" style="width:100%;justify-content:center">相談・予約する</a>
+        </div>
+        <div class="plan-card featured">
+          <span class="plan-popular">人気</span>
+          <div class="plan-icon">✨</div>
+          <h3>定額制ネイルアート</h3>
+          <div class="plan-price">¥6,000 <small>税込〜</small></div>
+          <p class="plan-desc">季節に合わせたアートデザインが揃う定額プラン。お好きなデザインを選べます。</p>
+          <div class="plan-feature-list">
+            <div class="plan-feature">デザイン豊富</div>
+            <div class="plan-feature">季節限定あり</div>
+            <div class="plan-feature">大人可愛いデザイン多数</div>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">人気プランを予約</a>
+        </div>
+        <div class="plan-card">
+          <div class="plan-icon">🎨</div>
+          <h3>定額制アート（上位）</h3>
+          <div class="plan-price">¥7,000 <small>税込</small></div>
+          <p class="plan-desc">より豊富なデザインから選べる上位プラン。トレンドから定番まで。</p>
+          <div class="plan-feature-list">
+            <div class="plan-feature">全デザイン対象</div>
+            <div class="plan-feature">アート自由度高め</div>
+            <div class="plan-feature">特別感のある仕上がり</div>
+          </div>
+          <a href="#contact" class="btn btn-secondary" style="width:100%;justify-content:center">詳細を確認する</a>
+        </div>
+      </div>
+      <p style="margin-top:14px;font-size:.8rem;color:var(--muted);padding:11px 15px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:var(--radius-md)">※ デザインの詳細・最新ラインナップはLINEにてご確認ください。オプション追加の場合は別途費用が発生します。</p>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Flow</div>
+      <h2 class="section-title">当日の流れ</h2>
+      <p class="section-lead" style="margin-bottom:36px">初めての方でも安心。来店からお帰りまでの流れをご説明します。</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-num">📱</div>
+          <h4>LINEで予約</h4>
+          <p>デザインのご相談もLINEでOK。希望日時をお知らせください。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">👋</div>
+          <h4>来店・カウンセリング</h4>
+          <p>デザインの好みや生活スタイルをヒアリング。最適なご提案をします。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">💅</div>
+          <h4>施術</h4>
+          <p>丁寧に仕上げます。脂肪冷却との同日施術も対応しています。</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">✨</div>
+          <h4>完成・お会計</h4>
+          <p>次回のご予約もその場で受付。アフターケアもご案内します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bottom-cta" id="contact">
+    <div class="container">
+      <div class="bottom-box">
+        <h2>まずはLINEでデザイン相談を</h2>
+        <p>「こんなデザインにしたい」というイメージ画像をLINEで送っていただくだけでOK。お気軽にご相談ください。</p>
+        <div class="cta-group">
+          <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn btn-primary">小郡店で予約する</a>
+          <a href="#" class="btn btn-secondary">LINEでデザイン相談</a>
+        </div>
+        <p style="margin-top:16px;font-size:.83rem;color:var(--muted)">✔ 勧誘なし　✔ 完全予約制　✔ 脂肪冷却と同日OK</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">BISIN BEAUTY</p>
+    <div class="footer-reserve">
+      <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>天神店を予約<span class="hp-badge">HotPepper</span></a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>小郡店を予約<span class="hp-badge">HotPepper</span></a>
+    </div>
+    <div class="footer-sns">
+      <a href="#" class="sns-btn" aria-label="X（Twitter）"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="sns-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" class="sns-btn rednote" aria-label="小红书">小红书</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 BISIN BEAUTY. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

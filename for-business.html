@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ビジネスサポート | BISIN BEAUTY</title>
+  <meta name="description" content="脂肪冷却サロン開業・Webサイト制作・AI/ITマーケティング支援。BISINがあなたのビジネスをゼロからサポートします。" />
+  <style>
+    :root{--bg:#f7f3ee;--card:rgba(255,255,255,0.85);--text:#2f2a26;--muted:#7a7169;--line:#e8dfd6;--accent:#b99c87;--accent-dark:#8a6e59;--shadow:0 18px 50px rgba(74,56,42,0.10);--shadow-sm:0 8px 24px rgba(74,56,42,0.07);--radius-xl:28px;--radius-lg:20px;--radius-md:14px;--max:1100px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--text);background:radial-gradient(circle at top left,#fff9f3 0,transparent 34%),radial-gradient(circle at right center,#f1e7dd 0,transparent 26%),linear-gradient(180deg,#fbf8f4 0%,#f5efe8 100%);line-height:1.75}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(251,248,244,.82);border-bottom:1px solid rgba(232,223,214,.8)}
+    .header-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:1.2rem;font-weight:800;letter-spacing:.1em}
+    .logo small{display:block;font-size:.68rem;color:var(--muted);font-weight:500;letter-spacing:.12em;margin-top:-2px}
+    .nav{display:flex;gap:24px;color:var(--muted);font-size:.95rem;font-weight:600}
+    .nav a:hover,.nav a.active{color:var(--text)}
+    .nav a.active{border-bottom:2px solid var(--accent-dark);padding-bottom:2px}
+    .nav-cta{padding:11px 20px;border-radius:999px;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:.9rem;font-weight:700;transition:transform .2s}
+    .nav-cta:hover{transform:translateY(-2px)}
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 28px;font-size:1rem;font-weight:800;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-dark{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;box-shadow:0 12px 28px rgba(0,0,0,.18)}
+    .btn-dark:hover{box-shadow:0 18px 36px rgba(0,0,0,.25)}
+    .btn-outline{background:rgba(255,255,255,.95);border-color:var(--line);color:var(--text)}
+    .btn-outline:hover{background:#fff}
+
+    /* HERO */
+    .hero{padding:72px 0 60px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(185,156,135,.12) 0,transparent 70%);pointer-events:none}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(255,255,255,.85);border:1px solid rgba(185,156,135,.3);border-radius:999px;font-size:.82rem;font-weight:700;color:var(--accent-dark);letter-spacing:.08em;margin-bottom:24px}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.2;letter-spacing:-.03em;margin-bottom:18px}
+    .hero h1 em{font-style:normal;color:var(--accent-dark)}
+    .hero-sub{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--muted);max-width:580px;margin:0 auto 32px}
+    .hero-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:36px}
+    .hero-tag{padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);font-size:.86rem;font-weight:700;color:var(--text)}
+    .hero-cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+
+    /* WHO IS THIS FOR */
+    .who-section{padding:64px 0}
+    .section-head{text-align:center;margin-bottom:48px}
+    .eyebrow{color:var(--accent-dark);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+    .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;line-height:1.25;margin-bottom:10px}
+    .section-head p{color:var(--muted);font-size:.97rem;max-width:540px;margin:0 auto}
+
+    /* PATH CARDS */
+    .path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .path-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+    .path-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .path-card-top{padding:32px 28px 24px;flex:1}
+    .path-icon-wrap{width:56px;height:56px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:18px}
+    .path-card:nth-child(1) .path-icon-wrap{background:linear-gradient(135deg,#e8f4ff,#d0e8f8)}
+    .path-card:nth-child(2) .path-icon-wrap{background:linear-gradient(135deg,#f0f5e8,#ddeedd)}
+    .path-card:nth-child(3) .path-icon-wrap{background:linear-gradient(135deg,#f5ece0,#f0dece)}
+    .path-label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .path-card h3{font-size:1.2rem;font-weight:800;line-height:1.3;margin-bottom:12px}
+    .path-card p{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:16px}
+    .path-features{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:0}
+    .path-features li{display:flex;align-items:flex-start;gap:9px;font-size:.86rem;color:var(--text)}
+    .path-features li::before{content:"✓";flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;margin-top:2px}
+    .path-card:nth-child(1) .path-features li::before{background:#d0e8f8;color:#2a6ea6}
+    .path-card:nth-child(2) .path-features li::before{background:#ddeedd;color:#2a6e3a}
+    .path-card:nth-child(3) .path-features li::before{background:#f0dece;color:#8a5a30}
+    .path-card-bottom{padding:20px 28px 24px;border-top:1px solid var(--line)}
+    .path-cta{display:flex;align-items:center;justify-content:space-between;font-size:.9rem;font-weight:800;color:var(--accent-dark);transition:gap .2s}
+    .path-cta .arrow{font-size:1.1rem;transition:transform .2s}
+    .path-card:hover .path-cta .arrow{transform:translateX(4px)}
+
+    /* WHY US */
+    .why-section{padding:64px 0;background:linear-gradient(180deg,#fdf9f4,#f5ebe0);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+    .why-card{text-align:center;padding:28px 18px;background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+    .why-num{font-size:2rem;font-weight:900;color:var(--accent-dark);line-height:1;margin-bottom:4px}
+    .why-unit{font-size:.72rem;font-weight:700;color:var(--muted);margin-bottom:10px}
+    .why-label{font-size:.88rem;font-weight:700;margin-bottom:6px}
+    .why-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+
+    /* FLOW */
+    .flow-section{padding:64px 0}
+    .flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;position:relative}
+    .flow-steps::before{content:"";position:absolute;top:32px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--accent) 0%,rgba(185,156,135,.2) 100%);z-index:0}
+    .flow-step{text-align:center;padding:0 12px;position:relative;z-index:1}
+    .flow-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+    .flow-step h4{font-size:.95rem;font-weight:800;margin-bottom:6px}
+    .flow-step p{font-size:.82rem;color:var(--muted);line-height:1.65}
+
+    /* CTA SECTION */
+    .cta-section{padding:72px 0;text-align:center}
+    .cta-box{background:linear-gradient(135deg,#2f2a26 0%,#3e3029 50%,#4a3a30 100%);border-radius:var(--radius-xl);padding:56px 48px;color:#fff;position:relative;overflow:hidden;box-shadow:0 32px 64px rgba(47,42,38,.35)}
+    .cta-box::before{content:"";position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.04)}
+    .cta-box::after{content:"";position:absolute;bottom:-40px;left:-40px;width:180px;height:180px;border-radius:50%;background:rgba(185,156,135,.08)}
+    .cta-box .eyebrow{color:rgba(185,156,135,.8)}
+    .cta-box h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.25;margin-bottom:14px;position:relative;z-index:1}
+    .cta-box p{font-size:1rem;color:rgba(255,255,255,.65);margin-bottom:36px;position:relative;z-index:1}
+    .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+    .btn-white{background:#fff;color:var(--text);font-weight:800;border-radius:999px;padding:14px 28px;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+    .btn-white:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.28)}
+    .btn-ghost{background:rgba(255,255,255,.1);color:#fff;font-weight:700;border-radius:999px;padding:14px 28px;font-size:1rem;border:1px solid rgba(255,255,255,.2);display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+    .btn-ghost:hover{background:rgba(255,255,255,.18)}
+
+    /* FOOTER */
+    .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+    .footer-brand{font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:var(--text)}
+    .footer-reserve{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .footer-hp-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:999px;background:#ff4b4b;color:#fff;font-size:.86rem;font-weight:700;transition:opacity .2s}
+    .footer-hp-btn:hover{opacity:.85}
+    .hp-badge{font-size:.68rem;background:rgba(0,0,0,.15);padding:2px 7px;border-radius:4px}
+    .footer-sns{display:flex;gap:10px}
+    .sns-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.06);color:var(--text);transition:background .2s,transform .2s}
+    .sns-btn:hover{background:rgba(0,0,0,.12);transform:translateY(-2px)}
+    .sns-btn.rednote{background:#ff2442;color:#fff;font-size:.6rem;font-weight:800;border-radius:8px;width:auto;padding:0 8px}
+    .footer-copy{font-size:.82rem;color:var(--muted)}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .path-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr 1fr}
+      .flow-steps{grid-template-columns:1fr 1fr;gap:24px}
+      .flow-steps::before{display:none}
+    }
+    @media(max-width:640px){
+      .hero{padding:48px 0 40px}
+      .hero h1{font-size:2rem}
+      .why-grid{grid-template-columns:1fr 1fr}
+      .cta-box{padding:36px 22px}
+      .hero-cta-row{flex-direction:column;align-items:center}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">BISIN BEAUTY<small>天神店 ／ 小郡店</small></a>
+      <nav class="nav">
+        <a href="index.html">ホーム</a>
+        <a href="services/fat-freezing.html">脂肪冷却</a>
+        <a href="services/nail.html">ネイル</a>
+        <a href="stores/coolspa-tenjin.html">店舗案内</a>
+        <a href="blog/">症例・ビフォーアフター</a>
+        <a href="for-business.html" class="active">開業支援</a>
+      </nav>
+      <a href="https://bisincool.co.jp/outsourcing" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-eyebrow">✦ BISIN BUSINESS SUPPORT</div>
+        <h1>あなたのビジネスを、<br><em>ゼロから一緒に。</em></h1>
+        <p class="hero-sub">脂肪冷却サロンの開業から、Webサイト制作・AI活用・マーケティング支援まで。BISINが経営のあらゆる場面でパートナーとして伴走します。</p>
+        <div class="hero-tags">
+          <span class="hero-tag">❄ 脂肪冷却サロン開業</span>
+          <span class="hero-tag">💻 Webサイト・LP制作</span>
+          <span class="hero-tag">🤖 AI・ITマーケ支援</span>
+          <span class="hero-tag">💅 ネイルサロン開業</span>
+        </div>
+        <div class="hero-cta-row">
+          <a href="https://bisincool.co.jp/outsourcing" target="_blank" rel="noopener" class="btn btn-dark">まず相談してみる →</a>
+          <a href="#paths" class="btn btn-outline">どんな支援があるか見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3 PATH CARDS ===== -->
+    <section class="who-section" id="paths">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">WHAT WE OFFER</div>
+          <h2>あなたはどちらをお探しですか？</h2>
+          <p>目的に合わせた3つのサポートメニューをご用意しています。</p>
+        </div>
+        <div class="path-grid">
+
+          <!-- Card 1: サロン開業 -->
+          <div class="path-card">
+            <div class="path-card-top">
+              <div class="path-icon-wrap">❄</div>
+              <div class="path-label">SALON LAUNCH</div>
+              <h3>脂肪冷却サロンを<br>開業したい</h3>
+              <p>機器の購入・レンタルから導入サポートまで。未経験でも安心して始められる体制を整えています。</p>
+              <ul class="path-features">
+                <li>業務用脂肪冷却マシンの購入・レンタル</li>
+                <li>施術研修・スタッフトレーニング</li>
+                <li>集客・運営ノウハウの提供</li>
+                <li>アフターサポート・保証付き</li>
+              </ul>
+            </div>
+            <div class="path-card-bottom">
+              <a href="https://bisincool.co.jp/product" target="_blank" rel="noopener" class="path-cta">
+                <span>機器・プランを見る</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Webサイト・集客 -->
+          <div class="path-card">
+            <div class="path-card-top">
+              <div class="path-icon-wrap">💻</div>
+              <div class="path-label">WEB & MARKETING</div>
+              <h3>このようなWebサイトを<br>作りたい・集客したい</h3>
+              <p>サロン専門のLP・ホームページ制作から、SNS運用・広告・SEOまで、集客を丸ごとサポートします。</p>
+              <ul class="path-features">
+                <li>高転化LP・ホームページ制作</li>
+                <li>Instagram / X / 小红书 運用代行</li>
+                <li>Web広告（Google / Meta）運用</li>
+                <li>HotPepper掲載サポート</li>
+              </ul>
+            </div>
+            <div class="path-card-bottom">
+              <a href="https://bisincool.co.jp/outsourcing" target="_blank" rel="noopener" class="path-cta">
+                <span>Web支援を詳しく見る</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: IT・AI・マーケ -->
+          <div class="path-card">
+            <div class="path-card-top">
+              <div class="path-icon-wrap">🤖</div>
+              <div class="path-label">IT / AI / CONSULTING</div>
+              <h3>IT・AI・マーケティングで<br>事業を加速したい</h3>
+              <p>美容業界に精通したITコンサルタントが、業務効率化・AIツール導入・経営データ分析を支援します。</p>
+              <ul class="path-features">
+                <li>AIチャットボット・自動化導入</li>
+                <li>予約システム・CRM構築</li>
+                <li>データ分析・ROIコンサルティング</li>
+                <li>スタッフIT研修・DX推進</li>
+              </ul>
+            </div>
+            <div class="path-card-bottom">
+              <a href="https://bisincool.co.jp/outsourcing" target="_blank" rel="noopener" class="path-cta">
+                <span>IT・AI支援を詳しく見る</span>
+                <span class="arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY BISIN ===== -->
+    <section class="why-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">WHY BISIN</div>
+          <h2>BISINが選ばれる理由</h2>
+          <p>自社サロン運営で培った実績とノウハウをそのままご提供します。</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-num">2</div>
+            <div class="why-unit">店舗運営中</div>
+            <div class="why-label">自社サロン運営の実績</div>
+            <div class="why-desc">天神・小郡の2店舗を直営運営。現場で使えるノウハウをそのまま提供します。</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">★4.8</div>
+            <div class="why-unit">平均口コミ評価</div>
+            <div class="why-label">高い顧客満足度</div>
+            <div class="why-desc">実際のお客様の声に基づく運営ノウハウが、サポート内容に反映されています。</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">3</div>
+            <div class="why-unit">ヶ月で黒字化実績</div>
+            <div class="why-label">ROI重視の支援</div>
+            <div class="why-desc">導入後3ヶ月での黒字化を目標に、集客から収益設計まで一括サポートします。</div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">∞</div>
+            <div class="why-unit">相談対応</div>
+            <div class="why-label">開業後も伴走</div>
+            <div class="why-desc">開業後もLINE・電話でいつでも相談できる体制。ひとりで悩まなくて済みます。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FLOW ===== -->
+    <section class="flow-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">HOW IT WORKS</div>
+          <h2>サポートの流れ</h2>
+          <p>まずは無料相談から。しつこい勧誘は一切ありません。</p>
+        </div>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">01</div>
+            <h4>無料相談</h4>
+            <p>フォームまたはLINEから気軽にご連絡ください。オンライン対応可。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">02</div>
+            <h4>ヒアリング・提案</h4>
+            <p>目標・予算・スケジュールをお聞きし、最適なプランをご提案します。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">03</div>
+            <h4>契約・着手</h4>
+            <p>内容にご納得いただいた後に契約。すぐに動き出せる体制があります。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">04</div>
+            <h4>継続サポート</h4>
+            <p>開業後・納品後も定期フォローアップで成果を一緒に追い続けます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div class="eyebrow">LET'S START</div>
+          <h2>まず、話してみませんか。</h2>
+          <p>「まだ検討中」でも大丈夫。アイデア段階からお気軽にご相談ください。<br>初回相談は完全無料・勧誘なし。</p>
+          <div class="cta-btns">
+            <a href="https://bisincool.co.jp/outsourcing" target="_blank" rel="noopener" class="btn-white">
+              💬 無料で相談する
+            </a>
+            <a href="https://bisincool.co.jp/product" target="_blank" rel="noopener" class="btn-ghost">
+              ❄ 機器・プランを見る
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">BISIN BEAUTY</p>
+      <div class="footer-reserve">
+        <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>天神店を予約<span class="hp-badge">HotPepper</span></a>
+        <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>小郡店を予約<span class="hp-badge">HotPepper</span></a>
+      </div>
+      <div class="footer-sns">
+        <a href="#" class="sns-btn" aria-label="X（Twitter）"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="sns-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" class="sns-btn rednote" aria-label="小红书">小红书</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 BISIN BEAUTY. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

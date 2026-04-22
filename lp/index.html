@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【初回¥3,300】脂肪冷却 体験キャンペーン | BISIN BEAUTY</title>
+  <meta name="description" content="今だけ初回体験¥3,300。福岡・天神／小郡の脂肪冷却専門サロン。食事制限不要・勧誘なし・完全予約制。残り枠わずか。" />
+  <style>
+    :root{--bg:#f7f3ee;--card:rgba(255,255,255,0.88);--text:#2f2a26;--muted:#7a7169;--line:#e8dfd6;--accent:#b99c87;--accent-dark:#8a6e59;--gold:#c9a34b;--shadow:0 18px 50px rgba(74,56,42,0.12);--shadow-sm:0 8px 24px rgba(74,56,42,0.07);--radius-xl:28px;--radius-lg:20px;--radius-md:14px;--max:800px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--text);background:linear-gradient(180deg,#fbf8f4,#f5efe8);line-height:1.75}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 28px));margin:0 auto}
+
+    /* LP HEADER — minimal, no nav */
+    .lp-header{padding:14px 0;background:rgba(251,248,244,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,223,214,.8);position:sticky;top:0;z-index:50}
+    .lp-header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{font-size:1.1rem;font-weight:800;letter-spacing:.1em}
+    .logo small{display:block;font-size:.62rem;color:var(--muted);font-weight:500}
+    .lp-header-cta{padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:.88rem;font-weight:800;box-shadow:0 6px 16px rgba(0,0,0,.18);white-space:nowrap;transition:transform .2s}
+    .lp-header-cta:hover{transform:translateY(-2px)}
+
+    /* URGENCY BAR */
+    .urgency-bar{background:linear-gradient(135deg,#2f2a26,#54463d);padding:10px 0;text-align:center}
+    .urgency-bar p{color:rgba(255,255,255,.9);font-size:.88rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+    .urgency-bar strong{color:#f5d680}
+    .urgency-dot{width:7px;height:7px;border-radius:50%;background:#f5d680;display:inline-block;animation:udot 1.2s ease-in-out infinite}
+    @keyframes udot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+    /* HERO */
+    .lp-hero{padding:52px 0 48px;background:radial-gradient(ellipse 80% 60% at 60% 30%,rgba(201,163,75,.12) 0,transparent 60%),linear-gradient(180deg,#fdf9f4,#f5ebe0)}
+    .hero-kv{text-align:center;margin-bottom:36px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 16px;background:rgba(255,255,255,.85);border:1px solid rgba(201,163,75,.35);border-radius:999px;color:var(--accent-dark);font-size:.82rem;font-weight:700;margin-bottom:18px}
+    .hero-eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);display:block;animation:udot 2s ease-in-out infinite}
+    .lp-hero h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;line-height:1.2;letter-spacing:-.02em;margin-bottom:14px}
+    .lp-hero h1 .hl{color:var(--accent-dark)}
+    .lp-hero h1 .price{font-size:clamp(2.4rem,8vw,4.4rem);color:var(--gold)}
+    .lp-hero p{font-size:clamp(.96rem,1.8vw,1.12rem);color:#544a42;max-width:560px;margin:0 auto 24px}
+
+    /* MAIN CTA */
+    .main-cta-group{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:16px}
+    .btn-cta-large{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:420px;padding:18px 28px;border-radius:999px;font-size:1.12rem;font-weight:900;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-align:center}
+    .btn-cta-large:hover{transform:translateY(-3px)}
+    .btn-dark{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;box-shadow:0 14px 32px rgba(0,0,0,.22)}
+    .btn-dark:hover{box-shadow:0 20px 40px rgba(0,0,0,.3)}
+    .btn-gold{background:linear-gradient(135deg,#c9a34b,#e0bb6a);color:#2f1f00;box-shadow:0 12px 28px rgba(201,163,75,.4)}
+    .btn-gold:hover{box-shadow:0 18px 36px rgba(201,163,75,.5)}
+    .btn-outline{background:rgba(255,255,255,.9);border:1px solid var(--line) !important;color:var(--text);box-shadow:var(--shadow-sm)}
+    .btn-small-note{font-size:.78rem;color:var(--muted)}
+
+    /* TRUST CHIPS */
+    .trust-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:6px}
+    .trust-chip{padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);color:#5b514a;font-size:.82rem;font-weight:600}
+
+    /* STATS */
+    .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:40px 0}
+    .stat-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm)}
+    .stat-card .sv{display:block;font-size:2rem;font-weight:900;color:var(--accent-dark);line-height:1;margin-bottom:4px}
+    .stat-card .sl{font-size:.76rem;color:var(--muted)}
+
+    /* SECTION */
+    .lp-section{padding:52px 0;border-top:1px solid var(--line)}
+    .section-label{text-align:center;margin-bottom:28px}
+    .eyebrow{color:var(--accent-dark);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+    .section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;line-height:1.25}
+
+    /* BEFORE/AFTER FEATURED */
+    .ba-featured{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow);margin-bottom:16px}
+    .ba-top{display:grid;grid-template-columns:1fr 90px 1fr;min-height:320px}
+    .ba-panel{display:flex;flex-direction:column}
+    .ba-panel-lbl{padding:12px 18px 8px;font-size:.68rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+    .ba-panel.before .ba-panel-lbl{background:#2f2a26;color:rgba(255,255,255,.35)}
+    .ba-panel.after  .ba-panel-lbl{background:#fdf6ec;color:var(--accent-dark)}
+    .ba-img{flex:1;position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;font-size:.76rem;font-weight:600}
+    .ba-panel.before .ba-img{background:#3a3028;color:rgba(255,255,255,.25);border-top:1px solid rgba(255,255,255,.05)}
+    .ba-panel.after  .ba-img{background:#faeedd;color:rgba(138,110,89,.35);border-top:1px solid rgba(185,156,135,.15)}
+    .ba-img .ph-icon{font-size:2.2rem;opacity:.2}
+    .ba-img .ph-txt{font-size:.7rem;opacity:.5;letter-spacing:.04em}
+    .ba-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .ba-nums{padding:13px 18px}
+    .ba-panel.before .ba-nums{background:#2f2a26}
+    .ba-panel.after  .ba-nums{background:#fdf6ec}
+    .ba-num-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+    .ba-num-row:last-child{margin:0}
+    .ba-num-row .nn{font-size:.72rem;font-weight:600}
+    .ba-num-row .nv{font-size:1.2rem;font-weight:900;line-height:1}
+    .ba-panel.before .nn{color:rgba(255,255,255,.38)}
+    .ba-panel.before .nv{color:rgba(255,255,255,.6)}
+    .ba-panel.after  .nn{color:var(--muted)}
+    .ba-panel.after  .nv{color:var(--accent-dark)}
+    .ba-mid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px 8px;background:rgba(247,243,238,.7);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+    .ba-arrow{font-size:1.5rem;color:var(--accent-dark);animation:ap 2s ease-in-out infinite}
+    @keyframes ap{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
+    .ba-diff{text-align:center;padding:7px 9px;background:rgba(255,255,255,.95);border:1px solid rgba(185,156,135,.28);border-radius:9px}
+    .ba-diff .dv{display:block;font-size:1rem;font-weight:900;color:var(--accent-dark);line-height:1}
+    .ba-diff .dl{font-size:.62rem;color:var(--muted);margin-top:2px}
+    .ba-bottom{padding:16px 20px;border-top:1px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .ba-profile{display:flex;align-items:center;gap:10px}
+    .ba-avatar{width:36px;height:36px;border-radius:50%;background:#f4ece3;border:2px solid rgba(185,156,135,.3);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+    .ba-profile-name{font-weight:800;font-size:.9rem}
+    .ba-profile-meta{font-size:.76rem;color:var(--muted)}
+    .ba-quote{flex:1;font-size:.84rem;color:#544a42;font-style:italic;padding-left:12px;border-left:2px solid rgba(185,156,135,.35)}
+    .ba-sessions{flex-shrink:0;text-align:center;padding:8px 12px;background:#f4ece3;border:1px solid rgba(185,156,135,.22);border-radius:var(--radius-md)}
+    .ba-sessions .sn{display:block;font-size:1.3rem;font-weight:900;color:var(--accent-dark);line-height:1}
+    .ba-sessions .sl{font-size:.66rem;color:var(--muted)}
+
+    /* CASES MINI GRID */
+    .cases-mini{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .case-mini-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .case-mini-header{padding:12px 14px;background:linear-gradient(135deg,#2f2a26,#3e3029);display:flex;align-items:center;justify-content:space-between}
+    .case-mini-header .cn{font-size:.66rem;font-weight:900;letter-spacing:.1em;color:rgba(255,255,255,.38);text-transform:uppercase}
+    .case-mini-header .ct{padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:.68rem;font-weight:700}
+    .case-img-pair{display:grid;grid-template-columns:1fr 1fr}
+    .cip{aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative}
+    .cip.bef{background:#3a3028}
+    .cip.aft{background:#faeedd}
+    .cip .cl{position:absolute;top:6px;left:6px;font-size:.58rem;font-weight:900;letter-spacing:.1em;padding:2px 6px;border-radius:999px}
+    .cip.bef .cl{background:rgba(255,255,255,.12);color:rgba(255,255,255,.5)}
+    .cip.aft .cl{background:rgba(185,156,135,.2);color:var(--accent-dark)}
+    .cip .ci{font-size:1.4rem;opacity:.18}
+    .cip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .case-mini-body{padding:12px 14px}
+    .case-mini-subj{font-size:.82rem;font-weight:800;margin-bottom:8px}
+    .cnr{display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:4px;margin-bottom:5px}
+    .cnr .lbl{font-size:.66rem;color:var(--muted);font-weight:600;grid-column:1/-1;margin-bottom:-2px}
+    .cnr .bv{font-size:.95rem;font-weight:700;color:rgba(100,89,80,.5);text-decoration:line-through;text-decoration-color:rgba(100,89,80,.2)}
+    .cnr .ar{font-size:.72rem;color:var(--accent)}
+    .cnr .av{font-size:1.05rem;font-weight:900;color:var(--accent-dark)}
+    .cnr .df{font-size:.7rem;font-weight:800;color:#fff;padding:2px 5px;border-radius:999px;background:var(--accent-dark)}
+    .case-mini-footer{display:flex;align-items:center;justify-content:space-between;padding-top:8px;border-top:1px solid var(--line)}
+    .case-mini-footer .sb{font-size:.72rem;color:var(--accent-dark);font-weight:700}
+    .case-mini-footer .ss{color:#c9a34b;font-size:.72rem}
+
+    /* PAIN / MERIT */
+    .icon-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .icon-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-sm);display:flex;gap:12px;align-items:flex-start}
+    .ic-icon{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:#f4ece3;border:1px solid rgba(185,156,135,.22);display:flex;align-items:center;justify-content:center;font-size:1rem}
+    .ic-body h4{font-size:.9rem;font-weight:800;margin-bottom:3px}
+    .ic-body p{font-size:.8rem;color:var(--muted)}
+
+    /* STEPS */
+    .steps-list{display:flex;flex-direction:column;gap:0}
+    .step-row{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line)}
+    .step-row:last-child{border-bottom:none}
+    .step-n{flex-shrink:0;width:38px;height:38px;border-radius:12px;background:#f4ece3;border:1px solid rgba(185,156,135,.25);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:900;color:var(--accent-dark)}
+    .step-body h4{font-size:.96rem;font-weight:800;margin-bottom:3px}
+    .step-body p{font-size:.86rem;color:var(--muted)}
+    .step-time{display:inline-block;margin-top:6px;padding:3px 9px;border-radius:999px;background:rgba(185,156,135,.12);font-size:.74rem;font-weight:700;color:var(--accent-dark)}
+
+    /* VOICE */
+    .voice-grid{display:flex;flex-direction:column;gap:12px}
+    .voice-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-sm)}
+    .voice-stars{color:#c9a34b;font-size:.88rem;margin-bottom:8px}
+    .voice-text{font-size:.88rem;color:#3a2e28;font-style:italic;line-height:1.75;margin-bottom:10px}
+    .voice-author{display:flex;align-items:center;gap:9px}
+    .voice-avatar{width:32px;height:32px;border-radius:50%;background:#f4ece3;border:1px solid rgba(185,156,135,.3);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+    .voice-name{font-size:.84rem;font-weight:700}
+    .voice-meta{font-size:.72rem;color:var(--muted)}
+
+    /* STORE SELECT */
+    .store-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .store-lp-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .store-lp-img{height:160px;background-size:cover;background-position:center;position:relative}
+    .store-lp-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(47,42,38,.6))}
+    .store-lp-img .store-lp-badge{position:absolute;bottom:10px;left:10px;z-index:1;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.88);font-size:.72rem;font-weight:800;color:var(--text)}
+    .store-lp-body{padding:16px}
+    .store-lp-name{font-size:1rem;font-weight:900;margin-bottom:4px}
+    .store-lp-meta{font-size:.78rem;color:var(--muted);margin-bottom:12px}
+    .store-lp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+    .slp-tag{font-size:.72rem;font-weight:600;padding:3px 8px;border-radius:999px;background:#f4ece3;border:1px solid rgba(185,156,135,.22);color:var(--accent-dark)}
+
+    /* FINAL CTA BOX */
+    .final-cta{background:linear-gradient(135deg,#2f2a26,#54463d);border-radius:var(--radius-xl);padding:40px 28px;text-align:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 30% 40%,rgba(201,163,75,.12) 0,transparent 60%);pointer-events:none}
+    .final-cta h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:#fff;margin-bottom:10px;position:relative}
+    .final-cta p{color:rgba(255,255,255,.65);font-size:.94rem;max-width:480px;margin:0 auto 24px;position:relative}
+    .final-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;position:relative}
+    .final-pill{padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);font-size:.78rem;font-weight:600}
+
+    /* STICKY BOTTOM BAR */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;padding:10px 16px 12px;background:rgba(250,246,241,.96);backdrop-filter:blur(18px);border-top:1px solid rgba(232,223,214,.9);box-shadow:0 -8px 28px rgba(74,56,42,.12);transform:translateY(100%);transition:transform .3s ease}
+    .sticky-bar.visible{transform:translateY(0)}
+    .sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:var(--max);margin:0 auto}
+    .sticky-text strong{display:block;font-size:.9rem;font-weight:800}
+    .sticky-text span{font-size:.74rem;color:var(--muted)}
+    .sticky-btns{display:flex;gap:7px;flex-shrink:0}
+    .sticky-btn{padding:10px 16px;border-radius:999px;font-size:.84rem;font-weight:800;border:1px solid transparent;cursor:pointer;transition:transform .15s;white-space:nowrap}
+    .sticky-btn:hover{transform:translateY(-1px)}
+    .sticky-btn-dark{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff}
+    .sticky-btn-gold{background:linear-gradient(135deg,#c9a34b,#e0bb6a);color:#2f1f00}
+
+
+    @media(max-width:600px){
+      .stats-row{grid-template-columns:1fr 1fr 1fr}
+      .store-cards,.cases-mini,.icon-grid{grid-template-columns:1fr}
+      .ba-top{grid-template-columns:1fr}
+      .ba-mid{flex-direction:row;border:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 14px}
+      .ba-arrow{transform:rotate(90deg)}
+      .ba-bottom{flex-direction:column;align-items:flex-start}
+      .ba-quote{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:10px}
+      .sticky-text{display:none}
+      .sticky-btns{flex:1}
+      .sticky-btn{flex:1;text-align:center}
+    }
+      .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+    .footer-brand{font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:var(--text)}
+    .footer-reserve{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .footer-hp-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:999px;background:#ff4b4b;color:#fff;font-size:.86rem;font-weight:700;transition:opacity .2s}
+    .footer-hp-btn:hover{opacity:.85}
+    .hp-badge{font-size:.68rem;background:rgba(0,0,0,.15);padding:2px 7px;border-radius:4px}
+    .footer-sns{display:flex;gap:10px}
+    .sns-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.06);color:var(--text);transition:background .2s,transform .2s}
+    .sns-btn:hover{background:rgba(0,0,0,.12);transform:translateY(-2px)}
+    .sns-btn.rednote{background:#ff2442;color:#fff;font-size:.6rem;font-weight:800;border-radius:8px;width:auto;padding:0 8px}
+    .footer-copy{font-size:.82rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lp-header">
+  <div class="container lp-header-inner">
+    <a class="logo" href="../index.html">BISIN BEAUTY<small>天神店 ／ 小郡店</small></a>
+    <a class="lp-header-cta" href="#contact">今すぐ予約する</a>
+  </div>
+</header>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <p><span class="urgency-dot"></span> <strong>今月限定キャンペーン</strong> 初回体験 通常¥8,800 → <strong>¥3,300</strong>（残りわずか）</p>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="lp-hero">
+    <div class="container">
+      <div class="hero-kv">
+        <div class="hero-eyebrow">❄ 初回限定キャンペーン実施中</div>
+        <h1>食事制限なしで<br><span class="hl">ウエスト</span><br><span class="price">−10cm</span> の実績</h1>
+        <p>脂肪冷却で気になる部位にピンポイントアプローチ。<br>メスなし・痛みほぼなし・施術中スマホOK。</p>
+        <div class="main-cta-group">
+          <a href="#stores" class="btn-cta-large btn-dark">
+            ❄ 天神店 初回体験を予約する
+          </a>
+          <a href="#stores" class="btn-cta-large btn-gold">
+            ✦ 小郡店 初回体験を予約する
+          </a>
+          <a href="#" class="btn-cta-large btn-outline" style="max-width:420px;padding:13px 28px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:7px;font-size:.97rem;font-weight:800">
+            💬 LINEで無料相談する
+          </a>
+        </div>
+        <p class="btn-small-note">✔ 勧誘一切なし　✔ 完全予約制　✔ キャンセル前日まで無料</p>
+        <div class="trust-chips">
+          <span class="trust-chip">✔ 初回体験¥3,300〜</span>
+          <span class="trust-chip">✔ 食事制限不要</span>
+          <span class="trust-chip">✔ ダウンタイムほぼなし</span>
+          <span class="trust-chip">✔ 口コミ★4.8</span>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat-card"><span class="sv">−10cm</span><span class="sl">最大ウエスト変化</span></div>
+        <div class="stat-card"><span class="sv">★4.8</span><span class="sl">平均口コミ評価</span></div>
+        <div class="stat-card"><span class="sv">96%</span><span class="sl">リピート継続率</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES -->
+  <section class="lp-section">
+    <div class="container">
+      <div class="section-label">
+        <div class="eyebrow">Real Results</div>
+        <h2 class="section-title">加工なし。本当の結果。</h2>
+      </div>
+
+      <div class="ba-featured">
+        <div class="ba-top">
+          <div class="ba-panel before">
+            <div class="ba-panel-lbl">Before</div>
+            <div class="ba-img">
+              <!-- <img src="../assets/cases/case01-before.jpg" alt="施術前"> -->
+              <span class="ph-icon">📷</span><span class="ph-txt">写真ここに挿入</span>
+            </div>
+            <div class="ba-nums">
+              <div class="ba-num-row"><span class="nn">ウエスト</span><span class="nv">95cm</span></div>
+              <div class="ba-num-row"><span class="nn">体重</span><span class="nv">75.9kg</span></div>
+            </div>
+          </div>
+          <div class="ba-mid">
+            <div class="ba-arrow">→</div>
+            <div class="ba-diff"><span class="dv">−10cm</span><span class="dl">ウエスト</span></div>
+            <div class="ba-diff"><span class="dv">−5.6kg</span><span class="dl">体重</span></div>
+          </div>
+          <div class="ba-panel after">
+            <div class="ba-panel-lbl">After</div>
+            <div class="ba-img">
+              <!-- <img src="../assets/cases/case01-after.jpg" alt="施術後"> -->
+              <span class="ph-icon">📷</span><span class="ph-txt">写真ここに挿入</span>
+            </div>
+            <div class="ba-nums">
+              <div class="ba-num-row"><span class="nn">ウエスト</span><span class="nv">85cm</span></div>
+              <div class="ba-num-row"><span class="nn">体重</span><span class="nv">70.3kg</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-bottom">
+          <div class="ba-profile">
+            <div class="ba-avatar">👩</div>
+            <div><div class="ba-profile-name">50代女性 / 天神店</div><div class="ba-profile-meta">食事制限なし ／ 施術7回</div></div>
+          </div>
+          <p class="ba-quote">「7回通ったらウエストが10cmも細くなって驚きました。服のサイズが本当に変わりました。」</p>
+          <div class="ba-sessions"><span class="sn">7</span><span class="sl">施術回数</span></div>
+        </div>
+      </div>
+
+      <div class="cases-mini">
+        <div class="case-mini-card">
+          <div class="case-mini-header"><span class="cn">Case 02</span><span class="ct">産後ケア</span></div>
+          <div class="case-img-pair">
+            <div class="cip bef"><span class="cl">BEFORE</span><span class="ci">📷</span></div>
+            <div class="cip aft"><span class="cl">AFTER</span><span class="ci">📷</span></div>
+          </div>
+          <div class="case-mini-body">
+            <div class="case-mini-subj">30代女性 ／ 小郡店</div>
+            <div><div class="cnr lbl-row" style="font-size:.66rem;color:var(--muted);font-weight:600;margin-bottom:2px">ウエスト</div><div class="cnr"><span class="bv">82cm</span><span class="ar">→</span><span class="av">75cm</span><span class="df">−7cm</span></div></div>
+          </div>
+          <div class="case-mini-footer"><span class="sb">施術5回 ／ 約2ヶ月</span><span class="ss">★★★★★</span></div>
+        </div>
+        <div class="case-mini-card">
+          <div class="case-mini-header"><span class="cn">Case 03</span><span class="ct">背中・二の腕</span></div>
+          <div class="case-img-pair">
+            <div class="cip bef"><span class="cl">BEFORE</span><span class="ci">📷</span></div>
+            <div class="cip aft"><span class="cl">AFTER</span><span class="ci">📷</span></div>
+          </div>
+          <div class="case-mini-body">
+            <div class="case-mini-subj">40代女性 ／ 天神店</div>
+            <div><div class="cnr lbl-row" style="font-size:.66rem;color:var(--muted);font-weight:600;margin-bottom:2px">背中周り</div><div class="cnr"><span class="bv">92cm</span><span class="ar">→</span><span class="av">85cm</span><span class="df">−7cm</span></div></div>
+          </div>
+          <div class="case-mini-footer"><span class="sb">施術6回 ／ 約3ヶ月</span><span class="ss">★★★★★</span></div>
+        </div>
+      </div>
+      <p style="margin-top:14px;padding:10px 14px;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:var(--radius-md);font-size:.76rem;color:var(--muted)">※ 効果には個人差があります。掲載は実測値（同意取得済）。食事制限・激しい運動なし。</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="lp-section" style="background:linear-gradient(180deg,#f3ebe0,#faf6f1)">
+    <div class="container">
+      <div class="section-label">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 class="section-title">選ばれる4つの理由</h2>
+      </div>
+      <div class="icon-grid">
+        <div class="icon-card"><div class="ic-icon">🎯</div><div class="ic-body"><h4>結果にコミットする施術</h4><p>体質・目標に合わせたオーダーメイドプログラム。加工なしのビフォーアフター症例を公開。</p></div></div>
+        <div class="icon-card"><div class="ic-icon">🔒</div><div class="ic-body"><h4>勧誘・押し売り一切なし</h4><p>自分のペースで通える安心設計。「勧誘一切なし宣言」を徹底しています。</p></div></div>
+        <div class="icon-card"><div class="ic-icon">📱</div><div class="ic-body"><h4>施術中スマホ・読書OK</h4><p>放置型施術なので、施術中は自由に過ごせます。忙しい方でも隙間時間に通えます。</p></div></div>
+        <div class="icon-card"><div class="ic-icon">💬</div><div class="ic-body"><h4>LINEでいつでも相談</h4><p>来店前の疑問もLINEで解決。専任スタッフが丁寧にご回答します。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="lp-section">
+    <div class="container">
+      <div class="section-label">
+        <div class="eyebrow">Flow</div>
+        <h2 class="section-title">ご利用の流れ</h2>
+      </div>
+      <div class="steps-list">
+        <div class="step-row"><div class="step-n">01</div><div class="step-body"><h4>LINEで予約・相談</h4><p>希望日時・店舗・気になる部位をLINEでお知らせください。</p><span class="step-time">約5分</span></div></div>
+        <div class="step-row"><div class="step-n">02</div><div class="step-body"><h4>来店・カウンセリング</h4><p>体質・目標をヒアリング。初回でも迷わずわかりやすくご説明します。</p><span class="step-time">約15分</span></div></div>
+        <div class="step-row"><div class="step-n">03</div><div class="step-body"><h4>脂肪冷却施術</h4><p>専用カップで気になる部位にアプローチ。施術中はリラックスして過ごせます。</p><span class="step-time">30〜120分</span></div></div>
+        <div class="step-row"><div class="step-n">04</div><div class="step-body"><h4>結果確認・次回ご提案</h4><p>変化をスタッフと確認。次回プランは強制なし。納得してから決められます。</p><span class="step-time">約10分</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="lp-section" style="background:linear-gradient(180deg,#f3ebe0,#faf6f1)">
+    <div class="container">
+      <div class="section-label">
+        <div class="eyebrow">Voice</div>
+        <h2 class="section-title">お客様の声</h2>
+      </div>
+      <div class="voice-grid">
+        <div class="voice-card"><div class="voice-stars">★★★★★</div><p class="voice-text">「勧誘が全くなくてびっくりしました。自分のペースで通えて、3ヶ月でウエストが7cm細くなりました。」</p><div class="voice-author"><div class="voice-avatar">👩</div><div><div class="voice-name">30代女性</div><div class="voice-meta">天神店 ／ 脂肪冷却</div></div></div></div>
+        <div class="voice-card"><div class="voice-stars">★★★★★</div><p class="voice-text">「産後のお腹をどうにかしたくて来店。5回で服のサイズが変わりました。スタッフさんの対応も最高でした。」</p><div class="voice-author"><div class="voice-avatar">👩</div><div><div class="voice-name">30代女性</div><div class="voice-meta">小郡店 ／ 脂肪冷却</div></div></div></div>
+        <div class="voice-card"><div class="voice-stars">★★★★★</div><p class="voice-text">「施術中スマホが使えるので仕事の合間にサクッと通えます。半年通い続けてリバウンドもなし。」</p><div class="voice-author"><div class="voice-avatar">👩</div><div><div class="voice-name">40代女性</div><div class="voice-meta">天神店 ／ 半年継続中</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORE SELECT -->
+  <section class="lp-section" id="stores">
+    <div class="container">
+      <div class="section-label">
+        <div class="eyebrow">Store</div>
+        <h2 class="section-title">店舗を選んで予約</h2>
+      </div>
+      <div class="store-cards">
+        <div class="store-lp-card">
+          <div class="store-lp-img" style="background-image:url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80')">
+            <span class="store-lp-badge">❄ 脂肪冷却専門</span>
+          </div>
+          <div class="store-lp-body">
+            <div class="store-lp-name">COOL SPA 天神店</div>
+            <div class="store-lp-meta">📍 天神南駅 徒歩3分 ／ 11:00〜21:00</div>
+            <div class="store-lp-tags">
+              <span class="slp-tag">初回¥3,300〜</span>
+              <span class="slp-tag">脂肪冷却専門</span>
+              <span class="slp-tag">駅近</span>
+            </div>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn-cta-large btn-dark" style="font-size:.92rem;padding:13px 20px">天神店で予約する</a>
+          </div>
+        </div>
+        <div class="store-lp-card">
+          <div class="store-lp-img" style="background-image:url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80')">
+            <span class="store-lp-badge">✦ ネイル＋脂肪冷却</span>
+          </div>
+          <div class="store-lp-body">
+            <div class="store-lp-name">CHUCHU 小郡店</div>
+            <div class="store-lp-meta">📍 小郡市祇園 ／ 10:00〜19:00（日休）</div>
+            <div class="store-lp-tags">
+              <span class="slp-tag">初回¥8,800〜</span>
+              <span class="slp-tag">ネイル同日可</span>
+              <span class="slp-tag">駐車場3台</span>
+            </div>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn-cta-large btn-gold" style="font-size:.92rem;padding:13px 20px">小郡店で予約する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="padding:52px 0 72px" id="contact">
+    <div class="container">
+      <div class="final-cta">
+        <h2>今月の体験枠、残りわずか</h2>
+        <p>初回体験キャンペーンは先着順・要予約。まずはLINEでご相談ください。勧誘・押し売りは一切ありません。</p>
+        <div class="main-cta-group" style="position:relative">
+          <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn-cta-large btn-dark" style="max-width:420px">❄ 天神店で予約する</a>
+          <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn-cta-large btn-gold" style="max-width:420px">✦ 小郡店で予約する</a>
+          <a href="#" class="btn-cta-large" style="max-width:420px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.88);font-size:.97rem;font-weight:800">💬 LINEで無料相談</a>
+        </div>
+        <div class="final-pills">
+          <span class="final-pill">✔ 勧誘なし</span>
+          <span class="final-pill">✔ 前日キャンセル無料</span>
+          <span class="final-pill">✔ 初回¥3,300〜</span>
+          <span class="final-pill">✔ 完全予約制</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">BISIN BEAUTY</p>
+    <div class="footer-reserve">
+      <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>天神店を予約<span class="hp-badge">HotPepper</span></a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>小郡店を予約<span class="hp-badge">HotPepper</span></a>
+    </div>
+    <div class="footer-sns">
+      <a href="#" class="sns-btn" aria-label="X（Twitter）"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="sns-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" class="sns-btn rednote" aria-label="小红书">小红书</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 BISIN BEAUTY. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-inner">
+    <div class="sticky-text"><strong>初回体験 ¥3,300〜</strong><span>勧誘なし・完全予約制</span></div>
+    <div class="sticky-btns">
+      <a href="#stores" class="sticky-btn sticky-btn-dark">天神店</a>
+      <a href="#stores" class="sticky-btn sticky-btn-gold">小郡店</a>
+      <a href="#" class="sticky-btn" style="background:rgba(255,255,255,.9);border:1px solid var(--line);color:var(--text);font-weight:800">LINE</a>
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  document.getElementById('stickyBar').classList.toggle('visible',window.scrollY>380);
+},{passive:true});
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>症例・ブログ | BISIN BEAUTY</title>
+  <meta name="description" content="脂肪冷却の症例・ビフォーアフター・お役立ち情報を発信。天神COOL SPA・小郡CHUCHU。" />
+  <style>
+    :root{--bg:#f7f3ee;--card:rgba(255,255,255,0.85);--text:#2f2a26;--muted:#7a7169;--line:#e8dfd6;--accent:#b99c87;--accent-dark:#8a6e59;--shadow:0 18px 50px rgba(74,56,42,0.10);--shadow-sm:0 8px 24px rgba(74,56,42,0.07);--radius-xl:28px;--radius-lg:20px;--radius-md:14px;--max:1180px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;color:var(--text);background:linear-gradient(180deg,#fbf8f4,#f5efe8);line-height:1.75}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(251,248,244,.82);border-bottom:1px solid rgba(232,223,214,.8)}
+    .header-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:1.2rem;font-weight:800;letter-spacing:.1em}
+    .logo small{display:block;font-size:.68rem;color:var(--muted);font-weight:500;letter-spacing:.12em;margin-top:-2px}
+    .nav{display:flex;gap:24px;color:var(--muted);font-size:.95rem;font-weight:600}
+    .nav a:hover,.nav a.active{color:var(--text)}
+    .nav a.active{border-bottom:2px solid var(--accent-dark);padding-bottom:2px}
+    .nav-cta{padding:11px 20px;border-radius:999px;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:.9rem;font-weight:700;transition:transform .2s}
+    .nav-cta:hover{transform:translateY(-2px)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:12px 22px;font-size:.93rem;font-weight:800;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;box-shadow:0 10px 24px rgba(0,0,0,.16)}
+    .btn-secondary{background:rgba(255,255,255,.95);border-color:var(--line);color:var(--text)}
+    .eyebrow{color:var(--accent-dark);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+
+    /* PAGE HERO */
+    .page-hero{padding:44px 0 40px;background:radial-gradient(ellipse 70% 50% at 70% 30%,rgba(185,156,135,.1) 0,transparent 60%),linear-gradient(180deg,#fdf9f4,#f5ebe0);border-bottom:1px solid var(--line)}
+    .breadcrumb{display:flex;gap:7px;align-items:center;font-size:.83rem;color:var(--muted);margin-bottom:14px}
+    .breadcrumb a:hover{color:var(--text)}
+    .page-hero h1{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:8px}
+    .page-hero p{color:var(--muted);font-size:.97rem;margin-bottom:22px}
+
+    /* FILTER TABS */
+    .filter-bar{display:flex;flex-wrap:wrap;gap:8px}
+    .filter-tab{padding:9px 18px;border-radius:999px;font-size:.88rem;font-weight:700;cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.9);color:var(--muted);transition:all .2s}
+    .filter-tab.active,.filter-tab:hover{background:var(--text);color:#fff;border-color:transparent}
+
+    /* FEATURED POST */
+    .featured-post{margin:40px 0 32px;background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr 0.9fr}
+    .featured-img{position:relative;min-height:340px;background:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80') center/cover}
+    .featured-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(255,255,255,.1))}
+    .featured-tag{position:absolute;top:16px;left:16px;padding:5px 12px;border-radius:999px;background:rgba(47,42,38,.75);backdrop-filter:blur(6px);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em}
+    .featured-body{padding:32px 28px;display:flex;flex-direction:column;justify-content:center}
+    .featured-label{font-size:.72rem;font-weight:800;letter-spacing:.12em;color:var(--accent-dark);text-transform:uppercase;margin-bottom:10px}
+    .featured-body h2{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;line-height:1.3;margin-bottom:12px}
+    .featured-body p{font-size:.92rem;color:var(--muted);margin-bottom:18px}
+    .featured-stats{display:flex;gap:14px;margin-bottom:20px}
+    .fstat{text-align:center;padding:9px 13px;background:#f4ece3;border:1px solid rgba(185,156,135,.25);border-radius:var(--radius-md)}
+    .fstat strong{display:block;font-size:1.2rem;font-weight:900;color:var(--accent-dark);line-height:1}
+    .fstat span{font-size:.68rem;color:var(--muted)}
+    .featured-meta{font-size:.8rem;color:var(--muted)}
+
+    /* BLOG GRID */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .blog-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;cursor:pointer}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .blog-card-img{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px}
+    /* category colors */
+    .blog-card-img.cat-case{background:linear-gradient(135deg,#2f2a26,#3e3029)}
+    .blog-card-img.cat-nail{background:linear-gradient(135deg,#f5e6f0,#e8d5ef)}
+    .blog-card-img.cat-tips{background:linear-gradient(135deg,#e6f0e8,#d5e8d8)}
+    .blog-card-img.cat-store{background:linear-gradient(135deg,#fdf6ec,#f5ebe0)}
+    .blog-card-img .img-icon{font-size:2.2rem;opacity:.35}
+    .blog-card-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .blog-img-tag{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.06em}
+    .cat-case   .blog-img-tag{background:rgba(255,255,255,.15);color:rgba(255,255,255,.8)}
+    .cat-nail   .blog-img-tag{background:rgba(185,136,185,.2);color:#7a3d8f}
+    .cat-tips   .blog-img-tag{background:rgba(100,160,100,.2);color:#3a6e40}
+    .cat-store  .blog-img-tag{background:rgba(185,156,135,.2);color:var(--accent-dark)}
+    .blog-card-body{padding:18px 20px 20px}
+    .blog-card-body h3{font-size:1rem;font-weight:800;line-height:1.4;margin-bottom:7px}
+    .blog-card-body p{font-size:.84rem;color:var(--muted);margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .blog-card-footer{display:flex;align-items:center;justify-content:space-between}
+    .blog-date{font-size:.76rem;color:var(--muted)}
+    .blog-store-tag{font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px;background:#f4ece3;border:1px solid rgba(185,156,135,.25);color:var(--accent-dark)}
+
+    /* BA MINI in card */
+    .ba-mini{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:10px 0;padding:10px 12px;background:#f4ece3;border-radius:var(--radius-md)}
+    .ba-mini .side{text-align:center}
+    .ba-mini .side .lbl{font-size:.64rem;color:var(--muted);font-weight:700;display:block}
+    .ba-mini .side .val{font-size:1rem;font-weight:900;line-height:1.1}
+    .ba-mini .side.before-side .val{color:rgba(100,89,80,.55);text-decoration:line-through;text-decoration-color:rgba(100,89,80,.2)}
+    .ba-mini .side.after-side  .val{color:var(--accent-dark)}
+    .ba-mini .diff-badge{font-size:.78rem;font-weight:900;color:#fff;background:var(--accent-dark);padding:4px 8px;border-radius:999px;white-space:nowrap}
+
+    /* SIDEBAR */
+    .blog-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:start}
+    .sidebar-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);padding:22px;box-shadow:var(--shadow-sm);margin-bottom:18px}
+    .sidebar-title{font-size:.88rem;font-weight:800;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+    .sidebar-link{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.84rem}
+    .sidebar-link:last-child{border-bottom:none}
+    .sidebar-link .sl-icon{flex-shrink:0;font-size:.9rem}
+    .sidebar-link .sl-text{color:var(--text);line-height:1.4}
+    .sidebar-link .sl-text small{display:block;color:var(--muted);font-size:.74rem;margin-top:2px}
+    .sidebar-link:hover .sl-text{color:var(--accent-dark)}
+    .cta-sidebar{background:linear-gradient(135deg,#2f2a26,#54463d);border-radius:var(--radius-xl);padding:22px;text-align:center}
+    .cta-sidebar h3{color:#fff;font-size:1rem;font-weight:800;margin-bottom:7px}
+    .cta-sidebar p{color:rgba(255,255,255,.65);font-size:.82rem;margin-bottom:14px}
+    .cta-sidebar .btn-white{display:block;padding:11px;border-radius:999px;background:#fff;color:var(--text);font-size:.88rem;font-weight:800;text-align:center;margin-bottom:8px;transition:transform .2s}
+    .cta-sidebar .btn-white:hover{transform:translateY(-1px)}
+    .cta-sidebar .btn-line{display:block;padding:11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:.88rem;font-weight:700;text-align:center}
+
+    /* PAGINATION */
+    .pagination{display:flex;justify-content:center;gap:8px;margin-top:40px}
+    .page-btn{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.9);color:var(--muted);cursor:pointer;transition:all .2s}
+    .page-btn.active,.page-btn:hover{background:var(--text);color:#fff;border-color:transparent}
+
+    @media(max-width:960px){
+      .blog-layout{grid-template-columns:1fr}
+      .featured-post{grid-template-columns:1fr}
+      .featured-img{min-height:220px}
+      .blog-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:720px){
+      .nav{display:none}
+      .blog-grid{grid-template-columns:1fr}
+      .filter-bar{gap:6px}
+      .filter-tab{padding:7px 12px;font-size:.82rem}
+    }
+      .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
+    .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+    .footer-brand{font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:var(--text)}
+    .footer-reserve{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .footer-hp-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:999px;background:#ff4b4b;color:#fff;font-size:.86rem;font-weight:700;transition:opacity .2s}
+    .footer-hp-btn:hover{opacity:.85}
+    .hp-badge{font-size:.68rem;background:rgba(0,0,0,.15);padding:2px 7px;border-radius:4px}
+    .footer-sns{display:flex;gap:10px}
+    .sns-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.06);color:var(--text);transition:background .2s,transform .2s}
+    .sns-btn:hover{background:rgba(0,0,0,.12);transform:translateY(-2px)}
+    .sns-btn.rednote{background:#ff2442;color:#fff;font-size:.6rem;font-weight:800;border-radius:8px;width:auto;padding:0 8px}
+    .footer-copy{font-size:.82rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../index.html">BISIN BEAUTY<small>天神店 ／ 小郡店</small></a>
+    <nav class="nav">
+      <a href="../index.html">ホーム</a>
+      <a href="../services/fat-freezing.html">脂肪冷却</a>
+      <a href="../services/nail.html">ネイル</a>
+      <a href="../stores/coolspa-tenjin.html">店舗案内</a>
+      <a href="index.html" class="active">症例・ビフォーアフター</a>
+            <a href="../for-business.html">開業支援</a>
+      </nav>
+    <a class="nav-cta" href="#contact">LINE相談</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">ホーム</a><span>›</span><span>ブログ・症例</span>
+      </div>
+      <div class="eyebrow">Blog &amp; Cases</div>
+      <h1>リアル症例・変化レポート</h1>
+      <p>脂肪冷却のビフォーアフター症例、ネイルデザイン紹介、お役立ちコラムを発信しています。</p>
+      <div class="filter-bar">
+        <button class="filter-tab active">すべて</button>
+        <button class="filter-tab">❄ 脂肪冷却症例</button>
+        <button class="filter-tab">💅 ネイル</button>
+        <button class="filter-tab">📖 コラム・豆知識</button>
+        <button class="filter-tab">🏠 店舗情報</button>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding:48px 0 72px">
+    <div class="container">
+      <div class="blog-layout">
+        <div>
+          <!-- FEATURED -->
+          <div class="featured-post">
+            <div class="featured-img">
+              <!-- <img src="../assets/blog/featured.jpg" alt=""> -->
+              <span class="featured-tag">✦ PICK UP</span>
+            </div>
+            <div class="featured-body">
+              <div class="featured-label">❄ 脂肪冷却症例</div>
+              <h2>50代女性がウエスト−10cmを達成。100カップチャレンジの全記録。</h2>
+              <p>食事制限なし・運動なし。7回の施術でどう変わったか、実測データとともに詳しくご紹介します。</p>
+              <div class="featured-stats">
+                <div class="fstat"><strong>−10cm</strong><span>ウエスト</span></div>
+                <div class="fstat"><strong>−5.6kg</strong><span>体重</span></div>
+                <div class="fstat"><strong>7回</strong><span>施術回数</span></div>
+              </div>
+              <div class="featured-meta">2025.03.15 ／ 天神COOL SPA店</div>
+              <a href="#" class="btn btn-primary" style="margin-top:16px;align-self:flex-start">記事を読む →</a>
+            </div>
+          </div>
+
+          <!-- GRID -->
+          <div class="blog-grid">
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-case">
+                <!-- <img src="../assets/blog/case02.jpg" alt=""> -->
+                <span class="blog-img-tag">脂肪冷却症例</span>
+                <span class="img-icon">📊</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>産後のお腹が5回でスッキリ。30代女性の施術記録。</h3>
+                <div class="ba-mini">
+                  <div class="side before-side"><span class="lbl">BEFORE</span><span class="val">82cm</span></div>
+                  <span class="diff-badge">−7cm</span>
+                  <div class="side after-side"><span class="lbl">AFTER</span><span class="val">75cm</span></div>
+                </div>
+                <p>産後なかなか戻らなかったお腹周りが、2ヶ月で大きく変化しました。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2025.02.28</span>
+                  <span class="blog-store-tag">小郡店</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-case">
+                <span class="blog-img-tag">脂肪冷却症例</span>
+                <span class="img-icon">📊</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>背中・二の腕集中ケア。6回で服が変わった40代女性の記録。</h3>
+                <div class="ba-mini">
+                  <div class="side before-side"><span class="lbl">BEFORE</span><span class="val">92cm</span></div>
+                  <span class="diff-badge">−7cm</span>
+                  <div class="side after-side"><span class="lbl">AFTER</span><span class="val">85cm</span></div>
+                </div>
+                <p>自分では見えない背中も、定期的にケアすることでラインが変わります。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2025.02.10</span>
+                  <span class="blog-store-tag">天神店</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-nail">
+                <span class="blog-img-tag">ネイル</span>
+                <span class="img-icon">💅</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>2025年春ネイルトレンド。小郡店スタッフおすすめデザイン5選。</h3>
+                <p>桜ピンク・テラコッタ・クリアフレンチ…今季おすすめのデザインをご紹介します。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2025.02.01</span>
+                  <span class="blog-store-tag">小郡店</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-tips">
+                <span class="blog-img-tag">コラム</span>
+                <span class="img-icon">📖</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>脂肪冷却とダイエットの違いとは？仕組みをわかりやすく解説。</h3>
+                <p>「痩せる」ではなく「脂肪細胞にアプローチする」。その違いと効果の出方を解説します。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2025.01.20</span>
+                  <span class="blog-store-tag">コラム</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-tips">
+                <span class="blog-img-tag">コラム</span>
+                <span class="img-icon">📖</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>施術後に気をつけること。効果を定着させるホームケアのポイント。</h3>
+                <p>脂肪冷却後のケアで、効果の定着スピードが変わります。スタッフが実践するポイントを解説。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2025.01.08</span>
+                  <span class="blog-store-tag">コラム</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-card">
+              <div class="blog-card-img cat-store">
+                <span class="blog-img-tag">店舗情報</span>
+                <span class="img-icon">🏠</span>
+              </div>
+              <div class="blog-card-body">
+                <h3>天神COOL SPA、年末年始の営業についてお知らせ。</h3>
+                <p>年末年始のご予約受付・休業日についてご案内します。</p>
+                <div class="blog-card-footer">
+                  <span class="blog-date">2024.12.20</span>
+                  <span class="blog-store-tag">天神店</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">›</button>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside>
+          <div class="cta-sidebar">
+            <h3>初回体験¥3,300〜</h3>
+            <p>勧誘なし・完全予約制。まずは気軽にご相談ください。</p>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn-white">天神店で予約する</a>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn-white">小郡店で予約する</a>
+            <a href="#" class="btn-line">💬 LINEで相談する</a>
+          </div>
+
+          <div class="sidebar-card" style="margin-top:18px">
+            <div class="sidebar-title">人気の症例記事</div>
+            <a href="#" class="sidebar-link">
+              <span class="sl-icon">❄</span>
+              <div class="sl-text">ウエスト−10cmを達成。50代女性の100カップ記録。<small>2025.03.15 ／ 天神店</small></div>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sl-icon">❄</span>
+              <div class="sl-text">産後のお腹が5回でスッキリ。30代女性の記録。<small>2025.02.28 ／ 小郡店</small></div>
+            </a>
+            <a href="#" class="sidebar-link">
+              <span class="sl-icon">❄</span>
+              <div class="sl-text">背中・二の腕6回集中ケアで服のサイズが変化。<small>2025.02.10 ／ 天神店</small></div>
+            </a>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-title">カテゴリー</div>
+            <a href="#" class="sidebar-link"><span class="sl-icon">❄</span><div class="sl-text">脂肪冷却症例<small>12件</small></div></a>
+            <a href="#" class="sidebar-link"><span class="sl-icon">💅</span><div class="sl-text">ネイル<small>8件</small></div></a>
+            <a href="#" class="sidebar-link"><span class="sl-icon">📖</span><div class="sl-text">コラム・豆知識<small>6件</small></div></a>
+            <a href="#" class="sidebar-link"><span class="sl-icon">🏠</span><div class="sl-text">店舗情報<small>4件</small></div></a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">BISIN BEAUTY</p>
+    <div class="footer-reserve">
+      <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>天神店を予約<span class="hp-badge">HotPepper</span></a>
+      <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="footer-hp-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14l-5-5 1.4-1.4L12 14.2l7.6-7.6L21 8l-9 9z"/></svg>小郡店を予約<span class="hp-badge">HotPepper</span></a>
+    </div>
+    <div class="footer-sns">
+      <a href="#" class="sns-btn" aria-label="X（Twitter）"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="#" class="sns-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+      <a href="#" class="sns-btn rednote" aria-label="小红书">小红书</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 BISIN BEAUTY. All Rights Reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
