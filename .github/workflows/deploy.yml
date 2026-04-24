@@ -1,0 +1,25 @@
+name: Deploy to Xserver
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: sv17041.xserver.jp
+          username: bisin202603
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /home/bisin202603/coolspa.bisincool.co.jp/public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.claude/**
