@@ -133,6 +133,11 @@
       .why-grid{grid-template-columns:1fr 1fr}
       .cta-box{padding:36px 22px}
       .hero-cta-row{flex-direction:column;align-items:center}
+      .nav{display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(251,248,244,0.97);backdrop-filter:blur(20px);z-index:100;justify-content:center;align-items:center;gap:36px;font-size:1.2rem}
+      .nav.open{display:flex}
+      .nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--text)}
+      .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:200}
+      .hamburger span{display:block;width:24px;height:2px;background:#2f2a26;border-radius:2px}
     }
   </style>
 </head>
@@ -141,15 +146,21 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">BISIN BEAUTY<small>天神店 ／ 小郡店</small></a>
-      <nav class="nav">
-        <a href="index.html">ホーム</a>
-        <a href="services/fat-freezing.html">脂肪冷却</a>
-        <a href="services/nail.html">ネイル</a>
-        <a href="stores/coolspa-tenjin.html">店舗案内</a>
-        <a href="blog/">症例・ビフォーアフター</a>
-        <a href="for-business.html" class="active">開業支援</a>
+      <nav class="nav" id="globalNav">
+        <button class="nav-close" onclick="document.getElementById('globalNav').classList.remove('open')" aria-label="閉じる">✕</button>
+        <a href="index.html" onclick="document.getElementById('globalNav').classList.remove('open')">ホーム</a>
+        <a href="services/fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
+        <a href="services/nail.html" onclick="document.getElementById('globalNav').classList.remove('open')">ネイル</a>
+        <a href="stores/coolspa-tenjin.html" onclick="document.getElementById('globalNav').classList.remove('open')">店舗案内</a>
+        <a href="blog/" onclick="document.getElementById('globalNav').classList.remove('open')">症例・ビフォーアフター</a>
+        <a href="for-business.html" class="active" onclick="document.getElementById('globalNav').classList.remove('open')">開業支援</a>
       </nav>
-      <a href="https://bisincool.co.jp/outsourcing.html" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <a href="https://bisincool.co.jp/outsourcing.html" target="_blank" rel="noopener" class="nav-cta">無料相談</a>
+        <button class="hamburger" onclick="document.getElementById('globalNav').classList.toggle('open')" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
