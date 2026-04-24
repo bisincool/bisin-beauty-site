@@ -19,6 +19,7 @@ jobs:
           username: bisin-deploy@coolspa.bisincool.co.jp
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
