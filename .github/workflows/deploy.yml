@@ -16,7 +16,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: sv17041.xserver.jp
-          username: bisin202603
+          username: bisin-deploy@coolspa.bisincool.co.jp
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /home/bisin202603/coolspa.bisincool.co.jp/public_html/
           exclude: |
