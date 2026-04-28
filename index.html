@@ -70,6 +70,13 @@
       font-size: 1.25rem;
       font-weight: 800;
       letter-spacing: 0.1em;
+      display: inline-flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 36px;
+      width: auto;
+      display: block;
     }
 
     .nav {
@@ -275,13 +282,13 @@
       border-radius: 24px;
       background:
         linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0.1)),
-        url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=80') center/cover;
+        url('images/store/InnerView01.jpg') center/cover;
       position: relative;
       overflow: hidden;
     }
 
     .hero-image::after {
-      content: "BISIN BEAUTY TEMPLATE";
+      content: "BISIN BEAUTY ／ 福岡";
       position: absolute;
       left: 18px;
       bottom: 18px;
@@ -402,12 +409,12 @@
     }
 
     .store-visual.tenjin {
-      background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80');
+      background-image: url('images/store/OutView01.jpg');
     }
 
     .store-visual-ogori,
     .store-visual.ogori {
-      background-image: url('https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80');
+      background-image: url('images/store/building_250x250.jpg');
     }
 
     .store-top {
@@ -650,6 +657,30 @@
       color: rgba(255,255,255,0.75);
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
     }
+    .case-banner {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #2f2a26;
+    }
+    .case-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .case-banner .banner-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.92);
+      color: var(--accent-dark);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
     .case-card-body { padding: 18px; }
     .case-card-subject {
       font-size: 0.88rem; font-weight: 800; margin-bottom: 14px;
@@ -821,7 +852,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="index.html">BISIN BEAUTY</a>
+      <a class="logo" href="index.html"><img src="images/logo/bisin_blue_logo_70.png" alt="BISIN BEAUTY"></a>
       <nav class="nav" id="globalNav">
         <button class="nav-close" onclick="document.getElementById('globalNav').classList.remove('open')" aria-label="閉じる">✕</button>
         <a href="services/fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
@@ -942,9 +973,7 @@
             <div class="ba-panel before">
               <div class="ba-panel-label">Before</div>
               <div class="ba-img-slot">
-                <!-- 実際の写真: <img src="assets/cases/case01-before.jpg" alt="施術前"> -->
-                <span class="slot-icon">📷</span>
-                <span class="slot-label">写真ここに挿入</span>
+                <img src="images/cases/Mochibefore.JPG" alt="施術前 50代女性 ウエスト95cm">
               </div>
               <div class="ba-stats-strip">
                 <div class="ba-stat-row"><span class="sn">ウエスト</span><span class="sv">95 cm</span></div>
@@ -965,9 +994,7 @@
             <div class="ba-panel after">
               <div class="ba-panel-label">After</div>
               <div class="ba-img-slot">
-                <!-- 実際の写真: <img src="assets/cases/case01-after.jpg" alt="施術後"> -->
-                <span class="slot-icon">📷</span>
-                <span class="slot-label">写真ここに挿入</span>
+                <img src="images/cases/Mochiafter.JPG" alt="施術後 50代女性 ウエスト85cm">
               </div>
               <div class="ba-stats-strip">
                 <div class="ba-stat-row"><span class="sn">ウエスト</span><span class="sv">85 cm</span></div>
@@ -997,6 +1024,10 @@
             <div class="case-card-header">
               <span class="case-num-badge">Case 02</span>
               <span class="case-tag">産後ケア</span>
+            </div>
+            <div class="case-banner">
+              <img src="images/cases/11.ladybeforeafter.JPG" alt="産後ケア Before/After 30代女性">
+              <span class="banner-tag">BEFORE → AFTER</span>
             </div>
             <div class="case-card-body">
               <div class="case-card-subject">30代女性 ／ 小郡店</div>
@@ -1033,6 +1064,10 @@
               <span class="case-num-badge">Case 03</span>
               <span class="case-tag">背中・二の腕</span>
             </div>
+            <div class="case-banner">
+              <img src="images/cases/12.ladybeforeafter2.JPG" alt="背中・二の腕 Before/After 40代女性">
+              <span class="banner-tag">BEFORE → AFTER</span>
+            </div>
             <div class="case-card-body">
               <div class="case-card-subject">40代女性 ／ 天神店</div>
               <div class="case-numbers">
@@ -1067,6 +1102,10 @@
             <div class="case-card-header">
               <span class="case-num-badge">Case 04</span>
               <span class="case-tag">全身ケア</span>
+            </div>
+            <div class="case-banner">
+              <img src="images/cases/13.manbeforeafter.JPG" alt="全身ケア Before/After">
+              <span class="banner-tag">BEFORE → AFTER</span>
             </div>
             <div class="case-card-body">
               <div class="case-card-subject">30代女性 ／ 天神店</div>
