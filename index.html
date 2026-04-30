@@ -432,6 +432,52 @@
       font-size: 1.2rem;
     }
 
+    /* ── PREMIUM STORE CARDS ───────────────────── */
+    .sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .sc-card{background:#fff;border-radius:32px;overflow:hidden;box-shadow:0 24px 60px rgba(74,56,42,.10);border:1px solid rgba(232,223,214,.55);display:flex;flex-direction:column}
+    /* top bar */
+    .sc-top-bar{padding:20px 24px 0;display:flex;align-items:center;justify-content:space-between}
+    .sc-rating-badge{display:inline-flex;align-items:center;gap:5px;padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:800;letter-spacing:.03em}
+    .sc-tenjin .sc-rating-badge{background:linear-gradient(135deg,#c9a34b,#b8922a);color:#fff;box-shadow:0 4px 14px rgba(185,147,42,.3)}
+    .sc-chuchu .sc-rating-badge{background:linear-gradient(135deg,#e87098,#d05080);color:#fff;box-shadow:0 4px 14px rgba(220,80,128,.28)}
+    .sc-detail-link{font-size:.78rem;font-weight:700;color:var(--accent-dark);opacity:.7;transition:opacity .2s}
+    .sc-detail-link:hover{opacity:1}
+    /* identity */
+    .sc-identity{padding:14px 24px 0;display:flex;align-items:center;gap:12px}
+    .sc-icon-wrap{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .sc-tenjin .sc-icon-wrap{background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff}
+    .sc-chuchu .sc-icon-wrap{background:linear-gradient(135deg,#e87098,#c05070)}
+    .sc-store-name{font-size:1.28rem;font-weight:800;color:#2f2a26;line-height:1.2}
+    .sc-store-sub{font-size:.76rem;color:var(--muted);margin-top:2px}
+    /* hero img */
+    .sc-hero{margin:14px 24px 0;border-radius:20px;overflow:hidden;height:190px;background-size:cover;background-position:center;position:relative}
+    .sc-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(47,42,38,.25))}
+    /* desc */
+    .sc-desc{padding:14px 24px 0;font-size:.91rem;color:#4a3d35;line-height:1.78}
+    /* tags */
+    .sc-tags{padding:10px 24px 0;display:flex;flex-wrap:wrap;gap:7px}
+    .sc-tag{display:inline-flex;align-items:center;gap:4px;padding:5px 11px;border-radius:999px;font-size:.76rem;font-weight:700;background:rgba(255,255,255,.9);border:1px solid var(--line);color:#5a4a42}
+    /* mini map */
+    .sc-map-wrap{margin:14px 24px 0;border-radius:16px;overflow:hidden;border:1px solid rgba(218,208,194,.65);box-shadow:0 6px 18px rgba(74,56,42,.06)}
+    /* photos */
+    .sc-photos-grid{margin:14px 24px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .sc-photo{border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative;background:linear-gradient(135deg,#f4ece3,#e8dfd6);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:rgba(138,110,89,.4);font-weight:600;flex-direction:column;gap:4px;box-shadow:0 4px 12px rgba(74,56,42,.07)}
+    .sc-chuchu .sc-photo{background:linear-gradient(135deg,#fde8ef,#f8d4e0)}
+    .sc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .sc-photo-lbl{font-size:.68rem;font-weight:700;color:#7a6050;text-align:center;margin-top:4px}
+    .sc-chuchu .sc-photo-lbl{color:#9a5060}
+    /* info */
+    .sc-info-block{padding:12px 24px 0;display:flex;flex-direction:column;gap:7px}
+    .sc-info-item{display:flex;align-items:center;gap:8px;font-size:.84rem;color:#5a4a42}
+    /* CTA */
+    .sc-cta-wrap{padding:18px 24px 24px;display:flex;flex-direction:column;gap:9px;margin-top:auto}
+    .sc-btn-line{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;background:#06c755;color:#fff;border-radius:999px;font-size:.97rem;font-weight:800;letter-spacing:.02em;box-shadow:0 8px 24px rgba(6,199,85,.32);transition:transform .2s,box-shadow .2s;text-decoration:none}
+    .sc-btn-line:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(6,199,85,.42)}
+    .sc-btn-gmap{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 24px;background:rgba(255,255,255,.9);border:1.5px solid rgba(185,156,135,.4);color:#5a4a42;border-radius:999px;font-size:.88rem;font-weight:700;transition:transform .2s;text-decoration:none}
+    .sc-chuchu .sc-btn-gmap{border-color:rgba(215,155,175,.4);color:#7a4050}
+    .sc-btn-gmap:hover{transform:translateY(-2px)}
+    @media(max-width:960px){.sc-grid{grid-template-columns:1fr}}
+
     .plan-price {
       margin: 16px 0 10px;
       font-size: 2rem;
@@ -1130,52 +1176,198 @@
           </div>
         </div>
 
-        <div class="cards-2">
-          <article class="card store-card" id="coolspa">
-            <div>
-              <div class="store-top">
-                <div>
-                  <div class="store-badge">❄</div>
-                  <h3 class="store-name">COOL SPA 天神店</h3>
-                  <div class="store-meta">脂肪冷却専門｜天神南駅近く</div>
-                </div>
-                <div class="store-score"><strong>4.7+</strong>口コミ高評価</div>
-              </div>
-              <p>脂肪冷却を中心に、症例重視で通いたい方へ。はじめてでもわかりやすい料金設計で、気になる部位へしっかりアプローチ。</p>
-              <div class="mini-list">
-                <span class="mini-tag">お腹・背中人気</span>
-                <span class="mini-tag">サウナ組み合わせ可</span>
-                <span class="mini-tag">駅近で通いやすい</span>
-              </div>
-              <div class="cta-group" style="margin-top:18px; margin-bottom:0;">
-                <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn btn-primary">天神店で予約する</a>
-              </div>
-            </div>
-            <div class="store-visual tenjin"></div>
-          </article>
+        <div class="sc-grid">
 
-          <article class="card store-card" id="chuchu">
-            <div>
-              <div class="store-top">
-                <div>
-                  <div class="store-badge">✦</div>
-                  <h3 class="store-name">CHUCHU 小郡店</h3>
-                  <div class="store-meta">ネイル＋痩身｜小郡駅近く</div>
-                </div>
-                <div class="store-score"><strong>4.8+</strong>口コミ高評価</div>
-              </div>
-              <p>ネイルも痩身も一緒に相談したい方へ。上品なネイルデザインと脂肪冷却の両方を楽しめる、地域密着のビューティーサロンです。</p>
-              <div class="mini-list">
-                <span class="mini-tag">ネイル対応</span>
-                <span class="mini-tag">通いやすい価格</span>
-                <span class="mini-tag">大人可愛い雰囲気</span>
-              </div>
-              <div class="cta-group" style="margin-top:18px; margin-bottom:0;">
-                <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn btn-primary">小郡店で予約する</a>
+          <!-- ── COOL SPA 天神店 ── -->
+          <div class="sc-card sc-tenjin">
+            <!-- top bar -->
+            <div class="sc-top-bar">
+              <span class="sc-rating-badge">★ 4.7 &nbsp;口コミ高評価</span>
+              <a href="stores/coolspa-tenjin.html" class="sc-detail-link">詳細を見る →</a>
+            </div>
+            <!-- identity -->
+            <div class="sc-identity">
+              <div class="sc-icon-wrap">❄</div>
+              <div>
+                <div class="sc-store-name">COOL SPA 天神店</div>
+                <div class="sc-store-sub">脂肪冷却専門サロン ｜ 天神南駅 徒歩3分</div>
               </div>
             </div>
-            <div class="store-visual ogori"></div>
-          </article>
+            <!-- hero image -->
+            <div class="sc-hero" style="background-image:url('images/store/OutView01.jpg')"></div>
+            <!-- description -->
+            <div class="sc-desc">脂肪冷却を中心に、症例重視で通いたい方へ。わかりやすい料金設計で、気になる部位へしっかりアプローチ。</div>
+            <!-- tags -->
+            <div class="sc-tags">
+              <span class="sc-tag">❄ 脂肪冷却</span>
+              <span class="sc-tag">🔥 サウナ組み合わせ可</span>
+              <span class="sc-tag">📍 駅近</span>
+            </div>
+            <!-- mini map -->
+            <div class="sc-map-wrap">
+              <svg viewBox="0 0 340 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+                <rect width="340" height="148" fill="#f5ede0"/>
+                <!-- grid lines -->
+                <line x1="0" y1="74" x2="340" y2="74" stroke="#e8d8c6" stroke-width="1"/>
+                <line x1="170" y1="0" x2="170" y2="148" stroke="#e8d8c6" stroke-width="1"/>
+                <!-- roads -->
+                <rect x="0" y="38" width="340" height="12" rx="2" fill="#ede2d4" opacity=".9"/>
+                <rect x="148" y="0" width="10" height="148" rx="2" fill="#ede2d4" opacity=".9"/>
+                <!-- road labels -->
+                <text x="20" y="48" font-size="7" fill="#b09070" font-family="sans-serif">渡辺通</text>
+                <text x="152" y="20" font-size="7" fill="#b09070" font-family="sans-serif" writing-mode="tb">昭和通</text>
+                <!-- dotted path -->
+                <path d="M153 98 L153 50 L215 50" stroke="#c9a34b" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
+                <!-- store marker -->
+                <circle cx="153" cy="98" r="13" fill="#2f2a26"/>
+                <text x="153" y="102" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="800">店</text>
+                <!-- store label -->
+                <rect x="100" y="113" width="106" height="18" rx="9" fill="rgba(47,42,38,.85)"/>
+                <text x="153" y="125" text-anchor="middle" font-size="8" fill="#fff" font-family="sans-serif" font-weight="700">COOL SPA 天神店</text>
+                <!-- station marker -->
+                <rect x="196" y="38" width="62" height="20" rx="6" fill="#c9a34b"/>
+                <text x="227" y="52" text-anchor="middle" font-size="8.5" fill="#fff" font-family="sans-serif" font-weight="800">天神南駅</text>
+                <!-- walk badge -->
+                <rect x="164" y="58" width="46" height="16" rx="8" fill="#fff" opacity=".95"/>
+                <text x="187" y="69" text-anchor="middle" font-size="7.5" fill="#7a5a30" font-family="sans-serif" font-weight="700">🚶 徒歩3分</text>
+              </svg>
+            </div>
+            <!-- photos -->
+            <div class="sc-photos-grid">
+              <div>
+                <div class="sc-photo">
+                  <img src="images/store/InnerView01.jpg" alt="施術ベッド">
+                </div>
+                <div class="sc-photo-lbl">施術ベッド</div>
+              </div>
+              <div>
+                <div class="sc-photo">
+                  <img src="images/store/OutView01.jpg" alt="受付">
+                </div>
+                <div class="sc-photo-lbl">受付エリア</div>
+              </div>
+              <div>
+                <div class="sc-photo">
+                  <span>準備中</span>
+                </div>
+                <div class="sc-photo-lbl">パウダールーム</div>
+              </div>
+            </div>
+            <!-- info -->
+            <div class="sc-info-block">
+              <div class="sc-info-item">📍 福岡市中央区天神2丁目</div>
+              <div class="sc-info-item">🚃 天神南駅 6番出口 徒歩3分</div>
+              <div class="sc-info-item">🕐 10:00〜20:00（最終受付 19:00）</div>
+            </div>
+            <!-- CTA -->
+            <div class="sc-cta-wrap">
+              <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="sc-btn-line">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.062 2 11.07c0 4.496 3.653 8.26 8.58 8.932.333.074.787.226.902.52.103.264.067.677.033.944l-.146.9c-.044.264-.204 1.033.905.563 1.109-.47 5.983-3.526 8.168-6.037C21.526 14.84 22 13.02 22 11.07 22 6.062 17.523 2 12 2z" fill="white"/></svg>
+                LINEで予約する
+              </a>
+              <a href="https://maps.app.goo.gl/xiro6ehUkLmiZFgH6" target="_blank" rel="noopener" class="sc-btn-gmap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#c9a34b"/></svg>
+                Google マップで見る
+              </a>
+            </div>
+          </div>
+
+          <!-- ── CHUCHU 小郡店 ── -->
+          <div class="sc-card sc-chuchu">
+            <!-- top bar -->
+            <div class="sc-top-bar">
+              <span class="sc-rating-badge">★ 4.8 &nbsp;口コミ高評価</span>
+              <a href="stores/chuchu-ogori.html" class="sc-detail-link" style="color:#d05080">詳細を見る →</a>
+            </div>
+            <!-- identity -->
+            <div class="sc-identity">
+              <div class="sc-icon-wrap">🌸</div>
+              <div>
+                <div class="sc-store-name" style="color:#2f2a26">CHUCHU 小郡店</div>
+                <div class="sc-store-sub">ネイル＋痩身サロン ｜ 西鉄小郡駅 徒歩5分</div>
+              </div>
+            </div>
+            <!-- hero image -->
+            <div class="sc-hero" style="background-image:url('images/store/building_250x250.jpg')"></div>
+            <!-- description -->
+            <div class="sc-desc">ネイルも痩身も一緒に相談したい方へ。上品なネイルデザインと脂肪冷却を楽しめる、地域密着のビューティーサロン。</div>
+            <!-- tags -->
+            <div class="sc-tags">
+              <span class="sc-tag">💅 ネイル対応</span>
+              <span class="sc-tag">💕 大人可愛い雰囲気</span>
+              <span class="sc-tag">💰 通いやすい価格</span>
+            </div>
+            <!-- mini map -->
+            <div class="sc-map-wrap">
+              <svg viewBox="0 0 340 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+                <rect width="340" height="148" fill="#fdf4f7"/>
+                <!-- grid lines -->
+                <line x1="0" y1="74" x2="340" y2="74" stroke="#f4d6e3" stroke-width="1"/>
+                <line x1="170" y1="0" x2="170" y2="148" stroke="#f4d6e3" stroke-width="1"/>
+                <!-- roads -->
+                <rect x="0" y="38" width="340" height="12" rx="2" fill="#f5dce7" opacity=".9"/>
+                <rect x="230" y="0" width="10" height="148" rx="2" fill="#f5dce7" opacity=".9"/>
+                <!-- diagonal railway -->
+                <line x1="0" y1="50" x2="200" y2="50" stroke="#e8c0d0" stroke-width="3" stroke-dasharray="8 4"/>
+                <!-- road labels -->
+                <text x="20" y="48" font-size="7" fill="#c07090" font-family="sans-serif">国道322号</text>
+                <text x="233" y="20" font-size="7" fill="#c07090" font-family="sans-serif" writing-mode="tb">県道</text>
+                <!-- dotted path -->
+                <path d="M170 98 L170 58 L110 58" stroke="#e87098" stroke-width="2.5" stroke-dasharray="5 4" fill="none"/>
+                <!-- store marker -->
+                <circle cx="170" cy="98" r="13" fill="#e87098"/>
+                <text x="170" y="102" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif" font-weight="800">店</text>
+                <!-- store label -->
+                <rect x="112" y="113" width="116" height="18" rx="9" fill="rgba(200,60,100,.85)"/>
+                <text x="170" y="125" text-anchor="middle" font-size="8" fill="#fff" font-family="sans-serif" font-weight="700">CHUCHU 小郡店</text>
+                <!-- station marker -->
+                <rect x="60" y="38" width="76" height="20" rx="6" fill="#e87098"/>
+                <text x="98" y="52" text-anchor="middle" font-size="8.5" fill="#fff" font-family="sans-serif" font-weight="800">西鉄小郡駅</text>
+                <!-- walk badge -->
+                <rect x="122" y="60" width="46" height="16" rx="8" fill="#fff" opacity=".95"/>
+                <text x="145" y="71" text-anchor="middle" font-size="7.5" fill="#b04060" font-family="sans-serif" font-weight="700">🚶 徒歩5分</text>
+              </svg>
+            </div>
+            <!-- photos -->
+            <div class="sc-photos-grid">
+              <div>
+                <div class="sc-photo">
+                  <img src="images/store/InnerView01.jpg" alt="店内">
+                </div>
+                <div class="sc-photo-lbl">店内</div>
+              </div>
+              <div>
+                <div class="sc-photo">
+                  <img src="images/store/building_250x250.jpg" alt="外観">
+                </div>
+                <div class="sc-photo-lbl">外観</div>
+              </div>
+              <div>
+                <div class="sc-photo">
+                  <span>準備中</span>
+                </div>
+                <div class="sc-photo-lbl">ネイルサンプル</div>
+              </div>
+            </div>
+            <!-- info -->
+            <div class="sc-info-block">
+              <div class="sc-info-item">📍 福岡県小郡市</div>
+              <div class="sc-info-item">🚃 西鉄小郡駅 徒歩5分</div>
+              <div class="sc-info-item">🕐 10:00〜20:00（最終受付 19:00）</div>
+            </div>
+            <!-- CTA -->
+            <div class="sc-cta-wrap">
+              <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="sc-btn-line">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.062 2 11.07c0 4.496 3.653 8.26 8.58 8.932.333.074.787.226.902.52.103.264.067.677.033.944l-.146.9c-.044.264-.204 1.033.905.563 1.109-.47 5.983-3.526 8.168-6.037C21.526 14.84 22 13.02 22 11.07 22 6.062 17.523 2 12 2z" fill="white"/></svg>
+                LINEで予約する
+              </a>
+              <a href="https://maps.app.goo.gl/DpAhsADoLLEro8qQ6" target="_blank" rel="noopener" class="sc-btn-gmap">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#e87098"/></svg>
+                Google マップで見る
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
