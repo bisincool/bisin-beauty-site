@@ -73,11 +73,38 @@
     .review-name{font-size:.86rem;font-weight:700}
     .review-meta{font-size:.74rem;color:var(--muted)}
 
-    /* MAP PLACEHOLDER */
-    .map-placeholder{height:320px;border-radius:var(--radius-xl);background:linear-gradient(135deg,#f0ebe3,#e8dfd6);border:1.5px dashed rgba(185,156,135,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:rgba(138,110,89,.5);box-shadow:var(--shadow-sm)}
-    .map-placeholder .map-icon{font-size:3rem;opacity:.3}
-    .map-placeholder p{font-size:.86rem;font-weight:600;letter-spacing:.04em}
-    .map-placeholder small{font-size:.76rem;opacity:.7}
+    /* ── NEW MAP SECTION ─────────────────────────────── */
+    .map-section-grid{display:grid;grid-template-columns:1fr 1.45fr;gap:32px;align-items:start}
+    /* Left info card */
+    .si-card{background:var(--card);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow)}
+    .si-head{padding:18px 24px;background:linear-gradient(135deg,#2f2a26,#54463d);color:#fff;font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:10px;letter-spacing:.04em}
+    .si-row-item{display:flex;align-items:flex-start;gap:14px;padding:16px 22px}
+    .si-ico{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#f4ece3,#ede0d0);border:1px solid rgba(185,156,135,.2);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;margin-top:1px}
+    .si-lbl{font-size:.74rem;font-weight:700;color:var(--accent-dark);letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+    .si-val{font-size:.9rem;color:var(--text);line-height:1.65}
+    .si-divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:0 22px}
+    .si-line-link{display:inline-flex;align-items:center;gap:8px;background:#06c755;color:#fff;padding:9px 16px;border-radius:999px;font-weight:800;font-size:.88rem;margin-top:4px;transition:opacity .2s,transform .2s}
+    .si-line-link:hover{opacity:.88;transform:translateY(-1px)}
+    /* Right map area */
+    .map-right{display:flex;flex-direction:column;gap:16px}
+    .route-heading{text-align:center;font-size:.88rem;font-weight:700;color:var(--accent-dark);letter-spacing:.09em;display:flex;align-items:center;gap:12px}
+    .route-heading::before,.route-heading::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(185,156,135,.55),transparent)}
+    .map-box{position:relative;border-radius:var(--radius-xl);overflow:hidden;border:1px solid rgba(220,210,195,.8);box-shadow:var(--shadow)}
+    .map-svg{width:100%;display:block}
+    /* Store photos row */
+    .spr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .spr-slot{border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;position:relative;background:linear-gradient(135deg,#f4ece3,#e8dfd6);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;font-size:.76rem;color:rgba(138,110,89,.45);font-weight:600;box-shadow:var(--shadow-sm)}
+    .spr-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .spr-label{position:absolute;bottom:0;left:0;right:0;padding:6px 8px;text-align:center;font-size:.72rem;font-weight:700;color:#fff;background:linear-gradient(transparent,rgba(47,42,38,.6));letter-spacing:.04em}
+    /* CTA bar */
+    .map-cta-bar{background:linear-gradient(135deg,rgba(255,255,255,.92),rgba(251,246,240,.94));border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);padding:16px 20px;display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-sm);flex-wrap:wrap}
+    .mcb-text{flex:1;min-width:150px;font-size:.82rem;color:var(--muted);line-height:1.55}
+    .mcb-text strong{display:block;color:var(--text);font-size:.9rem}
+    .mcb-line-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 18px;background:#06c755;color:#fff;border-radius:999px;font-weight:800;font-size:.86rem;flex-shrink:0;box-shadow:0 6px 18px rgba(6,199,85,.28);transition:transform .2s,box-shadow .2s}
+    .mcb-line-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(6,199,85,.35)}
+    .mcb-gmap-btn{display:inline-flex;align-items:center;gap:6px;padding:11px 16px;background:rgba(255,255,255,.95);border:1.5px solid rgba(185,156,135,.45);color:var(--accent-dark);border-radius:999px;font-weight:700;font-size:.83rem;flex-shrink:0;transition:transform .2s}
+    .mcb-gmap-btn:hover{transform:translateY(-2px)}
+    @media(max-width:960px){.map-section-grid{grid-template-columns:1fr}.spr-grid{grid-template-columns:repeat(3,1fr)}}
 
     /* MENU */
     .menu-table-wrap{border-radius:var(--radius-xl);background:var(--card);border:1px solid rgba(232,223,214,.9);overflow:hidden;box-shadow:var(--shadow-sm)}
@@ -182,48 +209,154 @@
     </div>
   </div>
 
-  <!-- INFO + MAP -->
-  <section class="section">
+  <!-- INFO + MAP (premium redesign) -->
+  <section class="section" id="access">
     <div class="container">
-      <div class="info-grid">
-        <div>
-          <div class="eyebrow">Store Info</div>
-          <h2 class="section-title">店舗情報</h2>
-          <div class="info-card" style="margin-top:20px">
-            <div class="info-card-head">❄ COOL SPA 天神店</div>
-            <div class="info-row"><span class="info-lbl">住所</span><span class="info-val">福岡県福岡市中央区渡辺通5丁目24-30<br>東カン福岡第一キャステール1009号室</span></div>
-            <div class="info-row"><span class="info-lbl">アクセス</span><span class="info-val">天神南駅 徒歩約3分</span></div>
-            <div class="info-row"><span class="info-lbl">営業時間</span><span class="info-val">11:00〜21:00（最終受付 19:30）</span></div>
-            <div class="info-row"><span class="info-lbl">定休日</span><span class="info-val">不定休（LINEにてご確認ください）</span></div>
-            <div class="info-row"><span class="info-lbl">駐車場</span><span class="info-val">なし（近隣コインパーキングをご利用ください）</span></div>
-            <div class="info-row"><span class="info-lbl">お問合せ</span><span class="info-val"><a href="#">LINEで問い合わせる →</a></span></div>
+      <div style="text-align:center;margin-bottom:36px">
+        <div class="eyebrow">Access &amp; Location</div>
+        <h2 class="section-title">店舗情報・アクセス</h2>
+      </div>
+      <div class="map-section-grid">
+
+        <!-- ── LEFT: Store Info Card ── -->
+        <div class="si-card">
+          <div class="si-head"><span>❄</span> COOL SPA 天神店</div>
+          <div class="si-row-item">
+            <div class="si-ico">📍</div>
+            <div><div class="si-lbl">住所</div><div class="si-val">福岡県福岡市中央区渡辺通5丁目24-30<br>東カン福岡第一キャステール1009号室</div></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-row-item">
+            <div class="si-ico">🚃</div>
+            <div><div class="si-lbl">アクセス</div><div class="si-val">天神南駅 徒歩約3分</div></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-row-item">
+            <div class="si-ico">🕐</div>
+            <div><div class="si-lbl">営業時間</div><div class="si-val">11:00〜21:00（最終受付 19:30）</div></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-row-item">
+            <div class="si-ico">📅</div>
+            <div><div class="si-lbl">定休日</div><div class="si-val">不定休（LINEにてご確認ください）</div></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-row-item">
+            <div class="si-ico">🅿</div>
+            <div><div class="si-lbl">駐車場</div><div class="si-val">なし（近隣コインパーキングをご利用ください）</div></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-row-item">
+            <div class="si-ico">💬</div>
+            <div>
+              <div class="si-lbl">お問合せ</div>
+              <a href="#contact" class="si-line-link">
+                <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#fff"/><path d="M33 18.8C33 12.8 27.1 8 20 8S7 12.8 7 18.8c0 5.4 4.8 9.9 11.3 10.7.4.1 1 .3 1.2.7.2.3.1.9.1.9l-.2 1.3c-.1.4-.3 1.5 1.3.8 1.6-.7 8.6-5.1 11.8-8.7A9.7 9.7 0 0033 18.8z" fill="#06c755"/><path d="M17 21.5h-2.5a.5.5 0 01-.5-.5v-5a.5.5 0 011 0v4.5H17a.5.5 0 010 1zm2.5 0a.5.5 0 01-.5-.5v-5a.5.5 0 011 0v5a.5.5 0 01-.5.5zm7-5a.5.5 0 010 1h-2v1.3h2a.5.5 0 010 1h-2V21h2a.5.5 0 010 1h-2.5a.5.5 0 01-.5-.5v-5a.5.5 0 01.5-.5H26zm-4.5 0a.5.5 0 011 0v5a.5.5 0 01-.9.3l-2.6-3.5V21a.5.5 0 01-1 0v-5a.5.5 0 01.9-.3l2.6 3.5V16.5z" fill="#fff"/></svg>
+                LINEでお問い合わせください
+              </a>
+            </div>
           </div>
         </div>
-        <div>
-          <a href="https://maps.app.goo.gl/xiro6ehUkLmiZFgH6" target="_blank" rel="noopener" class="map-placeholder" style="text-decoration:none;cursor:pointer;color:inherit;">
-            <span class="map-icon" style="opacity:.7">📍</span>
-            <p style="color:rgba(138,110,89,.9);">Google マップで見る</p>
-            <small style="opacity:.8;">タップして地図を開く</small>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- PHOTOS -->
-  <section class="section" style="background:linear-gradient(180deg,#f3ebe0,#faf6f1)">
-    <div class="container">
-      <div class="eyebrow">Gallery</div>
-      <h2 class="section-title">店内ギャラリー</h2>
-      <div class="photo-grid" style="margin-top:24px">
-        <div class="photo-slot">
-          <!-- <img src="../assets/stores/coolspa-main.jpg" alt="店内メイン"> -->
-          <span class="ph-icon">📷</span><span>メイン写真</span>
+        <!-- ── RIGHT: Map + Photos ── -->
+        <div class="map-right">
+          <div class="route-heading">天神南駅 徒歩約3分の好立地</div>
+
+          <!-- Stylized SVG Map -->
+          <div class="map-box">
+            <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" class="map-svg" aria-label="COOL SPA 天神店 周辺地図">
+              <!-- Base -->
+              <rect width="680" height="360" fill="#f5ede0"/>
+              <!-- Parks -->
+              <rect x="572" y="14" width="96" height="72" rx="6" fill="#c8dda8" opacity=".85"/>
+              <text x="620" y="57" text-anchor="middle" font-size="10" fill="#5a8040" font-family="sans-serif" font-weight="600">春吉公園</text>
+              <rect x="0" y="295" width="110" height="65" rx="5" fill="#c8dda8" opacity=".75"/>
+              <text x="55" y="332" text-anchor="middle" font-size="10" fill="#5a8040" font-family="sans-serif">警固公園</text>
+              <!-- Major horizontal roads -->
+              <rect x="0" y="82" width="680" height="16" fill="#e0d4c0"/>
+              <rect x="0" y="195" width="680" height="13" fill="#e0d4c0"/>
+              <rect x="0" y="298" width="680" height="15" fill="#e0d4c0"/>
+              <!-- Major vertical roads -->
+              <rect x="138" y="0" width="16" height="360" fill="#e0d4c0"/>
+              <rect x="338" y="0" width="14" height="360" fill="#e0d4c0"/>
+              <rect x="510" y="0" width="16" height="360" fill="#e0d4c0"/>
+              <!-- Minor roads -->
+              <rect x="0" y="148" width="680" height="8" fill="#ece4d4"/>
+              <rect x="0" y="248" width="680" height="8" fill="#ece4d4"/>
+              <rect x="62" y="0" width="8" height="360" fill="#ece4d4"/>
+              <rect x="228" y="0" width="8" height="360" fill="#ece4d4"/>
+              <rect x="424" y="0" width="8" height="360" fill="#ece4d4"/>
+              <rect x="608" y="0" width="8" height="360" fill="#ece4d4"/>
+              <!-- Road labels -->
+              <text x="154" y="79" font-size="11" fill="#a89070" font-family="sans-serif" font-weight="700">渡辺通</text>
+              <!-- Road number badges -->
+              <circle cx="462" cy="60" r="18" fill="#4a7ec8"/>
+              <text x="462" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="white" font-family="sans-serif">602</text>
+              <circle cx="572" cy="218" r="16" fill="#4a7ec8"/>
+              <text x="572" y="223" text-anchor="middle" font-size="11" font-weight="bold" fill="white" font-family="sans-serif">562</text>
+              <!-- Landmark labels -->
+              <text x="22" y="65" font-size="9.5" fill="#b0a090" font-family="sans-serif">天神ロフト</text>
+              <text x="172" y="55" font-size="8.5" fill="#b0a090" font-family="sans-serif">ホテルニューオータニ博多</text>
+              <text x="22" y="228" font-size="8.5" fill="#b0a090" font-family="sans-serif">ローソン 渡辺五丁目店</text>
+              <text x="22" y="268" font-size="8.5" fill="#b0a090" font-family="sans-serif">サニー渡辺店</text>
+              <text x="364" y="262" font-size="8.5" fill="#b0a090" font-family="sans-serif">福岡中央郵便局</text>
+              <text x="524" y="262" font-size="8.5" fill="#b0a090" font-family="sans-serif">ファミリーマート<tspan x="524" dy="11">福岡渡辺通五丁目店</tspan></text>
+              <!-- Dotted route path -->
+              <path d="M 272 295 Q 375 215 504 162" stroke="#c9a34b" stroke-width="3.5" stroke-dasharray="10,7" fill="none" stroke-linecap="round"/>
+              <!-- Walking time badge -->
+              <rect x="326" y="218" width="80" height="30" rx="15" fill="#c9a34b"/>
+              <text x="366" y="237" text-anchor="middle" font-size="10.5" font-weight="bold" fill="white" font-family="sans-serif">徒歩約3分</text>
+              <!-- Station marker -->
+              <circle cx="272" cy="305" r="26" fill="white" stroke="#c9a34b" stroke-width="2.5"/>
+              <text x="272" y="299" text-anchor="middle" font-size="14" font-family="sans-serif">🚃</text>
+              <text x="272" y="313" text-anchor="middle" font-size="8" fill="#7a6a55" font-family="sans-serif" font-weight="700">天神南駅</text>
+              <text x="272" y="342" text-anchor="middle" font-size="12" font-weight="800" fill="#2f2a26" font-family="sans-serif">天神南駅</text>
+              <!-- Store bubble tail -->
+              <polygon points="480,113 504,148 528,113" fill="#2f2a26"/>
+              <!-- Store bubble body -->
+              <rect x="380" y="38" width="210" height="78" rx="14" fill="#2f2a26"/>
+              <!-- Snowflake in bubble -->
+              <text x="404" y="88" font-size="26" font-family="sans-serif" fill="white" opacity=".9">❄</text>
+              <!-- Store name -->
+              <text x="436" y="68" font-size="13.5" font-weight="800" fill="white" font-family="sans-serif">COOL SPA</text>
+              <text x="436" y="88" font-size="13.5" font-weight="800" fill="white" font-family="sans-serif">天神店</text>
+              <!-- Store dot -->
+              <circle cx="504" cy="155" r="9" fill="#2f2a26"/>
+              <circle cx="504" cy="155" r="4" fill="white"/>
+            </svg>
+          </div>
+
+          <!-- 3 Store Photos -->
+          <div class="spr-grid">
+            <div class="spr-slot">
+              <img src="../images/store/InnerView01.jpg" alt="施術ベッド">
+              <span class="spr-label">施術ベッド</span>
+            </div>
+            <div class="spr-slot">
+              <img src="../images/store/OutView01.jpg" alt="受付">
+              <span class="spr-label">受付</span>
+            </div>
+            <div class="spr-slot">
+              <span style="font-size:1.6rem;opacity:.3">📷</span>
+              <span>パウダールーム</span>
+            </div>
+          </div>
+
+          <!-- CTA bar -->
+          <div class="map-cta-bar">
+            <div class="mcb-text">
+              📅 ご予約・お問い合わせはLINEがおすすめ！
+              <strong>お気軽にご連絡ください &rsaquo;</strong>
+            </div>
+            <a href="#contact" class="mcb-line-btn">
+              <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="rgba(255,255,255,.25)"/><path d="M33 18.8C33 12.8 27.1 8 20 8S7 12.8 7 18.8c0 5.4 4.8 9.9 11.3 10.7.4.1 1 .3 1.2.7.2.3.1.9.1.9l-.2 1.3c-.1.4-.3 1.5 1.3.8 1.6-.7 8.6-5.1 11.8-8.7A9.7 9.7 0 0033 18.8z" fill="#fff" opacity=".9"/></svg>
+              LINEでお問い合わせ &rsaquo;
+            </a>
+            <a href="https://maps.app.goo.gl/xiro6ehUkLmiZFgH6" target="_blank" rel="noopener" class="mcb-gmap-btn">
+              📍 Google Map
+            </a>
+          </div>
         </div>
-        <div class="photo-slot"><span class="ph-icon">📷</span><span>施術室</span></div>
-        <div class="photo-slot"><span class="ph-icon">📷</span><span>受付</span></div>
-        <div class="photo-slot"><span class="ph-icon">📷</span><span>待合室</span></div>
-        <div class="photo-slot"><span class="ph-icon">📷</span><span>外観</span></div>
       </div>
     </div>
   </section>
