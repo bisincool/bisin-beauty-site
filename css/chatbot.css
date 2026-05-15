@@ -614,6 +614,72 @@
 .cb-fallback a:last-child { border-bottom: none; }
 .cb-fallback a:hover { color: var(--cb-accent-d); }
 
+/* ── Header badge ── */
+.cb-header-badge {
+  display: inline-block;
+  margin-top: 4px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.04em;
+}
+
+/* ── Booking CTA (LINE + HotPepper) ── */
+.cb-booking-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+  align-self: flex-start;
+  width: 100%;
+  max-width: 295px;
+}
+
+.cb-cta-line--full {
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.cb-hp-row {
+  display: flex;
+  gap: 5px;
+}
+
+.cb-hp-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 6px;
+  border-radius: 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+  font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.cb-hp-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.cb-hp-btn.cb-hp-tenjin {
+  background: linear-gradient(135deg, #c97a3b, #a85e2a);
+  color: #fff;
+}
+
+.cb-hp-btn.cb-hp-ogori {
+  background: linear-gradient(135deg, var(--cb-accent), var(--cb-accent-d));
+  color: #fff;
+}
+
 /* ── Mobile adjustments ── */
 @media (max-width: 400px) {
   .cb-window {

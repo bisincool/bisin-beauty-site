@@ -23,11 +23,86 @@
   // ── ナレッジベース ─────────────────────────────────────
   var TOPICS = {
 
-    cryo: {
-      label: '❄️ 脂肪冷却の料金',
-      related: ['combo', 'howmany', 'book'],
+    // ── メイン8トピック（お悩みベース）──
+
+    belly: {
+      label: '🍃 お腹を細くしたい',
+      related: ['thigh', 'back_arm', 'price', 'knowledge'],
+      showBookingCta: true,
       answer:
-        '<strong>❄️ 脂肪冷却メニュー・料金</strong><br><br>' +
+        '<strong>お腹を細くしたい方へ</strong><br><br>' +
+        'お腹まわりのお悩み、たくさんの方からご相談いただいています😊<br><br>' +
+        '脂肪冷却は<strong>お腹まわりに特に効果的</strong>な施術です。<br>' +
+        '冷却カップをお腹にあてて約4℃まで冷やすと、脂肪細胞だけが自然に排出されます。<br>' +
+        '施術中は横になってスマホや読書OK。ダウンタイムは一切ありません。<br><br>' +
+        '<span class="cb-highlight">🍃 食事制限なし</span><span class="cb-highlight">⏱ 30〜80分</span><span class="cb-highlight">✅ ダウンタイムなし</span><br><br>' +
+        '<strong>お腹向け おすすめメニュー</strong><br>' +
+        '<div class="cb-price-row"><span class="cb-price-name">初回お試し 2CUP<span class="cb-price-note">前腹＋横腹など2部位</span></span><span class="cb-price-val">¥5,500</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">爆汗サウナ×冷却 4CUP<span class="cb-price-note">🔥人気No.1 / 80分</span></span><span class="cb-price-val">¥8,800</span></div>' +
+        '<br><span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。初回体験価格は各店舗で初めての方限定。税込。</span>' +
+        PRICE_FOOTER
+    },
+
+    thigh: {
+      label: '🦵 太ももが気になる',
+      related: ['belly', 'back_arm', 'price', 'knowledge'],
+      showBookingCta: true,
+      answer:
+        '<strong>太ももが気になる方へ</strong><br><br>' +
+        '太ももは運動だけではなかなか落ちにくい部位ですよね。<br>' +
+        '脂肪冷却なら<strong>太もも専用カップ</strong>で、内側・外側・前面など細かく対応できます。<br><br>' +
+        '<span class="cb-highlight">左右それぞれ施術OK</span><span class="cb-highlight">⏱ 1CUP約30分</span><span class="cb-highlight">✅ ダウンタイムなし</span><br><br>' +
+        '<strong>太もも向け おすすめメニュー</strong><br>' +
+        '<div class="cb-price-row"><span class="cb-price-name">初回お試し 2CUP<span class="cb-price-note">左右各1CUP</span></span><span class="cb-price-val">¥5,500</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">冷却のみ 4CUP<span class="cb-price-note">太もも＋他部位もOK</span></span><span class="cb-price-val">¥9,500</span></div>' +
+        '<br><span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。税込。</span>' +
+        PRICE_FOOTER
+    },
+
+    postnatal: {
+      label: '👶 産後太りが気になる',
+      related: ['belly', 'safety', 'price', 'book'],
+      showBookingCta: true,
+      answer:
+        '<strong>産後太りでお悩みの方へ</strong><br><br>' +
+        '産後は体が変化しやすく、特に<strong>下腹部・腰回り・太もも</strong>に脂肪がつきやすい時期です。<br>' +
+        '多くのママさんにご来店いただいています😊<br><br>' +
+        '脂肪冷却は施術中に横になるだけ。<br>' +
+        'ダウンタイムなし・そのまま帰宅できるので<strong>育児中でも無理なく通えます</strong>。<br><br>' +
+        '<span class="cb-highlight">🤱 育児中のママ歓迎</span><span class="cb-highlight">✅ ダウンタイムなし</span><span class="cb-highlight">⏱ 30〜80分</span><br><br>' +
+        '<div style="margin:4px 0 6px;padding:8px 10px;background:rgba(255,220,100,0.15);border:1px solid rgba(200,160,0,0.22);border-radius:8px;font-size:10.5px;line-height:1.7;color:var(--cb-text)">' +
+        '⚠️ 産後3ヶ月以降を推奨しています。授乳中の方・体調が不安な方はまずLINEでご相談ください。' +
+        '</div>' +
+        '<span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。</span>' +
+        PRICE_FOOTER
+    },
+
+    back_arm: {
+      label: '💪 背中・二の腕をスッキリ',
+      related: ['belly', 'thigh', 'price', 'knowledge'],
+      showBookingCta: true,
+      answer:
+        '<strong>背中・二の腕のお悩みに</strong><br><br>' +
+        '背中や二の腕は自分では見えにくい部位ですが、<br>' +
+        '振袖や背中の開いた服の季節に気になりますよね。<br><br>' +
+        '脂肪冷却は<strong>背中・脇腹・二の腕すべてに対応</strong>しています。<br>' +
+        '複数カップを使って効率よく施術できます。<br><br>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 8px">' +
+        '<span class="cb-highlight">二の腕</span><span class="cb-highlight">背中</span><span class="cb-highlight">脇腹</span><span class="cb-highlight">ブラはみ肉</span>' +
+        '</div>' +
+        '<strong>背中・二の腕向け おすすめメニュー</strong><br>' +
+        '<div class="cb-price-row"><span class="cb-price-name">初回お試し 2CUP<span class="cb-price-note">背中＋二の腕など</span></span><span class="cb-price-val">¥5,500</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">爆汗サウナ×冷却 4CUP<span class="cb-price-note">複数部位まとめてケア</span></span><span class="cb-price-val">¥8,800</span></div>' +
+        '<br><span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。税込。</span>' +
+        PRICE_FOOTER
+    },
+
+    price: {
+      label: '💴 料金を知りたい',
+      related: ['belly', 'combo', 'book', 'knowledge'],
+      showBookingCta: true,
+      answer:
+        '<strong>💴 脂肪冷却メニュー・料金</strong><br><br>' +
 
         '<span class="cb-store-label">❄ COOL SPA 天神店</span>' +
         '<div class="cb-price-row"><span class="cb-price-name">初回お試し 1CUP<span class="cb-price-note">まず試したい方の入口</span></span><span class="cb-price-val">¥3,300</span></div>' +
@@ -45,86 +120,71 @@
         PRICE_FOOTER
     },
 
-    nail: {
-      label: '💅 ネイルの料金',
-      related: ['combo', 'stores', 'book'],
+    book: {
+      label: '📅 初回体験を予約したい',
+      related: ['price', 'safety', 'howmany', 'stores'],
+      showBookingCta: true,
       answer:
-        '<strong>💅 ネイルメニュー・料金</strong><br><br>' +
-        '<span class="cb-store-label">✦ CHUCHU 小郡店のみ</span>' +
-        '<div class="cb-price-row"><span class="cb-price-name">シンプルネイル<span class="cb-price-note">ワンカラー・定番デザイン</span></span><span class="cb-price-val">¥5,500</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">定額制ネイルアート<span class="cb-price-note">⭐人気 / 季節デザイン豊富</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">定額制アート（上位）<span class="cb-price-note">全デザイン対象</span></span><span class="cb-price-val">¥7,000</span></div>' +
-        '<br><span style="font-size:10px;color:var(--cb-muted)">※ ネイルは小郡店のみ。詳細デザインはLINEにてご確認ください。</span>' +
+        '<strong>初回体験のご予約について</strong><br><br>' +
+        'ご予約お待ちしています！<br>' +
+        '<strong>強引な勧誘は一切ありません</strong>ので、<br>' +
+        'まずは体験だけでも大歓迎です😊<br><br>' +
+        '<span class="cb-highlight">💬 無理な勧誘なし</span><span class="cb-highlight">✅ 当日完結OK</span><span class="cb-highlight">⏱ 30〜120分</span><br><br>' +
+        '<strong>初回体験メニュー（初めての方限定）</strong><br>' +
+        '<div class="cb-price-row"><span class="cb-price-name">初回お試し 1CUP<span class="cb-price-note">まず試してみたい方</span></span><span class="cb-price-val">¥3,300〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">初回お試し 2CUP<span class="cb-price-note">2部位まとめてケア</span></span><span class="cb-price-val">¥5,500〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">爆汗サウナ×冷却 4CUP<span class="cb-price-note">🔥人気No.1 / 80分</span></span><span class="cb-price-val">¥8,800〜</span></div>' +
+        '<br>' +
+        '当日の流れ：カウンセリング → 施術 → 経過説明 → そのままご帰宅<br>' +
+        '施術中はスマホ・読書自由です。<br><br>' +
+        '<span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。税込。</span>' +
         PRICE_FOOTER
     },
 
-    combo: {
-      label: '✨ 冷却＋ネイルセット',
-      related: ['cryo', 'nail', 'book'],
+    safety: {
+      label: '🩺 痛み・安全性が心配',
+      related: ['howmany', 'knowledge', 'book'],
+      showBookingCta: true,
       answer:
-        '<strong>✨ 脂肪冷却＋ネイル 同日セット</strong><br><br>' +
-        'CHUCHU 小郡店では、脂肪冷却の施術中・施術後に<strong>ネイルを同日施術</strong>できます！<br><br>' +
-        '<span class="cb-highlight">⏱ 時間効率◎</span><span class="cb-highlight">💅 同日OK</span><span class="cb-highlight">🏪 小郡店のみ</span><br><br>' +
-        '<strong>人気の組み合わせ例</strong><br>' +
-        '<div class="cb-price-row"><span class="cb-price-name">爆汗サウナ×冷却 4CUP<span class="cb-price-note">80分</span></span><span class="cb-price-val">¥8,800</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">＋ 定額制ネイルアート<span class="cb-price-note">人気プラン</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
-        '<div class="cb-price-row" style="border-top:1px solid rgba(185,156,135,.4);margin-top:3px;padding-top:7px"><span class="cb-price-name" style="font-weight:900">合計（目安）</span><span class="cb-price-val" style="color:var(--cb-dark)">¥14,800〜</span></div>' +
-        '<br>冷却機器でセルフ放置中にネイルを受けられるので、待ち時間ゼロの贅沢な時間を過ごせます。' +
-        PRICE_FOOTER
+        '<strong>痛みと安全性について</strong><br><br>' +
+        '「痛そう」「体に悪くない？」というご不安、<br>よくいただくご質問です😊<br><br>' +
+
+        '<span class="cb-store-label">❄ 施術中の感覚</span>' +
+        '最初の数分は<strong>冷たさや軽い引っ張られる感覚</strong>がありますが、<br>' +
+        'ほとんどの方は途中からリラックスしてスマホをご覧になっています。<br>' +
+        '強い痛みはありません。<br><br>' +
+
+        '<span class="cb-store-label">✅ 安全性について</span>' +
+        '脂肪冷却（クライオリポリシス）は<strong>米国FDAの認可を取得した技術</strong>です。<br>' +
+        '皮膚・筋肉・神経には影響を与えず、脂肪細胞だけに作用します。<br>' +
+        '施術後のダウンタイムもなく、そのままお帰りいただけます。<br><br>' +
+
+        '<span class="cb-highlight">🇺🇸 FDA認可技術</span><span class="cb-highlight">✅ ダウンタイムなし</span><span class="cb-highlight">🩺 脂肪のみに作用</span><br><br>' +
+        '<span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。持病をお持ちの方は事前にご相談ください。</span>'
     },
 
     howmany: {
-      label: '🗓 何回で効果が出る？',
-      related: ['cryo', 'combo', 'book'],
+      label: '🗓 何回で効果出る？',
+      related: ['price', 'book', 'belly'],
+      showBookingCta: true,
       answer:
-        '<strong>🗓 効果・施術ペースについて</strong><br><br>' +
-        '個人差がありますが、<strong>3〜5回</strong>で変化を実感される方が多いです。<br><br>' +
+        '<strong>何回で効果が出るの？</strong><br><br>' +
+        '個人差はありますが、<strong>3〜5回</strong>で変化を実感される方が多いです😊<br><br>' +
         '<span class="cb-highlight">📊 平均ウエスト −7cm</span><span class="cb-highlight">★4.8 口コミ評価</span><span class="cb-highlight">96% 継続率</span><br><br>' +
-        '<strong>実際のお客様データ</strong><br>' +
+        '<strong>実際のお客様データ（参考）</strong><br>' +
         '<div class="cb-price-row"><span class="cb-price-name">50代女性 / 7回施術</span><span class="cb-price-val">−10cm / −5.6kg</span></div>' +
         '<div class="cb-price-row"><span class="cb-price-name">30代女性 / 全身100カップ</span><span class="cb-price-val">お腹−10cm</span></div>' +
         '<div class="cb-price-row"><span class="cb-price-name">60代男性 / 4回施術</span><span class="cb-price-val">お腹−8cm</span></div>' +
         '<br>' +
-        '施術後2〜3ヶ月かけて脂肪細胞が自然に排出されるため、回数を重ねるほど効果が定着します。月1回ペースが標準的です。<br><br>' +
-        '<span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。食事制限・激しい運動は行っていません。</span>'
+        '施術後2〜3ヶ月かけて脂肪細胞が自然に排出されます。月1回ペースが標準的です。<br><br>' +
+        '<span style="font-size:10px;color:var(--cb-muted)">※ 効果には個人差があります。食事制限・激しい運動は行っておりません。</span>'
     },
 
-    book: {
-      label: '📅 予約・体験方法',
-      related: ['cryo', 'combo', 'stores'],
-      answer:
-        '<strong>📅 ご予約・体験の方法</strong><br><br>' +
-        '予約は<strong>LINE相談</strong>が一番スムーズです！<br><br>' +
-        '<span class="cb-highlight">💬 デザイン相談もLINEでOK</span><span class="cb-highlight">✅ 完全予約制</span><br><br>' +
-        '<strong>初回体験からスタートできます</strong><br>' +
-        '<div class="cb-price-row"><span class="cb-price-name">脂肪冷却 お試し 1CUP</span><span class="cb-price-val">¥3,300〜</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">当日の流れ</span><span class="cb-price-val">約30〜120分</span></div>' +
-        '<br>' +
-        '施術中はスマホ・読書自由。ダウンタイムなし・そのまま帰宅できます。<br><br>' +
-        '<span style="font-size:10px;color:var(--cb-muted)">まずは気軽にLINEでご相談ください。強引な勧誘は一切ありません。</span>' +
-        PRICE_FOOTER
-    },
-
-    stores: {
-      label: '🏪 店舗・アクセス',
-      related: ['cryo', 'nail', 'book'],
-      answer:
-        '<strong>🏪 店舗案内</strong><br><br>' +
-
-        '<span class="cb-store-label">❄ COOL SPA 天神店</span>' +
-        '<div class="cb-price-row"><span class="cb-price-name">サービス</span><span class="cb-price-val">脂肪冷却のみ</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">営業時間</span><span class="cb-price-val">月〜土 10:00〜20:00</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">電話</span><span class="cb-price-val"><a href="tel:' + TEL_TENJIN + '" style="color:var(--cb-accent-d);text-decoration:none">☎ 092-753-5515</a></span></div>' +
-
-        '<span class="cb-store-label">✦ CHUCHU 小郡店</span>' +
-        '<div class="cb-price-row"><span class="cb-price-name">サービス</span><span class="cb-price-val">脂肪冷却＋ネイル</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">営業時間</span><span class="cb-price-val">月〜土 10:00〜20:00</span></div>' +
-        '<div class="cb-price-row"><span class="cb-price-name">電話</span><span class="cb-price-val"><a href="tel:' + TEL_OGORI + '" style="color:var(--cb-accent-d);text-decoration:none">☎ 0942-80-6688</a></span></div>'
-    },
+    // ── サブトピック（関連チップ経由でアクセス）──
 
     knowledge: {
       label: '🔬 脂肪冷却の仕組み',
-      related: ['cryo', 'howmany', 'combo'],
+      related: ['price', 'safety', 'howmany'],
       answer:
         '<strong>🔬 脂肪冷却（クライオリポリシス）とは？</strong><br><br>' +
 
@@ -153,7 +213,7 @@
 
     nailstyle: {
       label: '🎨 ネイルデザイン一覧',
-      related: ['nail', 'combo', 'book'],
+      related: ['combo', 'price', 'book'],
       answer:
         '<strong>🎨 ネイルデザイン・スタイル一覧</strong><br><br>' +
         '<span style="font-size:10.5px;color:var(--cb-muted)">CHUCHU 小郡店でご対応しています。</span><br><br>' +
@@ -180,9 +240,42 @@
         PRICE_FOOTER
     },
 
+    combo: {
+      label: '✨ 冷却＋ネイルセット',
+      related: ['price', 'nailstyle', 'book'],
+      showBookingCta: true,
+      answer:
+        '<strong>✨ 脂肪冷却＋ネイル 同日セット</strong><br><br>' +
+        'CHUCHU 小郡店では、脂肪冷却の施術中・施術後に<strong>ネイルを同日施術</strong>できます！<br><br>' +
+        '<span class="cb-highlight">⏱ 時間効率◎</span><span class="cb-highlight">💅 同日OK</span><span class="cb-highlight">🏪 小郡店のみ</span><br><br>' +
+        '<strong>人気の組み合わせ例</strong><br>' +
+        '<div class="cb-price-row"><span class="cb-price-name">爆汗サウナ×冷却 4CUP<span class="cb-price-note">80分</span></span><span class="cb-price-val">¥8,800</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">＋ 定額制ネイルアート<span class="cb-price-note">人気プラン</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
+        '<div class="cb-price-row" style="border-top:1px solid rgba(185,156,135,.4);margin-top:3px;padding-top:7px"><span class="cb-price-name" style="font-weight:900">合計（目安）</span><span class="cb-price-val" style="color:var(--cb-dark)">¥14,800〜</span></div>' +
+        '<br>冷却機器でセルフ放置中にネイルを受けられるので、待ち時間ゼロの贅沢な時間を過ごせます。' +
+        PRICE_FOOTER
+    },
+
+    stores: {
+      label: '🏪 店舗・アクセス',
+      related: ['price', 'book'],
+      answer:
+        '<strong>🏪 店舗案内</strong><br><br>' +
+
+        '<span class="cb-store-label">❄ COOL SPA 天神店</span>' +
+        '<div class="cb-price-row"><span class="cb-price-name">サービス</span><span class="cb-price-val">脂肪冷却のみ</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">営業時間</span><span class="cb-price-val">月〜土 10:00〜20:00</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">電話</span><span class="cb-price-val"><a href="tel:' + TEL_TENJIN + '" style="color:var(--cb-accent-d);text-decoration:none">☎ 092-753-5515</a></span></div>' +
+
+        '<span class="cb-store-label">✦ CHUCHU 小郡店</span>' +
+        '<div class="cb-price-row"><span class="cb-price-name">サービス</span><span class="cb-price-val">脂肪冷却＋ネイル</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">営業時間</span><span class="cb-price-val">月〜土 10:00〜20:00</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">電話</span><span class="cb-price-val"><a href="tel:' + TEL_OGORI + '" style="color:var(--cb-accent-d);text-decoration:none">☎ 0942-80-6688</a></span></div>'
+    },
+
     b2b: {
       label: '🏢 機器導入・法人相談',
-      related: ['cryo', 'stores'],
+      related: ['knowledge', 'stores'],
       answer:
         '<strong>🏢 脂肪冷却機器の導入・法人相談</strong><br><br>' +
         'サロン・クリニックへの<strong>COOLSPA機器の導入・B2B相談</strong>は、合同会社BISIN（販売会社）の専用サイトにてご案内しています。<br><br>' +
@@ -192,7 +285,7 @@
 
   };
 
-  var TOPIC_ORDER = ['cryo', 'nail', 'knowledge', 'nailstyle', 'combo', 'howmany', 'book', 'stores'];
+  var TOPIC_ORDER = ['belly', 'thigh', 'postnatal', 'back_arm', 'price', 'book', 'safety', 'howmany'];
 
   // 価格キーワード
   var PRICE_KW = ['価格', '費用', 'いくら', '料金', '値段', '安い', '高い', '円', '¥'];
@@ -230,8 +323,9 @@
         '<div class="cb-header-left">' +
           '<div class="cb-avatar">✦</div>' +
           '<div>' +
-            '<div class="cb-header-title">BISIN BEAUTY 相談室</div>' +
+            '<div class="cb-header-title">COOL SPA 相談室</div>' +
             '<div class="cb-header-sub">オンライン受付中</div>' +
+            '<div class="cb-header-badge">無理な勧誘なし・初回体験OK</div>' +
           '</div>' +
         '</div>' +
         '<button class="cb-close-btn" aria-label="閉じる">✕</button>' +
@@ -288,9 +382,9 @@
     appendTyping(function ($t) {
       $body.removeChild($t);
       var $msg = botBubble(
-        'いらっしゃいませ！<strong>BISIN BEAUTY</strong>です。<br>' +
-        '脂肪冷却・ネイルのご相談、ご予約のお手伝いをします。<br><br>' +
-        '気になるトピックをお選びください 👇'
+        'こんにちは。<strong>COOL SPA相談室</strong>です。<br>' +
+        '脂肪冷却が初めての方も大丈夫です。<br><br>' +
+        '気になる内容を選んでください 👇'
       );
       $body.appendChild($msg);
       setTimeout(buildTopicGrid, 300);
@@ -365,7 +459,6 @@
         $body.removeChild($tw);
         var $msg = botBubble(t.answer);
         $body.appendChild($msg);
-        // B2B リンクボタン
         var $linkRow = el('div', { className: 'cb-cta-row' });
         var $link = el('a', { className: 'cb-b2b-link', href: B2B_URL, target: '_blank', rel: 'noopener' });
         $link.innerHTML = '🔗 BISIN 機器導入サイトへ';
@@ -380,8 +473,38 @@
       $body.removeChild($tw);
       var $msg = botBubble(t.answer);
       $body.appendChild($msg);
+      if (t.showBookingCta) {
+        buildBookingCta();
+      }
       setTimeout(function () { buildRelatedRow(t.related); }, 350);
     }, 680);
+  }
+
+  // ── 予約CTAボタン（LINE + HotPepper）──────────────────
+  function buildBookingCta() {
+    var $cta = el('div', { className: 'cb-booking-cta' });
+
+    var $line = el('a', { className: 'cb-cta-line cb-cta-line--full', href: LINE_URL });
+    $line.innerHTML =
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.843 2.572-5.992z"/></svg>' +
+      ' 💬 LINEで無料相談する';
+
+    var $hpRow = el('div', { className: 'cb-hp-row' });
+
+    var $ht = el('a', { className: 'cb-hp-btn cb-hp-tenjin', href: HP_TENJIN, target: '_blank', rel: 'noopener' });
+    $ht.textContent = '📅 天神店を予約';
+
+    var $ho = el('a', { className: 'cb-hp-btn cb-hp-ogori', href: HP_OGORI, target: '_blank', rel: 'noopener' });
+    $ho.textContent = '📅 小郡店を予約';
+
+    $hpRow.appendChild($ht);
+    $hpRow.appendChild($ho);
+
+    $cta.appendChild($line);
+    $cta.appendChild($hpRow);
+
+    $body.appendChild($cta);
+    scrollDown();
   }
 
   // ── 関連トピックチップ ─────────────────────────────────
@@ -413,47 +536,81 @@
     $body.appendChild(userBubble(val));
     scrollDown();
 
-    var valLow = val;
+    var v = val;
 
-    // 価格キーワード → トピックへ誘導
-    if (PRICE_KW.some(function (k) { return valLow.indexOf(k) !== -1; })) {
+    // 価格キーワード
+    if (PRICE_KW.some(function (k) { return v.indexOf(k) !== -1; })) {
       appendTyping(function ($tw) {
         $body.removeChild($tw);
-        var $msg = botBubble(
-          '料金についてのご質問ですね！<br>以下のメニューからご確認いただけます。'
-        );
+        var $msg = botBubble('料金についてのご質問ですね！<br>以下のメニューからご確認いただけます。');
         $body.appendChild($msg);
-        setTimeout(function () { buildRelatedRow(['cryo', 'nail', 'combo']); }, 300);
+        setTimeout(function () { buildRelatedRow(['price', 'belly', 'combo']); }, 300);
       }, 650);
       return;
     }
 
-    // ネイル関連
-    if (valLow.indexOf('ネイル') !== -1 || valLow.indexOf('nail') !== -1) {
-      handleTopic('nail', null);
+    // ネイル
+    if (v.indexOf('ネイル') !== -1 || v.indexOf('nail') !== -1) {
+      handleTopic('nailstyle', null);
       return;
     }
 
-    // 冷却関連
-    if (valLow.indexOf('冷却') !== -1 || valLow.indexOf('痩身') !== -1 || valLow.indexOf('脂肪') !== -1) {
-      handleTopic('cryo', null);
+    // お腹
+    if (v.indexOf('お腹') !== -1 || v.indexOf('腹') !== -1 || v.indexOf('ウエスト') !== -1) {
+      handleTopic('belly', null);
+      return;
+    }
+
+    // 太もも
+    if (v.indexOf('太もも') !== -1 || v.indexOf('太腿') !== -1 || v.indexOf('もも') !== -1) {
+      handleTopic('thigh', null);
+      return;
+    }
+
+    // 産後
+    if (v.indexOf('産後') !== -1 || v.indexOf('育児') !== -1 || v.indexOf('ママ') !== -1) {
+      handleTopic('postnatal', null);
+      return;
+    }
+
+    // 背中・二の腕
+    if (v.indexOf('背中') !== -1 || v.indexOf('二の腕') !== -1 || v.indexOf('腕') !== -1) {
+      handleTopic('back_arm', null);
+      return;
+    }
+
+    // 安全・痛み
+    if (v.indexOf('痛') !== -1 || v.indexOf('安全') !== -1 || v.indexOf('怖') !== -1) {
+      handleTopic('safety', null);
+      return;
+    }
+
+    // 効果・回数
+    if (v.indexOf('効果') !== -1 || v.indexOf('何回') !== -1 || v.indexOf('回数') !== -1) {
+      handleTopic('howmany', null);
+      return;
+    }
+
+    // 冷却・痩身・脂肪（汎用）
+    if (v.indexOf('冷却') !== -1 || v.indexOf('痩身') !== -1 || v.indexOf('脂肪') !== -1) {
+      handleTopic('belly', null);
       return;
     }
 
     // セット・組み合わせ
-    if (valLow.indexOf('セット') !== -1 || valLow.indexOf('組み合わせ') !== -1 || valLow.indexOf('同日') !== -1) {
+    if (v.indexOf('セット') !== -1 || v.indexOf('組み合わせ') !== -1 || v.indexOf('同日') !== -1) {
       handleTopic('combo', null);
       return;
     }
 
     // B2B
-    if (valLow.indexOf('機器') !== -1 || valLow.indexOf('導入') !== -1 || valLow.indexOf('法人') !== -1 || valLow.indexOf('開業') !== -1) {
+    if (v.indexOf('機器') !== -1 || v.indexOf('導入') !== -1 || v.indexOf('法人') !== -1 || v.indexOf('開業') !== -1) {
       handleTopic('b2b', null);
       return;
     }
 
     // 予約
-    if (valLow.indexOf('予約') !== -1 || valLow.indexOf('体験') !== -1) {
+    if (v.indexOf('予約') !== -1 || v.indexOf('体験') !== -1) {
       handleTopic('book', null);
       return;
     }
@@ -462,8 +619,8 @@
     appendTyping(function ($tw) {
       $body.removeChild($tw);
       var $msg = botBubble(
-        'ありがとうございます。<br>詳しくはLINEまたはお電話でもご相談いただけます。<br><br>' +
-        'お気軽にお問い合わせください！'
+        'ありがとうございます😊<br>' +
+        'お気軽にLINEまたはお電話でもご相談いただけます。'
       );
       $body.appendChild($msg);
       buildCtaRow();
@@ -490,9 +647,7 @@
   function showFormPanel() {
     appendTyping(function ($tw) {
       $body.removeChild($tw);
-      var $msg = botBubble(
-        'お問い合わせフォームです。<br>送信後、担当者よりご連絡いたします。'
-      );
+      var $msg = botBubble('お問い合わせフォームです。<br>送信後、担当者よりご連絡いたします。');
       $body.appendChild($msg);
       setTimeout(buildForm, 300);
     }, 600);
