@@ -425,6 +425,18 @@
     setTimeout(function () { $body.scrollTop = $body.scrollHeight; }, 50);
   }
 
+  function scrollToStart($el) {
+    // 200ms delay ensures appendTyping's scrollDown() (fires at +50ms) has settled first
+    setTimeout(function () {
+      var bodyRect = $body.getBoundingClientRect();
+      var elRect   = $el.getBoundingClientRect();
+      var newTop   = $body.scrollTop + (elRect.top - bodyRect.top) - 8;
+      $body.style.scrollBehavior = 'auto';
+      $body.scrollTop = newTop < 0 ? 0 : newTop;
+      setTimeout(function () { $body.style.scrollBehavior = ''; }, 80);
+    }, 200);
+  }
+
   // ── トピックグリッド ───────────────────────────────────
   function buildTopicGrid() {
     var $grid = el('div', { className: 'cb-topic-grid' });
@@ -459,6 +471,7 @@
         $body.removeChild($tw);
         var $msg = botBubble(t.answer);
         $body.appendChild($msg);
+        scrollToStart($msg);
         var $linkRow = el('div', { className: 'cb-cta-row' });
         var $link = el('a', { className: 'cb-b2b-link', href: B2B_URL, target: '_blank', rel: 'noopener' });
         $link.innerHTML = '🔗 BISIN 機器導入サイトへ';
@@ -473,6 +486,7 @@
       $body.removeChild($tw);
       var $msg = botBubble(t.answer);
       $body.appendChild($msg);
+      scrollToStart($msg);
       if (t.showBookingCta) {
         buildBookingCta();
       }
@@ -504,7 +518,6 @@
     $cta.appendChild($hpRow);
 
     $body.appendChild($cta);
-    scrollDown();
   }
 
   // ── 関連トピックチップ ─────────────────────────────────
@@ -525,7 +538,6 @@
     $row.appendChild($fb);
 
     $body.appendChild($row);
-    scrollDown();
   }
 
   // ── 自由入力処理 ───────────────────────────────────────
