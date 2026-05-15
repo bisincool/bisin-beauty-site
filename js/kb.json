@@ -1,0 +1,110 @@
+{
+  "faqs": [
+
+    {
+      "id": "payment",
+      "keywords": ["支払い", "決済", "クレジット", "カード", "現金", "paypay", "ペイペイ", "キャッシュレス", "電子マネー", "スイカ", "交通系"],
+      "related": ["book", "price", "stores"],
+      "answer": "<strong>💳 お支払い方法について</strong><br><br>各店舗で以下のお支払い方法に対応しています。<br><br><span class=\"cb-store-label\">❄ COOL SPA 天神店 / ✦ CHUCHU 小郡店</span><div class=\"cb-price-row\"><span class=\"cb-price-name\">現金</span><span class=\"cb-price-val\">✅ 対応</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">クレジットカード</span><span class=\"cb-price-val\">✅ 各種対応</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">電子マネー・QR決済</span><span class=\"cb-price-val\">✅ PayPay等</span></div><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 詳細はLINEまたはお電話でご確認ください。</span>"
+    },
+
+    {
+      "id": "cancel",
+      "keywords": ["キャンセル", "変更", "日程", "日にち", "リスケ", "予約変更", "取り消し", "当日キャンセル"],
+      "related": ["book", "stores"],
+      "answer": "<strong>📋 予約キャンセル・変更について</strong><br><br>ご予約の変更・キャンセルは、<strong>前日まで</strong>にLINEまたはお電話にてご連絡ください。<br><br><span class=\"cb-highlight\">💬 LINEが一番スムーズです</span><span class=\"cb-highlight\">⏰ 前日までにご連絡を</span><br><br><span style=\"font-size:10px;color:var(--cb-muted)\">当日の急なキャンセルはなるべくお早めにご連絡ください。</span>"
+    },
+
+    {
+      "id": "parking",
+      "keywords": ["駐車場", "車", "駐車", "パーキング", "停める", "近く", "アクセス", "電車", "バス"],
+      "related": ["stores", "book"],
+      "answer": "<strong>🚗 アクセス・駐車場について</strong><br><br><span class=\"cb-store-label\">❄ COOL SPA 天神店</span>天神エリアにございます。近隣のコインパーキングをご利用ください。地下鉄・西鉄天神駅より徒歩圏内です。<br><br><span class=\"cb-store-label\">✦ CHUCHU 小郡店</span>お車でのご来店が便利です。詳しい場所はLINEまたはお電話でお伝えします。<br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 最新のアクセス情報はHotPepperまたはLINEにてご確認ください。</span>"
+    },
+
+    {
+      "id": "pregnant",
+      "keywords": ["妊娠", "妊婦", "授乳", "妊娠中", "授乳中", "産後すぐ", "出産後", "生理", "生理中"],
+      "related": ["postnatal", "safety", "book"],
+      "answer": "<strong>🤱 妊娠中・授乳中の方について</strong><br><br><div style=\"padding:8px 10px;background:rgba(255,220,100,0.15);border:1px solid rgba(200,160,0,0.22);border-radius:8px;font-size:11px;line-height:1.8;color:var(--cb-text)\">⚠️ <strong>妊娠中・授乳中の方の施術はお断りしております。</strong><br>産後は<strong>3ヶ月以降</strong>を目安に、医師にご相談のうえご来店ください。</div><br>産後太りのお悩みは多くのママさんからご相談いただいています😊<br>体調が回復されたら、ぜひLINEでご相談ください。<br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 生理中の施術は可能ですが、体調に合わせてご判断ください。</span>"
+    },
+
+    {
+      "id": "men",
+      "keywords": ["男性", "男", "メンズ", "旦那", "夫", "彼氏", "父", "男でも"],
+      "related": ["belly", "price", "book"],
+      "answer": "<strong>👨 男性のお客様について</strong><br><br>はい、<strong>男性のお客様も大歓迎です！</strong>😊<br><br>お腹・脇腹・背中・二の腕など、男性に多いお悩み部位も施術できます。<br><br><span class=\"cb-highlight\">👨 男性歓迎</span><span class=\"cb-highlight\">✅ 完全個室</span><span class=\"cb-highlight\">⏱ 施術中は放置OK</span><br><br>実際に40〜60代の男性のお客様にもご利用いただいています。<br>初回体験からお気軽にどうぞ。<br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 効果には個人差があります。</span>"
+    },
+
+    {
+      "id": "age",
+      "keywords": ["年齢", "何歳", "歳から", "高校生", "大学生", "10代", "20代", "60代", "70代", "シニア", "未成年"],
+      "related": ["safety", "book", "price"],
+      "answer": "<strong>👤 年齢について</strong><br><br>基本的に<strong>18歳以上</strong>の方を対象としています。<br><br>未成年の方（18歳未満）は保護者の同意が必要です。まずLINEにてご相談ください。<br><br><span class=\"cb-highlight\">👴 年齢上限なし</span><span class=\"cb-highlight\">✅ 60代・70代も通院中</span><br><br>実際に50〜70代のお客様も多くご利用いただいております。年齢による施術制限は特にありません。<br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 持病をお持ちの方は事前にご相談ください。</span>"
+    },
+
+    {
+      "id": "rebound",
+      "keywords": ["リバウンド", "戻る", "元に戻る", "維持", "効果持続", "続く", "長持ち", "一時的"],
+      "related": ["howmany", "knowledge", "price"],
+      "answer": "<strong>🔄 リバウンドについて</strong><br><br>脂肪冷却はリバウンドしにくいとされています。<br><br>理由は、<strong>脂肪細胞の「数」そのものを減らす</strong>から。<br>ダイエットや運動は脂肪細胞が「縮む」だけなので、食事が乱れるとリバウンドしやすいです。<br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">ダイエット<span class=\"cb-price-note\">脂肪細胞が縮むだけ</span></span><span class=\"cb-price-val\" style=\"color:#b99c87\">リバウンドしやすい</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">脂肪冷却<span class=\"cb-price-note\">脂肪細胞の数を減らす</span></span><span class=\"cb-price-val\" style=\"color:var(--cb-accent-d)\">効果が持続しやすい</span></div><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 効果には個人差があります。大幅な体重増加があると新しい脂肪がつく場合があります。</span>"
+    },
+
+    {
+      "id": "side_effects",
+      "keywords": ["副作用", "リスク", "危険", "大丈夫", "安全", "内出血", "赤み", "腫れ", "しびれ", "違和感"],
+      "related": ["safety", "knowledge", "book"],
+      "answer": "<strong>🩺 副作用・リスクについて</strong><br><br>脂肪冷却は安全性の高い施術ですが、施術後に以下のような一時的な反応が出る場合があります。<br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">赤み・むくみ</span><span class=\"cb-price-val\">数時間〜1日で改善</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">軽い内出血</span><span class=\"cb-price-val\">数日で自然に消える</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">一時的なしびれ感</span><span class=\"cb-price-val\">1〜2週間で回復</span></div><br>いずれも一時的なもので、ダウンタイムは実質なく施術後すぐにご帰宅いただけます。<br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 持病・金属プレート挿入等がある方は事前にご相談ください。</span>"
+    },
+
+    {
+      "id": "multi_area",
+      "keywords": ["複数", "同時", "一度に", "まとめて", "全身", "何箇所", "何部位", "お腹と", "背中と", "太ももと"],
+      "related": ["price", "belly", "back_arm"],
+      "answer": "<strong>📍 複数部位の同時施術について</strong><br><br>はい、<strong>複数部位を同日に施術できます！</strong><br><br>施術可能な部位：<br><div style=\"display:flex;flex-wrap:wrap;gap:4px;margin:6px 0\"><span class=\"cb-highlight\">お腹</span><span class=\"cb-highlight\">背中</span><span class=\"cb-highlight\">脇腹</span><span class=\"cb-highlight\">二の腕</span><span class=\"cb-highlight\">太もも</span><span class=\"cb-highlight\">ヒザ上</span><span class=\"cb-highlight\">ヒップ</span><span class=\"cb-highlight\">顎下</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">2部位（2CUP）<span class=\"cb-price-note\">例：お腹＋背中</span></span><span class=\"cb-price-val\">¥5,500〜</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">4部位（4CUP）<span class=\"cb-price-note\">人気プラン</span></span><span class=\"cb-price-val\">¥8,800〜</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">8部位（8CUP）<span class=\"cb-price-note\">全身まとめて</span></span><span class=\"cb-price-val\">¥19,800〜</span></div><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 税込。最新価格はHotPepperにてご確認ください。</span>"
+    },
+
+    {
+      "id": "counseling",
+      "keywords": ["カウンセリング", "相談", "無料", "説明", "聞きたい", "詳しく", "話を聞く"],
+      "related": ["book", "safety", "price"],
+      "answer": "<strong>💬 カウンセリングについて</strong><br><br><strong>初回カウンセリングは無料</strong>です😊<br><br>施術前に担当スタッフがお悩みをお伺いし、最適なプランをご提案します。<br><br><span class=\"cb-highlight\">💬 無料カウンセリング</span><span class=\"cb-highlight\">✅ 無理な勧誘なし</span><span class=\"cb-highlight\">⏱ 約15〜20分</span><br><br>当日体験をそのままお断りいただいても全く問題ありません。気軽にご来店ください。<br><br>まずはLINEで「カウンセリングしたい」とメッセージをお送りいただけるとスムーズです。"
+    },
+
+    {
+      "id": "clothes",
+      "keywords": ["服装", "着替え", "何を着", "持ち物", "タオル", "準備", "必要なもの", "当日"],
+      "related": ["book", "safety"],
+      "answer": "<strong>👗 当日の服装・持ち物について</strong><br><br>特別な準備は必要ありません。<br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">服装</span><span class=\"cb-price-val\">動きやすい服でOK</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">着替え</span><span class=\"cb-price-val\">店舗でご用意あり</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">メイク</span><span class=\"cb-price-val\">そのままでOK</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">持ち物</span><span class=\"cb-price-val\">特になし</span></div><br>施術後はそのままお帰りいただけます。仕事帰りや買い物のついでにもどうぞ😊"
+    },
+
+    {
+      "id": "after_treatment",
+      "keywords": ["施術後", "帰宅後", "生活", "食事", "運動", "お風呂", "制限", "注意", "気をつける"],
+      "related": ["safety", "howmany", "book"],
+      "answer": "<strong>✅ 施術後の生活について</strong><br><br>脂肪冷却はダウンタイムなし。施術後すぐに普段の生活が送れます。<br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">食事</span><span class=\"cb-price-val\">制限なし・すぐ食べてOK</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">運動</span><span class=\"cb-price-val\">当日から可能</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">入浴</span><span class=\"cb-price-val\">当日可能</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">仕事・外出</span><span class=\"cb-price-val\">そのまま帰宅OK</span></div><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 施術部位に一時的な赤みが出る場合がありますが、数時間で落ち着きます。</span>"
+    },
+
+    {
+      "id": "duration",
+      "keywords": ["施術時間", "何分", "どのくらい時間", "1時間", "30分", "長い", "短い", "所要時間"],
+      "related": ["price", "book", "belly"],
+      "answer": "<strong>⏱ 施術時間について</strong><br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">1CUP（1部位）</span><span class=\"cb-price-val\">約35〜40分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">2CUP（2部位）</span><span class=\"cb-price-val\">約60〜70分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">4CUP（爆汗サウナ含む）</span><span class=\"cb-price-val\">約80分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">8CUP（全身）</span><span class=\"cb-price-val\">約120分</span></div><br>施術中は<strong>スマホ・読書・うたた寝</strong>OK！放置型なのでリラックスして過ごせます😊<br><br>カウンセリング込みの目安：初回は＋15〜20分ほどお見込みください。"
+    },
+
+    {
+      "id": "first_visit",
+      "keywords": ["初めて", "初回", "はじめて", "未経験", "やったことない", "興味", "試したい", "体験"],
+      "related": ["book", "safety", "price"],
+      "answer": "<strong>🌟 初めての方へ</strong><br><br>初めての方も安心してお越しください！<strong>強引な勧誘は一切ありません。</strong><br><br>初回の流れ：<br><div class=\"cb-price-row\"><span class=\"cb-price-name\">① カウンセリング</span><span class=\"cb-price-val\">約15分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">② 施術</span><span class=\"cb-price-val\">30〜80分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">③ アフターケア説明</span><span class=\"cb-price-val\">約5分</span></div><div class=\"cb-price-row\"><span class=\"cb-price-name\">④ そのままご帰宅</span><span class=\"cb-price-val\">続けるかは自由</span></div><br><span class=\"cb-highlight\">💬 無理な勧誘なし</span><span class=\"cb-highlight\">✅ 1回だけでもOK</span><span class=\"cb-highlight\">❄ 初回¥3,300〜</span><br><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 効果には個人差があります。税込。</span>"
+    },
+
+    {
+      "id": "sauna_dome",
+      "keywords": ["サウナ", "爆汗", "サウナドーム", "汗", "発汗", "デトックス", "温める"],
+      "related": ["price", "belly", "book"],
+      "answer": "<strong>🔥 爆汗サウナドームについて</strong><br><br>COOL SPA / CHUCHU では<strong>脂肪冷却と爆汗サウナドームを組み合わせた人気プラン</strong>があります！<br><br>サウナドームで全身を温めながら発汗させ、その後に冷却施術を行うことで、相乗効果が期待できます。<br><br><span class=\"cb-highlight\">🔥 発汗・デトックス</span><span class=\"cb-highlight\">❄ 冷却との組み合わせ</span><span class=\"cb-highlight\">⭐ 人気No.1</span><br><br><div class=\"cb-price-row\"><span class=\"cb-price-name\">爆汗サウナ×冷却 4CUP<span class=\"cb-price-note\">80分 / 初回限定</span></span><span class=\"cb-price-val\">¥8,800</span></div><br><span style=\"font-size:10px;color:var(--cb-muted)\">※ 効果には個人差があります。税込。</span>"
+    }
+
+  ]
+}

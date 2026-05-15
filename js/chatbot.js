@@ -290,6 +290,37 @@
   // 価格キーワード
   var PRICE_KW = ['価格', '費用', 'いくら', '料金', '値段', '安い', '高い', '円', '¥'];
 
+  // ── ナレッジベース (kb.json) ──────────────────────────
+  var KB = null;
+
+  function loadKB() {
+    // スクリプトのsrcからベースパスを取得（サブディレクトリ対応）
+    var base = '/js/';
+    var scripts = document.querySelectorAll('script[src*="chatbot.js"]');
+    if (scripts.length) {
+      var src = scripts[0].getAttribute('src');
+      base = src.substring(0, src.lastIndexOf('/') + 1);
+    }
+    fetch(base + 'kb.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) { KB = data; })
+      .catch(function () { KB = null; });
+  }
+
+  function searchKB(query) {
+    if (!KB || !KB.faqs) return null;
+    var bestScore = 0;
+    var bestFaq   = null;
+    KB.faqs.forEach(function (faq) {
+      var score = 0;
+      faq.keywords.forEach(function (kw) {
+        if (query.indexOf(kw) !== -1) score += kw.length; // 長いキーワードを優先
+      });
+      if (score > bestScore) { bestScore = score; bestFaq = faq; }
+    });
+    return bestScore >= 2 ? bestFaq : null; // スコア2以上でマッチとみなす
+  }
+
   // ── 状態 ──────────────────────────────────────────────
   var isOpen   = false;
   var answers  = {};
@@ -353,6 +384,9 @@
     $input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleFreeText($input.value); $input.value = ''; }
     });
+
+    // ナレッジベースを非同期でロード
+    loadKB();
 
     // 初回自動オープン（4秒後・初回のみ）
     if (!sessionStorage.getItem('bisin-chat-seen')) {
@@ -550,7 +584,20 @@
 
     var v = val;
 
-    // 価格キーワード
+    // ① KB検索（最優先）
+    var hit = searchKB(v);
+    if (hit) {
+      appendTyping(function ($tw) {
+        $body.removeChild($tw);
+        var $msg = botBubble(hit.answer);
+        $body.appendChild($msg);
+        scrollToStart($msg);
+        setTimeout(function () { buildRelatedRow(hit.related || ['price', 'book', 'safety']); }, 350);
+      }, 650);
+      return;
+    }
+
+    // ② 価格キーワード → トピックへ誘導
     if (PRICE_KW.some(function (k) { return v.indexOf(k) !== -1; })) {
       appendTyping(function ($tw) {
         $body.removeChild($tw);
