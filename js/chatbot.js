@@ -122,6 +122,64 @@
         '<div class="cb-price-row"><span class="cb-price-name">電話</span><span class="cb-price-val"><a href="tel:' + TEL_OGORI + '" style="color:var(--cb-accent-d);text-decoration:none">☎ 0942-80-6688</a></span></div>'
     },
 
+    knowledge: {
+      label: '🔬 脂肪冷却の仕組み',
+      related: ['cryo', 'howmany', 'combo'],
+      answer:
+        '<strong>🔬 脂肪冷却（クライオリポリシス）とは？</strong><br><br>' +
+
+        '<span class="cb-store-label">❄ 脂肪細胞だけに効く仕組み</span>' +
+        '脂肪細胞は<strong>約4℃</strong>で結晶化して自然に死滅します。皮膚・筋肉・神経には影響なく、脂肪だけを選択的にアプローチできる技術です。死滅した細胞は<strong>2〜3ヶ月かけて体外へ自然排出</strong>されます。<br><br>' +
+
+        '<span class="cb-store-label">✦ ダイエットとの違い</span>' +
+        '<div class="cb-price-row"><span class="cb-price-name">ダイエット・運動<span class="cb-price-note">脂肪細胞が「縮む」だけ</span></span><span class="cb-price-val" style="color:#b99c87">リバウンドしやすい</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">脂肪冷却<span class="cb-price-note">脂肪細胞の「数」を減らす</span></span><span class="cb-price-val" style="color:var(--cb-accent-d)">効果が持続しやすい</span></div>' +
+
+        '<span class="cb-store-label">📍 施術できる8部位</span>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 6px">' +
+          '<span class="cb-highlight">お腹</span><span class="cb-highlight">背中</span><span class="cb-highlight">脇腹</span><span class="cb-highlight">二の腕</span>' +
+          '<span class="cb-highlight">太もも</span><span class="cb-highlight">ヒザ上</span><span class="cb-highlight">ヒップ</span><span class="cb-highlight">顎下</span>' +
+        '</div>' +
+
+        '<span class="cb-store-label">✅ こんな方におすすめ</span>' +
+        '<div style="font-size:11.5px;line-height:1.9;color:var(--cb-text)">' +
+          '✔ 食事制限が続かない<br>' +
+          '✔ 運動が苦手・忙しい<br>' +
+          '✔ 部分的に気になる箇所がある<br>' +
+          '✔ ダウンタイムなしで通いたい<br>' +
+          '✔ 施術中もスマホ・読書 OK' +
+        '</div>'
+    },
+
+    nailstyle: {
+      label: '🎨 ネイルデザイン一覧',
+      related: ['nail', 'combo', 'book'],
+      answer:
+        '<strong>🎨 ネイルデザイン・スタイル一覧</strong><br><br>' +
+        '<span style="font-size:10.5px;color:var(--cb-muted)">CHUCHU 小郡店でご対応しています。</span><br><br>' +
+
+        '<span class="cb-store-label">💅 シンプル系</span>' +
+        '<div class="cb-price-row"><span class="cb-price-name">ワンカラー<span class="cb-price-note">単色・オフィスでも馴染む定番</span></span><span class="cb-price-val">¥5,500〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">フレンチネイル<span class="cb-price-note">先端ホワイト・クラシックで飽きない</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">グラデーション<span class="cb-price-note">2色をなめらかにつなぐ・女性らしい</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
+
+        '<span class="cb-store-label">✨ アート系</span>' +
+        '<div class="cb-price-row"><span class="cb-price-name">フラワーアート<span class="cb-price-note">繊細な花柄・大人可愛い</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">マーブル<span class="cb-price-note">大理石模様・スタイリッシュ</span></span><span class="cb-price-val">¥7,000〜</span></div>' +
+        '<div class="cb-price-row"><span class="cb-price-name">ラメ / ホログラム<span class="cb-price-note">キラキラ・特別な日に映える</span></span><span class="cb-price-val">¥6,000〜</span></div>' +
+
+        '<span class="cb-store-label">🌸 季節限定デザイン</span>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 6px">' +
+          '<span class="cb-highlight">🌸 春：桜・パステル</span>' +
+          '<span class="cb-highlight">🌊 夏：海・鮮やか</span>' +
+          '<span class="cb-highlight">🍂 秋：紅葉・テラコッタ</span>' +
+          '<span class="cb-highlight">❄ 冬：雪・クリスマス</span>' +
+        '</div>' +
+
+        '<br><span style="font-size:10px;color:var(--cb-muted)">※ 最新デザインはLINEまたはHotPepperにてご確認ください。</span>' +
+        PRICE_FOOTER
+    },
+
     b2b: {
       label: '🏢 機器導入・法人相談',
       related: ['cryo', 'stores'],
@@ -134,7 +192,7 @@
 
   };
 
-  var TOPIC_ORDER = ['cryo', 'nail', 'combo', 'howmany', 'book', 'stores'];
+  var TOPIC_ORDER = ['cryo', 'nail', 'knowledge', 'nailstyle', 'combo', 'howmany', 'book', 'stores'];
 
   // 価格キーワード
   var PRICE_KW = ['価格', '費用', 'いくら', '料金', '値段', '安い', '高い', '円', '¥'];
