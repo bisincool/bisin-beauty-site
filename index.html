@@ -610,6 +610,67 @@
       display: grid; grid-template-columns: 1fr auto 1fr;
       align-items: stretch; min-height: 280px;
     }
+    .case-single-visual {
+      display: grid;
+      grid-template-columns: minmax(260px, 500px) 1fr;
+      gap: 30px;
+      align-items: center;
+      padding: 28px;
+      background: linear-gradient(135deg, #fffaf3 0%, #f6eee4 100%);
+    }
+    .case-single-image-card {
+      background: #fff;
+      border: 1px solid rgba(219, 205, 190, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(70, 45, 30, 0.12);
+      overflow: hidden;
+    }
+    .case-single-image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .case-single-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .case-single-copy h3 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+    .case-single-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 0.95rem;
+    }
+    .case-single-badges {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .case-single-badge {
+      padding: 14px 12px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .case-single-badge strong {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1;
+      color: var(--accent-dark);
+      margin-bottom: 6px;
+    }
+    .case-single-badge span {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
     .ba-panel { display: flex; flex-direction: column; }
     .ba-panel-label {
       padding: 12px 20px 10px; font-size: 0.72rem; font-weight: 900;
@@ -833,6 +894,7 @@
 
     @media (max-width: 980px) {
       .case-featured-top { grid-template-columns: 1fr; }
+      .case-single-visual { grid-template-columns: 1fr; padding: 18px; gap: 20px; }
       .ba-center { flex-direction: row; min-width: unset; padding: 14px 20px; border: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
       .ba-arrow { transform: rotate(90deg); }
       .cases-head { flex-direction: column; align-items: flex-start; }
@@ -1081,43 +1143,36 @@
         </div>
 
         <div class="case-featured">
-          <div class="case-featured-top">
-            <div class="ba-panel before">
-              <div class="ba-panel-label">Before</div>
-              <div class="ba-img-slot"><img src="images/cases/Mochibefore.JPG" alt="脂肪冷却 お腹まわり Before"></div>
-              <div class="ba-stats-strip">
-                <div class="ba-stat-row"><span class="sn">お腹</span><span class="sv">Before</span></div>
-                <div class="ba-stat-row"><span class="sn">ウエスト</span><span class="sv">Before</span></div>
-                <div class="ba-stat-row"><span class="sn">下腹</span><span class="sv">Before</span></div>
-              </div>
-            </div>
-            <div class="ba-center">
-              <div class="ba-arrow">→</div>
-              <div class="ba-diff-row"><span class="d-val">-9cm</span><span class="d-label">お腹</span></div>
-              <div class="ba-diff-row"><span class="d-val">-7cm</span><span class="d-label">ウエスト</span></div>
-              <div class="ba-diff-row"><span class="d-val">-9.5cm</span><span class="d-label">下腹</span></div>
-            </div>
-            <div class="ba-panel after">
-              <div class="ba-panel-label">After</div>
-              <div class="ba-img-slot"><img src="images/cases/Mochiafter.JPG" alt="脂肪冷却 お腹まわり After"></div>
-              <div class="ba-stats-strip">
-                <div class="ba-stat-row"><span class="sn">お腹</span><span class="sv">After</span></div>
-                <div class="ba-stat-row"><span class="sn">ウエスト</span><span class="sv">After</span></div>
-                <div class="ba-stat-row"><span class="sn">下腹</span><span class="sv">After</span></div>
-              </div>
-            </div>
+        <div class="case-single-visual">
+          <div class="case-single-image-card">
+            <img src="images/cases/uploaded/100cup-back-before-after02-web.png" alt="100カップチャレンジ 背中と腰まわりのビフォーアフター症例">
           </div>
-          <div class="case-featured-bottom">
-            <div class="case-profile">
-              <div class="case-avatar">40代</div>
-              <div><div class="case-profile-name">女性 / サウナドーム×脂肪冷却4cup</div><div class="case-profile-meta">HotPepper掲載内容より要約</div></div>
+          <div class="case-single-copy">
+            <div class="eyebrow">Featured Case</div>
+            <h3>後ろ姿でわかる、背中・腰まわりの変化。</h3>
+            <p>100カップチャレンジ経過症例。顔出しではなく背中・腰まわりのライン変化が見える写真に差し替え、初めての方にも実感値が伝わりやすい構成にしました。</p>
+            <div class="case-single-badges">
+              <div class="case-single-badge"><strong>Before</strong><span>2025/10/17</span></div>
+              <div class="case-single-badge"><strong>4回後</strong><span>2026/3/17</span></div>
+              <div class="case-single-badge"><strong>100cup</strong><span>チャレンジ経過</span></div>
             </div>
-            <p class="case-quote">温めてから冷却することで受けやすく、スタッフの声かけや水分補給の案内が安心材料になった、という声が多く寄せられています。</p>
-            <a href="services/fat-freezing.html#contact" class="btn btn-primary" style="flex-shrink:0;font-size:.88rem;padding:11px 20px">初回体験を予約する</a>
+            <p>脂肪冷却は回数を重ねながら、約1ヶ月かけてラインの変化を見ていく施術です。温めてから冷却する流れで、夏前のサイズダウン相談にもおすすめです。</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+              <a href="services/fat-freezing.html#contact" class="btn btn-primary" style="font-size:.9rem;padding:11px 20px">初回体験を予約する</a>
+              <a href="https://beauty.hotpepper.jp/kr/slnH000736255/photo/" target="_blank" rel="noopener" style="font-size:.82rem;color:var(--muted);font-weight:700">HotPepper掲載症例を見る</a>
+            </div>
           </div>
         </div>
+        <div class="case-featured-bottom">
+          <div class="case-profile">
+            <div class="case-avatar">100</div>
+            <div><div class="case-profile-name">100カップチャレンジ / 背中・腰まわり</div><div class="case-profile-meta">HotPepper掲載内容より要約</div></div>
+          </div>
+          <p class="case-quote">掲載内容は症例傾向をもとに要約しています。結果には個人差があり、効果を保証するものではありません。</p>
+        </div>
+      </div>
 
-        <div class="cases-grid">
+      <div class="cases-grid">
           <div class="case-card">
             <div class="case-card-header"><span class="case-num-badge">Case 02</span><span class="case-tag">1年以上継続</span></div>
             <div class="case-banner"><img src="images/cases/11.ladybeforeafter.JPG" alt="脂肪冷却 継続症例"><span class="banner-tag">BEFORE / AFTER</span></div>
