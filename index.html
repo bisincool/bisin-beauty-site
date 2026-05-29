@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BISIN Beauty Salon Sample</title>
+  <title>福岡・天神/小郡の脂肪冷却サロン｜初回体験¥3,300｜BISIN BEAUTY</title>
+  <meta name="description" content="福岡・天神/小郡で脂肪冷却痩身を体験。初回¥3,300から、食事制限なし・無理な勧誘なしで気になる部位をケア。天神COOL SPA・小郡CHUCHUで予約受付中。" />
   <style>
     :root {
       --bg: #f7f3ee;
@@ -144,6 +145,12 @@
       font-weight: 800;
     }
 
+    .hero h1 .hero-price {
+      display: inline-block;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
     .hero-sub {
       font-size: clamp(1.04rem, 1.5vw, 1.24rem);
       color: #544a42;
@@ -174,6 +181,36 @@
       color: #5b514a;
       font-size: 0.92rem;
       white-space: nowrap;
+    }
+
+    .hero-offer {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      margin: 24px 0 18px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(185,156,135,0.34);
+      background: rgba(255,255,255,0.88);
+      box-shadow: 0 10px 28px rgba(74,56,42,0.08);
+    }
+
+    .hero-offer-price {
+      color: var(--accent-dark);
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .hero-offer-copy {
+      color: #544a42;
+      font-size: 0.92rem;
+      font-weight: 800;
+      line-height: 1.45;
     }
 
     .store-select {
@@ -848,6 +885,15 @@
         letter-spacing: -0.04em;
       }
 
+      .hero-offer {
+        grid-template-columns: 1fr;
+        width: 100%;
+      }
+
+      .hero-offer-copy {
+        font-size: 0.88rem;
+      }
+
       .cta-group {
         flex-direction: column;
       }
@@ -906,24 +952,30 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="tagline">天神・小郡｜脂肪冷却・ネイルサロン</p>
-          <h1>福岡で"無理なく美しく"</h1>
-          <p class="hero-sub">脂肪冷却で理想のボディへ。ネイルで指先まで整う、トータルビューティーサロン。</p>
-          <p class="hero-desc">結果重視の痩身と、上品なネイルを一つの場所で。初めての方でも安心して通える、自然で続けやすい美しさをご提案します。</p>
+          <p class="tagline">福岡・天神/小郡｜脂肪冷却痩身サロン</p>
+          <h1>食事制限なしで、気になる部位を集中ケア。<span class="hero-price">初回体験¥3,300</span></h1>
+          <p class="hero-sub">脂肪冷却でお腹・腰まわり・太ももにアプローチ。天神COOL SPAと小郡CHUCHUで、初めての方も予約しやすい体験メニューをご用意しています。</p>
+          <p class="hero-desc">無理な勧誘なし。施術前に悩みや目標を確認し、料金と通い方をわかりやすくご案内します。</p>
+
+          <div class="hero-offer" aria-label="初回体験キャンペーン">
+            <div class="hero-offer-price">¥3,300〜</div>
+            <div class="hero-offer-copy">初回限定の脂肪冷却体験<br>天神店・小郡店で予約受付中</div>
+          </div>
 
           <div class="trust-list">
-            <span class="trust-item">✔ 初回体験あり</span>
+            <span class="trust-item">✔ 食事制限なし</span>
             <span class="trust-item">✔ 無理な勧誘なし</span>
-            <span class="trust-item">✔ 症例多数・口コミ高評価</span>
+            <span class="trust-item">✔ 天神南駅徒歩3分</span>
+            <span class="trust-item">✔ 小郡店は駐車場あり</span>
           </div>
 
-          <p class="store-select">ご希望の店舗をお選びください</p>
+          <p class="store-select">初回体験の店舗をお選びください</p>
           <div class="cta-group">
-            <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn btn-primary">天神店で予約する</a>
-            <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn btn-primary">小郡店で予約する</a>
-            <a href="#contact" class="btn btn-secondary">LINEで相談する</a>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000736255/" target="_blank" rel="noopener" class="btn btn-primary">天神店の初回体験を予約</a>
+            <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn btn-primary">小郡店の初回体験を予約</a>
+            <a href="#contact" class="btn btn-secondary">LINEで無料相談</a>
           </div>
-          <div class="hero-note">脂肪冷却・ネイルともに、初めての方にもわかりやすいメニューをご用意しています。</div>
+          <div class="hero-note">どのメニューが合うかわからない方は、LINEで部位・予算・通える頻度をご相談ください。</div>
         </div>
 
         <div class="hero-visual">
