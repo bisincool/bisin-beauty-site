@@ -121,6 +121,21 @@
       box-shadow: 0 16px 28px rgba(0,0,0,0.2);
     }
 
+    .header-cn-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid rgba(185, 156, 135, 0.42);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+      color: var(--accent-dark);
+      font-size: .9rem;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(74,56,42,.08);
+    }
+
     .hero {
       padding: 56px 0 32px;
     }
@@ -1065,6 +1080,7 @@
         <a href="for-business.html" onclick="document.getElementById('globalNav').classList.remove('open')">開業支援</a>
       </nav>
       <div style="display:flex;align-items:center;gap:12px;">
+        <a class="header-cn-link" href="cn/index.html">中文</a>
         <a class="header-cta" href="#contact">LINE相談</a>
         <button class="hamburger" onclick="document.getElementById('globalNav').classList.toggle('open')" aria-label="メニュー">
           <span></span><span></span><span></span>
