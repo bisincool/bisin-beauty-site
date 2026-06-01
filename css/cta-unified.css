@@ -359,9 +359,25 @@ body.has-global-mobile-cta #stickyBar {
 
   .hotpepper-review-bridge {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .hotpepper-review-steps {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .hotpepper-bridge-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hotpepper-bridge-btn {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .hotpepper-score-card,
+  .hotpepper-booking-card {
+    padding: 18px;
   }
 }

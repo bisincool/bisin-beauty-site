@@ -277,13 +277,22 @@
       .nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--text)}
       .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:200}
       .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+      .menu-row{grid-template-columns:1fr;align-items:flex-start;gap:6px;padding:14px 18px}
+      .menu-time,.menu-price{text-align:left}
+      .menu-price strong{font-size:1.05rem}
       .booking-guide-grid,.visit-flow{grid-template-columns:1fr}
       .booking-guide-note{align-items:flex-start;flex-direction:column}
       .cases-grid{grid-template-columns:1fr}
+      .case-single-badges{grid-template-columns:1fr}
+      .case-number-row{grid-template-columns:1fr auto 1fr}
+      .case-number-row .cn-diff{grid-column:1 / -1;justify-self:flex-end}
       .case-featured-bottom{flex-direction:column}
       .case-quote{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:10px}
       .cta-group{flex-direction:column}
       .btn{width:100%;justify-content:center}
+      .bottom-cta{padding-bottom:118px}
+      .bottom-box{padding:24px 18px;border-radius:24px}
+      .bottom-box img{max-width:128px;height:auto}
     }
       .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
     .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
