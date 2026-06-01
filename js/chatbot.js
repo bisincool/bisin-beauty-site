@@ -389,9 +389,7 @@
     loadKB();
 
     // 初回自動オープン（4秒後・初回のみ）
-    if (!sessionStorage.getItem('bisin-chat-seen')) {
-      setTimeout(function () { openChat(); }, 4000);
-    }
+    // Do not auto-open. The chat menu opens only after the user taps the launcher.
   }
 
   // ── 開閉 ──────────────────────────────────────────────
