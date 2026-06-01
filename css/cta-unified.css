@@ -195,20 +195,46 @@ body.has-global-mobile-cta #stickyBar {
 }
 
 .hotpepper-review-bridge {
-  margin-top: 22px;
+  position: relative;
+  margin-top: 26px;
   display: grid;
-  grid-template-columns: minmax(220px, 0.9fr) 1.1fr;
-  gap: 16px;
+  grid-template-columns: minmax(250px, 0.86fr) minmax(0, 1.14fr);
+  gap: 14px;
   align-items: stretch;
+  padding: 14px;
+  border: 1px solid rgba(219, 205, 190, 0.95);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(250, 246, 241, 0.92)),
+    radial-gradient(circle at 14% 0%, rgba(185, 156, 135, 0.18), transparent 34%);
+  box-shadow: 0 18px 44px rgba(70, 45, 30, 0.1);
 }
 
 .hotpepper-score-card,
 .hotpepper-booking-card {
-  border: 1px solid rgba(219, 205, 190, 0.92);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 12px 30px rgba(70, 45, 30, 0.08);
-  padding: 20px;
+  border: 1px solid rgba(219, 205, 190, 0.74);
+  border-radius: 14px;
+  box-shadow: 0 10px 26px rgba(70, 45, 30, 0.07);
+  padding: 22px;
+}
+
+.hotpepper-score-card {
+  background: #fffaf4;
+}
+
+.hotpepper-score-kicker,
+.hotpepper-card-label {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  margin-bottom: 14px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(185, 156, 135, 0.16);
+  color: var(--accent-dark, #8a6e59);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
 }
 
 .hotpepper-score-main {
@@ -219,46 +245,64 @@ body.has-global-mobile-cta #stickyBar {
 
 .hotpepper-score-main strong {
   display: block;
-  font-size: clamp(2.5rem, 5vw, 3.4rem);
-  line-height: 0.95;
-  color: var(--accent-dark, #8a6e59);
+  font-size: clamp(2.7rem, 5vw, 3.55rem);
+  line-height: 0.9;
+  color: #2f2a26;
 }
 
 .hotpepper-score-main span {
   display: block;
-  margin-bottom: 7px;
-  font-size: 0.85rem;
-  line-height: 1.45;
-  font-weight: 800;
-  color: var(--text, #2f2a26);
+  margin-bottom: 6px;
+  color: #54463d;
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.hotpepper-stars {
+  margin-top: 10px;
+  color: #c99a33;
+  font-size: 0.94rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.hotpepper-score-copy {
+  margin: 12px 0 0;
+  color: #5f554d;
+  font-size: 0.88rem;
+  line-height: 1.75;
 }
 
 .hotpepper-score-sub {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 .hotpepper-score-sub div {
-  padding: 10px;
+  min-height: 68px;
+  padding: 10px 8px;
+  border: 1px solid rgba(219, 205, 190, 0.68);
   border-radius: 12px;
-  background: #f8f1e8;
+  background: #fff;
   text-align: center;
 }
 
 .hotpepper-score-sub strong {
   display: block;
   color: var(--text, #2f2a26);
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: 1rem;
+  line-height: 1.2;
   margin-bottom: 5px;
 }
 
 .hotpepper-score-sub span {
   color: var(--muted, #7c6c5f);
-  font-size: 0.74rem;
-  font-weight: 700;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
 .hotpepper-booking-card {
@@ -267,54 +311,88 @@ body.has-global-mobile-cta #stickyBar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
+}
+
+.hotpepper-booking-card .hotpepper-card-label {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f3dfc9;
 }
 
 .hotpepper-booking-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: #fff;
-  font-size: 1.25rem;
-  line-height: 1.45;
+  font-size: clamp(1.28rem, 2.1vw, 1.7rem);
+  line-height: 1.42;
 }
 
 .hotpepper-booking-card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.72);
-  line-height: 1.8;
-  font-size: 0.9rem;
+  max-width: 660px;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.85;
+  font-size: 0.92rem;
+}
+
+.hotpepper-highlight-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.hotpepper-highlight-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.76rem;
+  font-weight: 850;
 }
 
 .hotpepper-bridge-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.1fr 0.95fr 1.05fr;
   gap: 10px;
-  flex-wrap: wrap;
 }
 
 .hotpepper-bridge-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 10px 16px;
+  min-height: 46px;
+  padding: 11px 15px;
   border-radius: 999px;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
   text-decoration: none;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .hotpepper-bridge-btn:hover {
   transform: translateY(-1px);
 }
 
-.hotpepper-bridge-btn.review {
+.hotpepper-bridge-btn.primary {
   background: #fff;
   color: #2f2a26;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.hotpepper-bridge-btn.secondary {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hotpepper-bridge-btn.reserve {
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #2f2a26;
+  background: #f3dfc9;
 }
 
 .hotpepper-review-steps {
@@ -325,30 +403,41 @@ body.has-global-mobile-cta #stickyBar {
 }
 
 .hotpepper-review-step {
-  padding: 12px;
-  border: 1px solid var(--line, #e6ddd4);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.72);
+  position: relative;
+  min-height: 94px;
+  padding: 14px 14px 14px 46px;
+  border: 1px solid rgba(219, 205, 190, 0.76);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .hotpepper-review-step span {
-  display: block;
-  color: var(--accent-dark, #8a6e59);
-  font-size: 0.72rem;
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #2f2a26;
+  color: #fff;
+  font-size: 0.68rem;
   font-weight: 900;
-  margin-bottom: 5px;
 }
 
 .hotpepper-review-step strong {
   display: block;
   color: var(--text, #2f2a26);
-  font-size: 0.86rem;
-  margin-bottom: 4px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  margin-bottom: 5px;
 }
 
 .hotpepper-review-step small {
+  display: block;
   color: var(--muted, #7c6c5f);
-  line-height: 1.5;
+  line-height: 1.55;
   font-size: 0.74rem;
 }
 
@@ -360,24 +449,34 @@ body.has-global-mobile-cta #stickyBar {
   .hotpepper-review-bridge {
     grid-template-columns: 1fr;
     gap: 12px;
+    padding: 10px;
   }
 
   .hotpepper-review-steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .hotpepper-bridge-actions {
-    display: grid;
     grid-template-columns: 1fr;
   }
 
   .hotpepper-bridge-btn {
     width: 100%;
-    min-height: 42px;
+    min-height: 46px;
   }
 
   .hotpepper-score-card,
   .hotpepper-booking-card {
     padding: 18px;
+  }
+
+  .hotpepper-score-sub {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .hotpepper-review-steps {
+    grid-template-columns: 1fr;
   }
 }
