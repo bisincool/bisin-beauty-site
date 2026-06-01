@@ -113,6 +113,31 @@
     .menu-price strong{font-size:1.15rem;font-weight:900;color:var(--accent-dark)}
     .menu-price span{display:block;font-size:.72rem;color:var(--muted)}
 
+    /* conversion guide */
+    .booking-guide{padding:56px 0;background:#faf6f1}
+    .booking-guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+    .booking-card{position:relative;border:1px solid rgba(232,223,214,.92);background:rgba(255,255,255,.9);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:20px;display:flex;flex-direction:column;gap:12px}
+    .booking-card.recommend{border-color:rgba(185,156,135,.55);box-shadow:0 18px 45px rgba(70,45,30,.12)}
+    .booking-card-kicker{font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dark)}
+    .booking-card h3{font-size:1.08rem;line-height:1.45;margin:0}
+    .booking-card p{font-size:.86rem;line-height:1.8;color:var(--muted);margin:0}
+    .booking-card ul{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+    .booking-card li{font-size:.82rem;color:var(--text);padding-left:16px;position:relative}
+    .booking-card li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:999px;background:var(--accent)}
+    .booking-card-cta{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;background:var(--text);color:#fff;font-size:.82rem;font-weight:800;text-decoration:none}
+    .booking-guide-note{margin-top:16px;padding:14px 18px;border:1px solid var(--line);border-radius:var(--radius-lg);background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:space-between;gap:14px;color:var(--muted);font-size:.86rem}
+    .booking-guide-note strong{color:var(--text)}
+
+    .first-visit{padding:58px 0;background:linear-gradient(180deg,#faf6f1,#f3ebe0)}
+    .visit-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px}
+    .visit-step{background:rgba(255,255,255,.86);border:1px solid rgba(232,223,214,.9);border-radius:var(--radius-lg);padding:16px;min-height:150px;box-shadow:var(--shadow-sm)}
+    .visit-step-num{width:30px;height:30px;border-radius:999px;background:var(--text);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:900;margin-bottom:12px}
+    .visit-step h3{font-size:.95rem;margin:0 0 8px}
+    .visit-step p{font-size:.8rem;line-height:1.75;color:var(--muted);margin:0}
+    .visit-checks{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .visit-check{padding:13px 15px;border-radius:var(--radius-lg);background:rgba(47,42,38,.05);border:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+    .visit-check strong{display:block;color:var(--text);font-size:.86rem;margin-bottom:3px}
+
     /* CASES */
     .cases-section{padding:64px 0;background:linear-gradient(180deg,#f3ebe0,#faf6f1)}
     .cases-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px}
@@ -238,6 +263,8 @@
 
     @media(max-width:960px){
       .page-hero-grid,.steps-grid{grid-template-columns:1fr}
+      .booking-guide-grid,.visit-flow{grid-template-columns:1fr 1fr}
+      .visit-checks{grid-template-columns:1fr}
       .cases-grid{grid-template-columns:1fr 1fr}
       .case-featured-top{grid-template-columns:1fr}
       .case-single-visual{grid-template-columns:1fr;padding:18px;gap:20px}
@@ -250,6 +277,8 @@
       .nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--text)}
       .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:200}
       .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+      .booking-guide-grid,.visit-flow{grid-template-columns:1fr}
+      .booking-guide-note{align-items:flex-start;flex-direction:column}
       .cases-grid{grid-template-columns:1fr}
       .case-featured-bottom{flex-direction:column}
       .case-quote{padding-left:0;border-left:none;border-top:1px solid var(--line);padding-top:10px}
@@ -424,6 +453,54 @@
     </div>
   </section>
 
+  <!-- BOOKING GUIDE -->
+  <section class="booking-guide" id="booking-guide">
+    <div class="container">
+      <div class="eyebrow">Choose Your First Visit</div>
+      <h2 class="section-title">初回は、目的に合わせて選べます。</h2>
+      <p class="section-lead">迷ったら予約前に相談できます。体型、気になる部位、来店時間に合わせて無理なく選べる入口を用意しました。</p>
+      <div class="booking-guide-grid">
+        <article class="booking-card">
+          <div class="booking-card-kicker">Trial</div>
+          <h3>まず試したい方は<br>1CUP / 2CUP体験</h3>
+          <p>脂肪冷却が初めてで、冷たさや吸引感を確認したい方に。</p>
+          <ul>
+            <li>お腹・二の腕など1部位から相談</li>
+            <li>短時間で体験しやすい</li>
+            <li>勧誘なしで始めやすい</li>
+          </ul>
+          <a class="booking-card-cta" href="#contact">初回体験を予約する</a>
+        </article>
+        <article class="booking-card recommend">
+          <div class="booking-card-kicker">Recommended</div>
+          <h3>しっかり変化を狙うなら<br>サウナ×脂肪冷却4cup</h3>
+          <p>お腹、背中、腰まわりなど、見た目の変化を狙いたい方に一番選ばれています。</p>
+          <ul>
+            <li>温めてから冷却する人気プラン</li>
+            <li>初回でも満足感を得やすい</li>
+            <li>症例写真を見て相談できる</li>
+          </ul>
+          <a class="booking-card-cta" href="#contact">人気プランで予約する</a>
+        </article>
+        <article class="booking-card">
+          <div class="booking-card-kicker">Full Body</div>
+          <h3>複数部位をまとめるなら<br>全身痩身8cup</h3>
+          <p>お腹だけでなく、背中・太もも・二の腕まで一度に相談したい方に。</p>
+          <ul>
+            <li>全体のボディラインを見て設計</li>
+            <li>短期集中の相談に向いている</li>
+            <li>120分でまとめてケア</li>
+          </ul>
+          <a class="booking-card-cta" href="#contact">全身プランを相談する</a>
+        </article>
+      </div>
+      <div class="booking-guide-note">
+        <span><strong>予約メニューに迷う場合：</strong>HotPepperでは気になるプランを選び、当日カウンセリングで部位やカップ数を相談できます。</span>
+        <a class="booking-card-cta" href="https://lin.ee/ueF4z50" target="_blank" rel="noopener">LINEで事前相談</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CASES ===== -->
   <section class="cases-section" id="results">
     <div class="container">
@@ -510,6 +587,27 @@
     </div>
   </section>
 
+  <!-- FIRST VISIT FLOW -->
+  <section class="first-visit" id="first-visit-flow">
+    <div class="container">
+      <div class="eyebrow">First Visit Flow</div>
+      <h2 class="section-title">初回体験は、この流れでご案内します。</h2>
+      <p class="section-lead">初めての方が不安になりやすい「何をされるのか」「どれくらい時間がかかるのか」を来店前に確認できます。</p>
+      <div class="visit-flow">
+        <div class="visit-step"><div class="visit-step-num">01</div><h3>予約</h3><p>HotPepperまたはLINEから予約。迷う場合は希望部位だけ伝えてください。</p></div>
+        <div class="visit-step"><div class="visit-step-num">02</div><h3>カウンセリング</h3><p>気になる部位、体質、目標を確認し、無理のないプランを提案します。</p></div>
+        <div class="visit-step"><div class="visit-step-num">03</div><h3>採寸・写真確認</h3><p>必要に応じてサイズや見た目を確認。変化を追いやすくします。</p></div>
+        <div class="visit-step"><div class="visit-step-num">04</div><h3>施術</h3><p>サウナドームで温め、脂肪冷却へ。冷たさや吸引感は声をかけながら調整します。</p></div>
+        <div class="visit-step"><div class="visit-step-num">05</div><h3>アフター案内</h3><p>水分補給、食事時間、次回来店目安を案内。無理な勧誘はありません。</p></div>
+      </div>
+      <div class="visit-checks">
+        <div class="visit-check"><strong>来店時間の目安</strong>初回体験はメニューにより30〜80分前後。余裕を持ってご予約ください。</div>
+        <div class="visit-check"><strong>服装</strong>施術しやすい着替えをご用意します。普段着で来店できます。</div>
+        <div class="visit-check"><strong>男性の相談</strong>お腹・背中・腰まわりなど、男性の脂肪冷却相談にも対応しています。</div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="section" style="background:linear-gradient(180deg,#faf6f1,#f3ebe0)">
     <div class="container" style="max-width:720px">
@@ -532,6 +630,22 @@
           <dt><button class="faq-btn" aria-expanded="false"><span class="faq-q"><span class="faq-q-lbl">Q.</span><span>どの部位に施術できますか？</span></span><span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l5 5 5-5"/></svg></span></button></dt>
           <dd class="faq-body" hidden>お腹・背中・太もも・二の腕・脇腹などに対応しています。カウンセリングで気になる部位をお伝えいただければ、最適なプランをご提案します。</dd>
         </div>
+        <div class="faq-item">
+          <dt><button class="faq-btn" aria-expanded="false"><span class="faq-q"><span class="faq-q-lbl">Q.</span><span>どのメニューを選べばいいかわかりません。</span></span><span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l5 5 5-5"/></svg></span></button></dt>
+          <dd class="faq-body" hidden>初めてで迷う場合は、まず気になる部位を基準に選んでください。お試しなら1CUP/2CUP、見た目の変化を狙うならサウナ×脂肪冷却4cup、複数部位なら8cupがおすすめです。当日のカウンセリングで調整できます。</dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-btn" aria-expanded="false"><span class="faq-q"><span class="faq-q-lbl">Q.</span><span>男性も予約できますか？</span></span><span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l5 5 5-5"/></svg></span></button></dt>
+          <dd class="faq-body" hidden>はい。お腹・背中・腰まわりなど、男性の脂肪冷却相談にも対応しています。症例写真を見ながら、気になる部位に合わせてご案内します。</dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-btn" aria-expanded="false"><span class="faq-q"><span class="faq-q-lbl">Q.</span><span>当日は何か準備が必要ですか？</span></span><span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l5 5 5-5"/></svg></span></button></dt>
+          <dd class="faq-body" hidden>特別な準備は不要です。施術前後は水分をしっかり取り、直前の重い食事は控えめがおすすめです。服装は普段着で問題ありません。</dd>
+        </div>
+        <div class="faq-item">
+          <dt><button class="faq-btn" aria-expanded="false"><span class="faq-q"><span class="faq-q-lbl">Q.</span><span>強い勧誘はありますか？</span></span><span class="faq-chevron"><svg width="9" height="9" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 5l5 5 5-5"/></svg></span></button></dt>
+          <dd class="faq-body" hidden>無理な勧誘はありません。料金を明確にしたうえで、必要な回数や部位を相談できます。初回体験だけの利用でも大丈夫です。</dd>
+        </div>
       </dl>
     </div>
   </section>
@@ -547,7 +661,7 @@
           <a href="https://beauty.hotpepper.jp/kr/slnH000498862/" target="_blank" rel="noopener" class="btn btn-primary">小郡店で予約する</a>
         </div>
         <div style="text-align:center;">
-          <p style="font-size:.95rem;font-weight:700;margin-bottom:12px;opacity:.85;">💬 LINEで相談・予約もできます</p>
+          <p style="font-size:.95rem;font-weight:700;margin-bottom:12px;opacity:.85;">メニューに迷う方はLINEで事前相談できます</p>
           <img src="../images/line-qr.png" alt="LINE QRコード" style="width:140px;height:140px;border-radius:16px;border:3px solid rgba(255,255,255,0.3);box-shadow:0 4px 16px rgba(0,0,0,0.15);">
           <p style="font-size:.82rem;margin-top:8px;opacity:.7;">カメラでスキャンしてください</p>
         </div>
