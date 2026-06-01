@@ -194,8 +194,174 @@ body.has-global-mobile-cta #stickyBar {
   text-underline-offset: 3px;
 }
 
+.hotpepper-review-bridge {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) 1.1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.hotpepper-score-card,
+.hotpepper-booking-card {
+  border: 1px solid rgba(219, 205, 190, 0.92);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(70, 45, 30, 0.08);
+  padding: 20px;
+}
+
+.hotpepper-score-main {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.hotpepper-score-main strong {
+  display: block;
+  font-size: clamp(2.5rem, 5vw, 3.4rem);
+  line-height: 0.95;
+  color: var(--accent-dark, #8a6e59);
+}
+
+.hotpepper-score-main span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  font-weight: 800;
+  color: var(--text, #2f2a26);
+}
+
+.hotpepper-score-sub {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.hotpepper-score-sub div {
+  padding: 10px;
+  border-radius: 12px;
+  background: #f8f1e8;
+  text-align: center;
+}
+
+.hotpepper-score-sub strong {
+  display: block;
+  color: var(--text, #2f2a26);
+  font-size: 1.2rem;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.hotpepper-score-sub span {
+  color: var(--muted, #7c6c5f);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.hotpepper-booking-card {
+  background: #2f2a26;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hotpepper-booking-card h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.hotpepper-booking-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.8;
+  font-size: 0.9rem;
+}
+
+.hotpepper-bridge-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hotpepper-bridge-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hotpepper-bridge-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hotpepper-bridge-btn.review {
+  background: #fff;
+  color: #2f2a26;
+}
+
+.hotpepper-bridge-btn.reserve {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.hotpepper-review-steps {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hotpepper-review-step {
+  padding: 12px;
+  border: 1px solid var(--line, #e6ddd4);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.hotpepper-review-step span {
+  display: block;
+  color: var(--accent-dark, #8a6e59);
+  font-size: 0.72rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.hotpepper-review-step strong {
+  display: block;
+  color: var(--text, #2f2a26);
+  font-size: 0.86rem;
+  margin-bottom: 4px;
+}
+
+.hotpepper-review-step small {
+  color: var(--muted, #7c6c5f);
+  line-height: 1.5;
+  font-size: 0.74rem;
+}
+
 @media (max-width: 720px) {
   .review-proof-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hotpepper-review-bridge {
+    grid-template-columns: 1fr;
+  }
+
+  .hotpepper-review-steps {
+    grid-template-columns: 1fr 1fr;
   }
 }
