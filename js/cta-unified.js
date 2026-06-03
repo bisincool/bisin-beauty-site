@@ -11,8 +11,8 @@
       mobile: 'LINE'
     },
     cn: {
-      header: 'WeChat咨询',
-      mobile: 'WeChat'
+      header: '微信咨询',
+      mobile: '微信'
     },
     en: {
       header: 'LINE Chat',

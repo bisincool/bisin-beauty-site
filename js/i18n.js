@@ -50,7 +50,7 @@
       summaryText: '在福冈天神 / 小郡，可咨询脂肪冷冻瘦身、美甲护理与预约方案。',
       reserveTenjin: '预约天神店',
       reserveOgori: '预约小郡店',
-      lineConsult: 'WeChat咨询',
+      lineConsult: '微信咨询',
       reserve: '立即预约',
       freeConsult: '免费咨询',
       home: '首页',
@@ -501,7 +501,7 @@
     while (walker.nextNode()) textNodes.push(walker.currentNode);
     textNodes.forEach(function (node) {
       if (!originalLineText.has(node)) originalLineText.set(node, node.nodeValue);
-      node.nodeValue = node.nodeValue.replace(/LINE/g, 'WeChat');
+      node.nodeValue = node.nodeValue.replace(/LINE/g, '微信');
     });
   }
 
@@ -524,7 +524,7 @@
       var baseWidth = parseFloat(img.style.width || img.getAttribute('width') || '140');
       var size = Math.round(baseWidth * 1.5) + 'px';
       img.setAttribute('src', wechatQr);
-      img.setAttribute('alt', 'BISIN CoolSpa WeChat 二维码');
+      img.setAttribute('alt', 'BISIN CoolSpa 微信二维码');
       img.style.width = size;
       img.style.height = size;
       img.style.objectFit = 'contain';
@@ -637,7 +637,7 @@
           mutation.addedNodes.forEach(function (node) {
             if (node.nodeType === 1) applyChineseContactOverride(node);
             else if (node.nodeType === 3 && node.nodeValue.indexOf('LINE') !== -1 && !shouldSkipContactNode(node)) {
-              node.nodeValue = node.nodeValue.replace(/LINE/g, 'WeChat');
+              node.nodeValue = node.nodeValue.replace(/LINE/g, '微信');
             } else if (node.nodeType === 3 && node.nodeValue.indexOf('脂肪冷却') !== -1 && !shouldSkipContactNode(node)) {
               if (!originalChineseTermText.has(node)) originalChineseTermText.set(node, node.nodeValue);
               node.nodeValue = localizeChineseTerms(node.nodeValue);
@@ -735,11 +735,11 @@
       },
       cn: {
         prefix: '亲，先加',
-        channel: 'WeChat',
+        channel: '微信',
         suffix: '确认，再预约更安心哦~',
         qr: 'images/contact/wechat-qr-02.png',
-        alt: 'BISIN CoolSpa WeChat 二维码',
-        caption: '扫码添加 WeChat',
+        alt: 'BISIN CoolSpa 微信二维码',
+        caption: '扫码添加微信',
         size: '165px'
       },
       en: {
@@ -883,9 +883,9 @@
         casesTitle: '不修图，用数字说话。',
         cta: '亲，先从初次体验 ¥3,300 开始也可以哦~',
         ctaLead: '我们会先用中文帮你确认适合部位、预算和预约时间。不强推、完全预约制，确认清楚后再预约更安心。',
-        consult: '菜单拿不准的话，先加 WeChat 事前确认',
-        scan: '扫码添加 WeChat',
-        bookingConsult: 'WeChat事前咨询'
+        consult: '菜单拿不准的话，先加微信事前确认',
+        scan: '扫码添加微信',
+        bookingConsult: '微信事前咨询'
       },
       en: {
         title: 'How Fat Freezing Works',
