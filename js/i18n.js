@@ -50,7 +50,7 @@
       summaryText: '在福冈天神 / 小郡，可咨询脂肪冷却塑形、美甲护理与预约方案。',
       reserveTenjin: '预约天神店',
       reserveOgori: '预约小郡店',
-      lineConsult: 'LINE 咨询',
+      lineConsult: 'WeChat咨询',
       reserve: '立即预约',
       freeConsult: '免费咨询',
       home: '首页',
@@ -466,6 +466,145 @@
     setText(nodes[index], value);
   }
 
+  var chineseContactObserver = null;
+  var chineseContactPending = false;
+  var originalLineText = new WeakMap();
+  var originalLineImage = new WeakMap();
+  var originalLineLink = new WeakMap();
+
+  function shouldSkipContactNode(node) {
+    if (!node || !node.parentElement) return true;
+    return /^(SCRIPT|STYLE|NOSCRIPT|TEXTAREA|INPUT|OPTION)$/.test(node.parentElement.tagName);
+  }
+
+  function rewriteLineTextForChinese(root) {
+    var scope = root && root.nodeType === 1 ? root : document.body;
+    if (!scope) return;
+
+    var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        return shouldSkipContactNode(node) || node.nodeValue.indexOf('LINE') === -1
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function (node) {
+      if (!originalLineText.has(node)) originalLineText.set(node, node.nodeValue);
+      node.nodeValue = node.nodeValue.replace(/LINE/g, 'WeChat');
+    });
+  }
+
+  function rewriteLineAssetsForChinese(root) {
+    var scope = root && root.nodeType === 1 ? root : document;
+    var wechatQr = makeLink('images/contact/wechat-qr-02.png');
+
+    scope.querySelectorAll('img').forEach(function (img) {
+      var src = img.getAttribute('src') || '';
+      if (src.indexOf('line-qr') === -1) return;
+      if (!originalLineImage.has(img)) {
+        originalLineImage.set(img, {
+          src: src,
+          alt: img.getAttribute('alt'),
+          width: img.style.width,
+          height: img.style.height,
+          objectFit: img.style.objectFit
+        });
+      }
+      var baseWidth = parseFloat(img.style.width || img.getAttribute('width') || '140');
+      var size = Math.round(baseWidth * 1.5) + 'px';
+      img.setAttribute('src', wechatQr);
+      img.setAttribute('alt', 'BISIN CoolSpa WeChat 二维码');
+      img.style.width = size;
+      img.style.height = size;
+      img.style.objectFit = 'contain';
+    });
+
+    scope.querySelectorAll('a[href*="lin.ee"]').forEach(function (link) {
+      if (!originalLineLink.has(link)) {
+        originalLineLink.set(link, {
+          href: link.getAttribute('href'),
+          target: link.getAttribute('target'),
+          rel: link.getAttribute('rel')
+        });
+      }
+      link.setAttribute('href', '#contact');
+      link.removeAttribute('target');
+      link.setAttribute('rel', 'noopener');
+    });
+  }
+
+  function applyChineseContactOverride(root) {
+    rewriteLineTextForChinese(root);
+    rewriteLineAssetsForChinese(root);
+  }
+
+  function stopChineseContactObserver() {
+    if (!chineseContactObserver) return;
+    chineseContactObserver.disconnect();
+    chineseContactObserver = null;
+  }
+
+  function restoreLineContactState() {
+    if (!document.body) return;
+
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        return originalLineText.has(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function (node) {
+      node.nodeValue = originalLineText.get(node);
+    });
+
+    document.querySelectorAll('img').forEach(function (img) {
+      if (!originalLineImage.has(img)) return;
+      var original = originalLineImage.get(img);
+      img.setAttribute('src', original.src);
+      if (original.alt === null) img.removeAttribute('alt');
+      else img.setAttribute('alt', original.alt);
+      img.style.width = original.width;
+      img.style.height = original.height;
+      img.style.objectFit = original.objectFit;
+    });
+
+    document.querySelectorAll('a').forEach(function (link) {
+      if (!originalLineLink.has(link)) return;
+      var original = originalLineLink.get(link);
+      link.setAttribute('href', original.href);
+      if (original.target === null) link.removeAttribute('target');
+      else link.setAttribute('target', original.target);
+      if (original.rel === null) link.removeAttribute('rel');
+      else link.setAttribute('rel', original.rel);
+    });
+  }
+
+  function startChineseContactObserver() {
+    if (chineseContactObserver || !document.body) return;
+    chineseContactObserver = new MutationObserver(function (mutations) {
+      if (chineseContactPending) return;
+      chineseContactPending = true;
+      window.requestAnimationFrame(function () {
+        chineseContactPending = false;
+        mutations.forEach(function (mutation) {
+          mutation.addedNodes.forEach(function (node) {
+            if (node.nodeType === 1) applyChineseContactOverride(node);
+            else if (node.nodeType === 3 && node.nodeValue.indexOf('LINE') !== -1 && !shouldSkipContactNode(node)) {
+              node.nodeValue = node.nodeValue.replace(/LINE/g, 'WeChat');
+            }
+          });
+        });
+      });
+    });
+    chineseContactObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  }
+
   function applyHomeBodyCopy(lang) {
     var t = pageBodyCopy.home[lang] || pageBodyCopy.home[DEFAULT_LANG];
 
@@ -532,6 +671,55 @@
     setBodyTextAt('#plans .plan-desc', 0, t.plan1Text);
     setBodyTextAt('#plans .plan-desc', 1, t.plan2Text);
     setBodyTextAt('#plans .plan-desc', 2, t.plan3Text);
+
+    applyHomeContactCopy(lang);
+  }
+
+  function applyHomeContactCopy(lang) {
+    var contact = {
+      jp: {
+        prefix: 'お問い合わせは',
+        channel: 'LINE',
+        suffix: 'でいつでも♪',
+        qr: 'images/line-qr.png',
+        alt: 'LINE QRコード',
+        caption: 'カメラでスキャン',
+        size: '110px'
+      },
+      cn: {
+        prefix: '亲，先加',
+        channel: 'WeChat',
+        suffix: '确认，再预约更安心哦~',
+        qr: 'images/contact/wechat-qr-02.png',
+        alt: 'BISIN CoolSpa WeChat 二维码',
+        caption: '扫码添加 WeChat',
+        size: '165px'
+      },
+      en: {
+        prefix: 'Message us on',
+        channel: 'LINE',
+        suffix: 'anytime',
+        qr: 'images/line-qr.png',
+        alt: 'LINE QR code',
+        caption: 'Scan with your camera',
+        size: '110px'
+      }
+    };
+    var c = contact[lang] || contact[DEFAULT_LANG];
+    var qr = document.querySelector('[data-contact-qr]');
+
+    setBodyText('[data-contact-title-prefix]', c.prefix);
+    setBodyText('[data-contact-channel]', c.channel);
+    setBodyText('[data-contact-title-suffix]', c.suffix);
+    setBodyText('[data-contact-qr-caption]', c.caption);
+
+    if (qr) {
+      qr.setAttribute('src', c.qr);
+      qr.setAttribute('alt', c.alt);
+      qr.style.width = c.size;
+      qr.style.height = c.size;
+      qr.style.objectFit = 'contain';
+    }
   }
 
   function translatePageBody(lang) {
@@ -568,7 +756,7 @@
         l3: '请按想做的项目和交通便利度选择门店。',
         h4: '门店介绍',
         l4: '欢迎选择适合你的门店进行预约。',
-        cta: '先从免费 LINE 咨询开始'
+        cta: '先从免费微信咨询开始'
       },
       en: {
         heroTitle: 'Services & Prices',
@@ -628,7 +816,11 @@
         menuTitle: 'メニュー・料金',
         menuLead: '入口がわかりやすい価格設計。初回体験から始められます。',
         casesTitle: '加工なし。数字が証明。',
-        cta: 'まずは脂肪冷却を相談'
+        cta: 'まずは初回体験¥3,300から',
+        ctaLead: 'カウンセリングから丁寧にご案内。勧誘なし・完全予約制で安心してお越しいただけます。',
+        consult: 'メニューに迷う方はLINEで事前相談できます',
+        scan: 'カメラでスキャンしてください',
+        bookingConsult: 'LINEで事前相談'
       },
       cn: {
         title: '脂肪冷却的护理原理',
@@ -642,7 +834,11 @@
         menuTitle: '项目与价格',
         menuLead: '价格入口清楚，可从初次体验开始。',
         casesTitle: '不修图，用数字说话。',
-        cta: '先咨询脂肪冷却'
+        cta: '亲，先从初次体验 ¥3,300 开始也可以哦~',
+        ctaLead: '我们会先用中文帮你确认适合部位、预算和预约时间。不强推、完全预约制，确认清楚后再预约更安心。',
+        consult: '菜单拿不准的话，先加 WeChat 事前确认',
+        scan: '扫码添加 WeChat',
+        bookingConsult: 'WeChat事前咨询'
       },
       en: {
         title: 'How Fat Freezing Works',
@@ -656,7 +852,11 @@
         menuTitle: 'Menu & Prices',
         menuLead: 'Clear entry prices, starting with first-visit trials.',
         casesTitle: 'No Retouching. Real Numbers.',
-        cta: 'Ask About Fat Freezing'
+        cta: 'Start With a First Trial From ¥3,300',
+        ctaLead: 'We guide you carefully from consultation. No pushy sales, reservation-only, and easy to visit with confidence.',
+        consult: 'Not sure which menu to choose? Ask us on LINE first.',
+        scan: 'Scan with your camera',
+        bookingConsult: 'Ask on LINE Before Booking'
       }
     }, function (t) {
       setBodyTextAt('.section-title', 0, t.title);
@@ -671,6 +871,12 @@
       setBodyText('#menu .section-lead', t.menuLead);
       setBodyText('#cases .section-title', t.casesTitle);
       setBodyText('.bottom-box h2', t.cta);
+      setBodyTextAt('.bottom-box p', 0, t.ctaLead);
+      setBodyTextAt('.bottom-box p', 1, t.consult);
+      setBodyTextAt('.bottom-box p', 2, t.scan);
+      document.querySelectorAll('.booking-card-cta').forEach(function (node) {
+        setText(node, t.bookingConsult);
+      });
     });
   }
 
@@ -692,7 +898,7 @@
         galleryLead: '从上班到休闲日，为不同场景建议合适设计。',
         plans: '美甲项目与价格',
         flow: '到店流程',
-        cta: '先用 LINE 咨询设计'
+        cta: '先用微信咨询设计'
       },
       en: {
         hero: 'Confidence Starts at Your Fingertips. Elegant Nails for Every Day.',
@@ -799,6 +1005,11 @@
     var t = copy[lang] || copy[DEFAULT_LANG];
     if (persist) localStorage.setItem(STORAGE_KEY, lang);
 
+    if (lang !== 'cn') {
+      stopChineseContactObserver();
+      restoreLineContactState();
+    }
+
     document.documentElement.lang = t.htmlLang;
     document.title = (t.pageTitle[pageKey()] || t.title);
     document.querySelectorAll('.lang-switcher__current').forEach(function (node) {
@@ -813,6 +1024,15 @@
     translateCtas(t);
     translateMainButtons(t);
     translatePageBody(lang);
+
+    if (lang === 'cn') {
+      applyChineseContactOverride(document.body);
+      startChineseContactObserver();
+    }
+
+    window.dispatchEvent(new CustomEvent('bisin:languagechange', {
+      detail: { lang: lang }
+    }));
   }
 
   function init() {
