@@ -45,9 +45,9 @@
     cn: {
       htmlLang: 'zh-CN',
       label: '语言',
-      title: 'Coolspa - 脂肪冷却瘦身 & 美甲沙龙',
-      summaryTitle: 'Coolspa 脂肪冷却瘦身 & 美甲沙龙',
-      summaryText: '在福冈天神 / 小郡，可咨询脂肪冷却塑形、美甲护理与预约方案。',
+      title: 'Coolspa - 脂肪冷冻瘦身 & 美甲沙龙',
+      summaryTitle: 'Coolspa 脂肪冷冻瘦身 & 美甲沙龙',
+      summaryText: '在福冈天神 / 小郡，可咨询脂肪冷冻瘦身、美甲护理与预约方案。',
       reserveTenjin: '预约天神店',
       reserveOgori: '预约小郡店',
       lineConsult: 'WeChat咨询',
@@ -55,16 +55,16 @@
       freeConsult: '免费咨询',
       home: '首页',
       service: '项目',
-      fatFreezing: '脂肪冷却',
+      fatFreezing: '脂肪冷冻瘦身',
       nail: '美甲',
       stores: '门店',
       business: '加盟/导入',
       blog: '博客',
       hotpepper: 'HotPepper',
       pageTitle: {
-        home: 'BISIN BEAUTY | Coolspa 脂肪冷却瘦身 & 美甲沙龙',
+        home: 'BISIN BEAUTY | Coolspa 脂肪冷冻瘦身 & 美甲沙龙',
         service: '项目 | BISIN BEAUTY',
-        fat: '脂肪冷却瘦身 | BISIN BEAUTY',
+        fat: '脂肪冷冻瘦身 | BISIN BEAUTY',
         nail: '美甲 | BISIN BEAUTY',
         tenjin: 'COOL SPA 天神店 | BISIN BEAUTY',
         ogori: 'CHUCHU 小郡店 | BISIN BEAUTY',
@@ -471,6 +471,15 @@
   var originalLineText = new WeakMap();
   var originalLineImage = new WeakMap();
   var originalLineLink = new WeakMap();
+  var originalChineseTermText = new WeakMap();
+
+  function localizeChineseTerms(text) {
+    if (!text) return text;
+    return text
+      .replace(/脂肪冷却瘦身/g, '脂肪冷冻瘦身')
+      .replace(/脂肪冷却痩身/g, '脂肪冷冻瘦身')
+      .replace(/脂肪冷却/g, '脂肪冷冻瘦身');
+  }
 
   function shouldSkipContactNode(node) {
     if (!node || !node.parentElement) return true;
@@ -535,9 +544,29 @@
     });
   }
 
+  function rewriteChineseTermsForChinese(root) {
+    var scope = root && root.nodeType === 1 ? root : document.body;
+    if (!scope) return;
+
+    var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        return shouldSkipContactNode(node) || node.nodeValue.indexOf('脂肪冷却') === -1
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function (node) {
+      if (!originalChineseTermText.has(node)) originalChineseTermText.set(node, node.nodeValue);
+      node.nodeValue = localizeChineseTerms(node.nodeValue);
+    });
+  }
+
   function applyChineseContactOverride(root) {
     rewriteLineTextForChinese(root);
     rewriteLineAssetsForChinese(root);
+    rewriteChineseTermsForChinese(root);
   }
 
   function stopChineseContactObserver() {
@@ -582,6 +611,21 @@
     });
   }
 
+  function restoreChineseTermState() {
+    if (!document.body) return;
+
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        return originalChineseTermText.has(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(function (node) {
+      node.nodeValue = originalChineseTermText.get(node);
+    });
+  }
+
   function startChineseContactObserver() {
     if (chineseContactObserver || !document.body) return;
     chineseContactObserver = new MutationObserver(function (mutations) {
@@ -594,6 +638,9 @@
             if (node.nodeType === 1) applyChineseContactOverride(node);
             else if (node.nodeType === 3 && node.nodeValue.indexOf('LINE') !== -1 && !shouldSkipContactNode(node)) {
               node.nodeValue = node.nodeValue.replace(/LINE/g, 'WeChat');
+            } else if (node.nodeType === 3 && node.nodeValue.indexOf('脂肪冷却') !== -1 && !shouldSkipContactNode(node)) {
+              if (!originalChineseTermText.has(node)) originalChineseTermText.set(node, node.nodeValue);
+              node.nodeValue = localizeChineseTerms(node.nodeValue);
             }
           });
         });
@@ -1008,10 +1055,12 @@
     if (lang !== 'cn') {
       stopChineseContactObserver();
       restoreLineContactState();
+      restoreChineseTermState();
     }
 
     document.documentElement.lang = t.htmlLang;
     document.title = (t.pageTitle[pageKey()] || t.title);
+    if (lang === 'cn') document.title = localizeChineseTerms(document.title);
     document.querySelectorAll('.lang-switcher__current').forEach(function (node) {
       setText(node, languageNames[lang]);
     });
