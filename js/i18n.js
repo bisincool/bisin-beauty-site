@@ -283,6 +283,7 @@
     if (path.indexOf('/lp/') !== -1) return 'lp';
     if (path.indexOf('/blog/') !== -1) return 'blog';
     if (path.indexOf('/for-business') !== -1) return 'business';
+    if (path.indexOf('/services/mens-fat-freezing') !== -1) return 'mens';
     if (path.indexOf('/services/fat-freezing') !== -1) return 'fat';
     if (path.indexOf('/services/nail') !== -1) return 'nail';
     if (path.indexOf('/service') !== -1) return 'service';
@@ -1644,6 +1645,7 @@
       setBodyTextAt('.section-lead', 4, t.l4);
       setBodyText('.bottom-box h2', t.cta);
     });
+    else if (key === 'mens') applyMensPageCopy(lang);
     else if (key === 'fat') applyFatPageCopy(lang);
     else if (key === 'nail') applyNailPageCopy(lang);
     else if (key === 'tenjin' || key === 'ogori') applyStorePageCopy(lang, key);
@@ -1654,6 +1656,100 @@
 
   function applySimplePageCopy(lang, dict, apply) {
     apply(dict[lang] || dict[DEFAULT_LANG]);
+  }
+
+  function setTexts(selector, values) {
+    document.querySelectorAll(selector).forEach(function (node, index) {
+      if (values[index]) setText(node, values[index]);
+    });
+  }
+
+  function applyMensPageCopy(lang) {
+    if (lang !== 'cn') return;
+
+    document.title = '福冈天神男性冻脂｜腹部・腰周案例｜BISIN BEAUTY';
+
+    setBodyText('.hero .eyebrow', 'Men\'s Fat Freezing / Tenjin');
+    setBodyText('.hero h1', '男性腹部和腰周，先看真实变化再预约。');
+    setBodyText('.hero-lead', '面向男性的冻脂咨询页。适合在意小腹、腰侧赘肉、背部线条的人。先看前后对比、费用和流程，再决定是否预约。支持单次体验，费用清楚，不强推套餐。');
+    setTexts('.hero-point strong', ['¥3,300', '步行3分钟', '可单次体验', '男性可咨询']);
+    setTexts('.hero-point span', ['1CUP 起，先轻松试一次', '天神南站附近，工作后也方便', '不是必须购买课程', '腹部、腰周、背部都可以先问']);
+    setTexts('.hero .cta-row .btn', ['预约天神店', '查看男性案例', '先咨询']);
+    setBodyText('.case-caption strong', '20多岁男性 / 腹部集中护理');
+    setBodyText('.case-caption small', '以下为案例参考，效果因人而异，不保证所有人达到相同结果。');
+
+    setBodyText('main > section:nth-of-type(2) .section-title', '为什么男性也适合来 Coolspa？');
+    setBodyText('main > section:nth-of-type(2) .section-lead', '相比复杂的高价课程，Coolspa 更强调费用透明、流程简单、可单次体验和不强推。第一次来店前，你可以先确认部位、预算和适合的杯数。');
+    setTexts('main > section:nth-of-type(2) .card-kicker', ['No pressure', 'Easy to continue', 'Visible check']);
+    setTexts('main > section:nth-of-type(2) .card h3', ['不强推套餐，先体验一次再判断。', '天神南站附近，工作后也好安排。', '用照片和测量结果一起确认变化。']);
+    setTexts('main > section:nth-of-type(2) .card p', [
+      '不是一上来就推荐高价课程。可以从 1CUP / 2CUP 开始，先确认体感、部位和预算。',
+      '天神南站步行约3分钟。腹部、腰周、背部等男性在意的部位，可以从短时间菜单开始。',
+      '不只凭感觉判断。通过照片、测量和实际反馈来确认，再决定是否继续护理。'
+    ]);
+    setTexts('.num-card span', ['HotPepper 平均评价', '2026年6月时点评价规模', '人气：桑拿 × 4CUP', '8CUP 集中护理参考时长']);
+
+    setBodyText('.feature-case .eyebrow', 'Featured Men\'s Case');
+    setBodyText('.feature-case h2', '1次护理，下腹 -8cm。看得见的变化。');
+    setBodyText('.feature-case p', '1次后能有这样的变化？腰侧赘肉也更清爽。这里展示 2026/3/25 护理前到 2026/4/17 1次护理后的横向、正面、背面对比。');
+    setBodyText('.feature-badge', '1次护理后 / 下腹 -8cm');
+    setTexts('.feature-shot span', ['侧面', '正面', '背面']);
+    setBodyText('.feature-note', '※ 效果因人而异。图片为获得顾客同意后发布的案例参考。');
+
+    setBodyText('.ba-section .eyebrow', 'Before / After');
+    setBodyText('.ba-section .section-title', '男性腹部，建议从正面和侧面一起看。');
+    setBodyText('.ba-section .section-lead', '衣服上能看出的凸起感、腰带上方的腰肉、从侧面看到的厚度，都是男性常见的在意点。照片比单纯数字更容易帮助你判断要咨询哪里。');
+    setTexts('.ba-label', ['正面对比', '侧面对比']);
+    setTexts('.change-item span', ['推荐咨询部位', '第一次怎么选', '想集中护理时']);
+    setTexts('.change-item strong', ['腹部 / 腰周 / 背部', '先用 1CUP・2CUP 确认体感', '桑拿 × 冻脂 4CUP']);
+    setBodyText('.ba-section .btn-primary', '查看 HotPepper 案例');
+
+    setBodyText('main > section:nth-of-type(4) .section-title', '第一次来的男性，会按这个流程说明。');
+    setBodyText('main > section:nth-of-type(4) .section-lead', '为了减少“不知道会做什么”的不安，我们把预约前到当天的流程整理得很简单。');
+    setTexts('.flow-step h3', ['咨询部位', '桑拿温热', '冻脂护理', '照片・测量确认']);
+    setTexts('.flow-step p', [
+      '腹部、腰周、背部等，只要先告诉我们你在意的地方。也可以边看案例边确认。',
+      '人气菜单会先用桑拿舱温热身体，再进行冷冻护理。想出汗、想有体感的人也很适合。',
+      '会一边确认冷感和吸附感一边进行。如果不舒服，可以当场调整。',
+      '护理后的体感、照片和尺寸变化会一起确认。是否需要下一次，也可以当场商量。'
+    ]);
+
+    setBodyText('#menu .section-title', '男性容易选择的菜单。');
+    setBodyText('#menu .section-lead', '想先小范围试一次、想短期看外观变化、想搭配桑拿出汗，都可以按目的选择。');
+    setTexts('.menu-row h3', ['冻脂 1CUP 体验', '冻脂 2CUP 体验', '爆汗桑拿舱 × 冻脂 4CUP', '爆汗桑拿舱 × 冻脂 8CUP']);
+    setTexts('.menu-row p', [
+      '适合先试腹部某一处、腰周等小范围部位。',
+      '适合想同时咨询左右差、正面和侧面的人。',
+      '适合想重点护理腹部和腰周的男性，人气组合菜单。',
+      '适合想把腹部、腰周、背部等多个部位一起咨询的人。'
+    ]);
+    setTexts('.menu-price span', ['初次参考', '约30分钟', '约80分钟', '约120分钟']);
+    setBodyText('.side-note h3', '正在犹豫要不要去医疗机构的人，可以先看这里。');
+    setBodyText('.side-note p', 'Coolspa 不是医疗机构，不提供诊断或治疗。我们提供的是美容沙龙护理体验，重点是好理解的价格、好预约的流程，以及不强推的咨询方式。');
+    setTexts('.side-note li', ['不是高价课程前提，也可以单次体验', '桑拿 × 冷冻护理，体感更完整', '看照片和测量结果后，再决定是否继续', '天神南站步行约3分钟，下班后也方便来']);
+
+    setBodyText('main > section:nth-of-type(6) .section-title', '男性常见问题。');
+    setTexts('.faq summary', ['男性一个人来店可以吗？', '会痛吗？', '不知道选哪个菜单怎么办？', '需要准备衣服吗？', '效果可以保证吗？']);
+    setTexts('.faq p', [
+      '可以。天神店也接受男性腹部、腰周、背部等部位的冻脂咨询。',
+      '会有冷感和吸附感，但很多人几分钟后会适应。如果不舒服，可以当场调整。',
+      '第一次建议从 1CUP / 2CUP 开始确认体感。想看外观变化时，可咨询桑拿 × 冻脂 4CUP。当天也可以根据部位调整。',
+      '平时穿着来店即可。店内会准备适合护理时使用的换洗衣物。来店前避免吃得过饱会更舒服。',
+      '效果因人而异，不能保证结果。我们会通过照片和测量帮助你确认变化，再一起决定是否需要继续。'
+    ]);
+
+    setBodyText('.bottom-cta .eyebrow', 'Book / Consult');
+    setBodyText('.bottom-cta h2', '先从腹部和腰周咨询开始。');
+    setBodyText('.bottom-cta p', '可以先看案例，再确认部位、次数和预算。不确定菜单时，先用微信咨询，再决定是否通过 HotPepper 预约。');
+    setTexts('.bottom-cta .btn', ['微信咨询', '预约天神店']);
+    setBodyText('.qr-box span', '微信事前咨询');
+    var qr = document.querySelector('.qr-box img');
+    if (qr) {
+      qr.setAttribute('src', makeLink('images/contact/wechat-qr-02.png'));
+      qr.setAttribute('alt', 'BISIN CoolSpa 微信二维码');
+    }
+
+    setTexts('.footer-reserve .footer-hp-btn', ['预约天神店HotPepper', '预约小郡店HotPepper']);
   }
 
   function applyFatPageCopy(lang) {
