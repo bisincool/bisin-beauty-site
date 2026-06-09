@@ -259,6 +259,10 @@
     .bottom-box h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;margin-bottom:10px}
     .bottom-box p{color:var(--muted);max-width:520px;margin:0 auto 22px}
     .cta-group{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .mens-slide-entry{position:fixed;right:0;top:50%;transform:translate(18px,-50%);z-index:90;display:flex;align-items:center;gap:10px;padding:14px 18px 14px 16px;border-radius:999px 0 0 999px;background:linear-gradient(135deg,#1f2624,#3f3029);color:#fff;box-shadow:0 18px 38px rgba(47,35,29,.24);font-weight:900;letter-spacing:.04em;writing-mode:vertical-rl;text-orientation:mixed;transition:transform .22s ease,box-shadow .22s ease;text-decoration:none}
+    .mens-slide-entry:hover{transform:translate(0,-50%);box-shadow:0 22px 44px rgba(47,35,29,.32)}
+    .mens-slide-entry .slide-arrow{writing-mode:horizontal-tb;width:26px;height:26px;border-radius:999px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-size:1rem}
+    .mens-slide-entry .slide-text{line-height:1.2}
 
 
     @media(max-width:960px){
@@ -272,10 +276,10 @@
       .cases-head{flex-direction:column;align-items:flex-start}
     }
     @media(max-width:720px){
-      .nav{display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100%;background:#fbf8f4;backdrop-filter:blur(20px);z-index:100;justify-content:center;align-items:center;gap:36px;font-size:1.2rem}
+      .nav{display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;overflow-y:auto;background:#fff;backdrop-filter:none;z-index:1000;justify-content:flex-start;align-items:center;gap:24px;font-size:1.08rem;padding:88px 24px 32px}
       .nav.open{display:flex}
       .nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--text)}
-      .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:200}
+      .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
       .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
       .menu-row{grid-template-columns:1fr;align-items:flex-start;gap:6px;padding:14px 18px}
       .menu-time,.menu-price{text-align:left}
@@ -293,6 +297,8 @@
       .bottom-cta{padding-bottom:118px}
       .bottom-box{padding:24px 18px;border-radius:24px}
       .bottom-box img{max-width:128px;height:auto}
+      .mens-slide-entry{right:0;top:48%;transform:translate(12px,-50%);padding:12px 14px 12px 12px;font-size:.82rem;z-index:80}
+      .mens-slide-entry:hover{transform:translate(0,-50%)}
     }
       .footer{padding:40px 0 28px;border-top:1px solid var(--line)}
     .footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
@@ -326,7 +332,6 @@
       <button class="nav-close" onclick="document.getElementById('globalNav').classList.remove('open')" aria-label="閉じる">✕</button>
       <a href="../index.html" onclick="document.getElementById('globalNav').classList.remove('open')">ホーム</a>
       <a href="fat-freezing.html" class="active" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
-      <a href="mens-fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">メンズ</a>
       <a href="nail.html" onclick="document.getElementById('globalNav').classList.remove('open')">ネイル</a>
       <a href="../stores/coolspa-tenjin.html" onclick="document.getElementById('globalNav').classList.remove('open')">店舗案内</a>
       <a href="../blog/index.html" onclick="document.getElementById('globalNav').classList.remove('open')">症例・ビフォーアフター</a>
@@ -340,6 +345,11 @@
     </div>
   </div>
 </header>
+
+<a class="mens-slide-entry" href="mens-fat-freezing.html" aria-label="男性専用ページへ">
+  <span class="slide-arrow">›</span>
+  <span class="slide-text">男性専用ページ</span>
+</a>
 
 <main>
 

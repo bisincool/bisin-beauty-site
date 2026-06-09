@@ -169,10 +169,10 @@
       .photo-slot:first-child{grid-row:span 1}
     }
     @media(max-width:720px){
-      .nav{display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100%;background:#fbf8f4;backdrop-filter:blur(20px);z-index:100;justify-content:center;align-items:center;gap:36px;font-size:1.2rem}
+      .nav{display:none;flex-direction:column;position:fixed;top:0;left:0;width:100%;height:100vh;height:100dvh;overflow-y:auto;background:#fff;backdrop-filter:none;z-index:1000;justify-content:flex-start;align-items:center;gap:24px;font-size:1.08rem;padding:88px 24px 32px}
       .nav.open{display:flex}
       .nav-close{position:absolute;top:24px;right:24px;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--text)}
-      .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:200}
+      .hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
       .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
       .reviews-grid{grid-template-columns:1fr}
       .store-hero-img{height:300px}
@@ -212,7 +212,6 @@
       <button class="nav-close" onclick="document.getElementById('globalNav').classList.remove('open')" aria-label="閉じる">✕</button>
       <a href="../index.html" onclick="document.getElementById('globalNav').classList.remove('open')">ホーム</a>
       <a href="../services/fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
-      <a href="../services/mens-fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">メンズ</a>
       <a href="../services/nail.html" onclick="document.getElementById('globalNav').classList.remove('open')">ネイル</a>
       <a href="chuchu-ogori.html" class="active" onclick="document.getElementById('globalNav').classList.remove('open')">店舗案内</a>
       <a href="../blog/index.html" onclick="document.getElementById('globalNav').classList.remove('open')">症例・ビフォーアフター</a>

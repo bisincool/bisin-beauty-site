@@ -163,10 +163,10 @@
       .feature-case-head{grid-template-columns:1fr}
       .feature-gallery{grid-template-columns:1fr}
       .side-note{position:static}
-      .nav{position:fixed;inset:0 0 auto 0;transform:translateY(-110%);transition:transform .2s;background:#fff;flex-direction:column;align-items:flex-start;padding:70px 26px 28px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+      .nav{position:fixed;inset:0;z-index:1000;height:100vh;height:100dvh;overflow-y:auto;transform:translateY(-110%);transition:transform .2s;background:#fff;flex-direction:column;align-items:flex-start;justify-content:flex-start;padding:88px 26px 32px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
       .nav.open{transform:translateY(0)}
-      .nav-close{display:block;position:absolute;top:18px;right:20px;border:0;background:transparent;font-size:1.8rem}
-      .hamburger{display:block}
+      .nav-close{display:block;position:absolute;top:18px;right:20px;border:0;background:transparent;font-size:1.8rem;color:var(--text)}
+      .hamburger{display:block;position:relative;z-index:1001}
     }
     @media(max-width:640px){
       .container{width:min(100% - 22px,var(--max))}
@@ -191,8 +191,7 @@
       <nav class="nav" id="globalNav">
         <button class="nav-close" onclick="document.getElementById('globalNav').classList.remove('open')" aria-label="閉じる">×</button>
         <a href="../index.html" onclick="document.getElementById('globalNav').classList.remove('open')">ホーム</a>
-        <a href="fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
-        <a class="active" href="mens-fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">メンズ</a>
+      <a class="active" href="fat-freezing.html" onclick="document.getElementById('globalNav').classList.remove('open')">脂肪冷却</a>
         <a href="nail.html" onclick="document.getElementById('globalNav').classList.remove('open')">ネイル</a>
         <a href="../stores/coolspa-tenjin.html" onclick="document.getElementById('globalNav').classList.remove('open')">店舗</a>
         <a href="../blog/index.html" onclick="document.getElementById('globalNav').classList.remove('open')">症例</a>
